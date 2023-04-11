@@ -1,40 +1,23 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.generic.wallet'
+    namespace 'com.example.sample01'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.generic.wallet"
         minSdk 24
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-
+        consumerProguardFiles "consumer-rules.pro"
     }
 
-
-
     buildTypes {
-        debug {
-            buildConfigField "String", "BASE_URL_LIVE", '"http://uatthailiapi.digihub.com.np/api/"'
-            buildConfigField "String", "USERNAME", '"wePayApiUser"'
-            buildConfigField "String", "PASSWORD", '"wePayAp1us3r@20"'
-            buildConfigField "String", "PRIVATE_KEY", '"C9498449-16BC-49D3-B4D9-A060461C3F90"'
-        }
-
         release {
             minifyEnabled false
-            buildConfigField "String", "BASE_URL_LIVE", '"http://uatthailiapi.digihub.com.np/api/"'
-            buildConfigField "String", "USERNAME", '"wePayApiUser"'
-            buildConfigField "String", "PASSWORD", '"wePayAp1us3r@20"'
-            buildConfigField "String", "PRIVATE_KEY", '"C9498449-16BC-49D3-B4D9-A060461C3F90"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -53,10 +36,12 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    implementation project(":Sample01")
-
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("com.tbuonomo:dotsindicator:4.3")
 
 }

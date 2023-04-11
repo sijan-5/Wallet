@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".onBoard.ThirdFragment">
+
+
+    <ImageView
+        android:layout_width="303.77dp"
+        android:layout_height="196.98dp"
+        android:id="@+id/instantPayImage"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="36.25dp"
+        android:layout_marginEnd="34.98dp"
+        android:layout_marginBottom="339dp"
+        android:src="@drawable/multipleservicepg"
+        />
+
+    <TextView
+        android:id="@+id/middleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/quicksand"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/instantPayImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="91dp"
+        android:layout_marginEnd="90dp"
+        android:text="Multiple Services"
+        android:textColor="#303030"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quicksand"
+        android:gravity="center"
+        android:text="@string/lorem"
+        app:layout_constraintTop_toBottomOf="@+id/middleText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="#011024"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        android:lineSpacingExtra="8dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
