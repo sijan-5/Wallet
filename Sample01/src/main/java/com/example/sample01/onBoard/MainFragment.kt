@@ -31,6 +31,7 @@ class MainFragment : Fragment() {
     private lateinit var pagerAdapter : PagerAdapter
     private lateinit var nextButton : Button
     private lateinit var logInText : TextView
+    private lateinit var skipText : TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,18 +42,15 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         pager = view.findViewById(R.id.pager)
-        tabIndicator = view.findViewById(R.id.tab_layout)
-        pagerAdapter = PagerAdapter(this)
+        tabIndicator = view.findViewById(R.id.tabLayout)
+        pagerAdapter = PagerAdapter(this,this.requireContext())
         nextButton = view.findViewById(R.id.nextButton)
         logInText = view.findViewById(R.id.logInText)
+        skipText = view.findViewById(R.id.skipText)
         pager.adapter = pagerAdapter
-
         // tablayout and viewpager
         TabLayoutMediator(tabIndicator,pager) {tab, positioin ->
-
-
         }.attach()
 
 
@@ -61,10 +59,12 @@ class MainFragment : Fragment() {
                if (position == 2){
                     logInText.visibility = View.VISIBLE
                     nextButton.text = "Create Account"
+                   skipText.visibility = View.INVISIBLE
                 }
                 else
                {
                    logInText.visibility = View.INVISIBLE
+                   skipText.visibility = View.VISIBLE
                    nextButton.text = "Next"
                }
                 super.onPageSelected(position)
@@ -74,7 +74,5 @@ class MainFragment : Fragment() {
             pager.currentItem = pager.currentItem + 1
         }
 
-
     }
-
 }

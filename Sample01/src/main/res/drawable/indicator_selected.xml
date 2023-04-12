@@ -11,9 +11,9 @@
                 android:topLeftRadius="67dp"
                 />
 
-            <solid android:color="#8275FF" />
-            <size android:height="4dp"
-                android:width="2dp"
+            <solid android:color="@color/button_purple" />
+            <size android:height="16dp"
+                android:width="6dp"
                 />
         </shape>
     </item>

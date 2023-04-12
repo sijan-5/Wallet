@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onBoard.OnBoardFragment">
+
+
+    <ImageView
+        android:id="@+id/instantPayImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/dimen_24"
+        android:layout_marginTop="@dimen/dimen_48"
+        android:layout_marginEnd="@dimen/dimen_24"
+        />
+
+    <TextView
+        android:id="@+id/middleBoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/instantPayImage"
+        android:layout_marginTop="@dimen/dimen_40"
+        android:fontFamily="@font/quicksand"
+        android:textColor="@color/bold_text_color"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/loremText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/lorem"
+        app:layout_constraintTop_toBottomOf="@+id/middleBoldText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dimen_24"
+        android:layout_marginEnd="@dimen/dimen_24"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:gravity="center"
+        android:textColor="@color/lorem_color"
+        android:textSize="12sp"
+        android:lineSpacingExtra="8dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

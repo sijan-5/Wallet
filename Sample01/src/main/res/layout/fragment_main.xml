@@ -4,74 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
     tools:context=".onBoard.MainFragment">
+
+    <TextView
+        android:id="@+id/skipText"
+        android:fontFamily="@font/quicksand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skip"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:layout_marginRight="@dimen/dimen_16"
+        android:textColor="@color/button_purple"
+        android:textStyle="normal"
+        />
 
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
+        app:layout_constraintTop_toBottomOf="@id/skipText"
+        android:layout_marginTop="@dimen/dimen_40"
         />
 
-    
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="10dp"
+        android:id="@+id/tabLayout"
+        android:layout_width="42dp"
+        android:layout_height="16dp"
         app:layout_constraintTop_toBottomOf="@id/pager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/dimen_40"
         app:tabBackground="@drawable/indicator_selector"
         app:tabGravity="center"
         app:tabIndicator="@null"
         />
 
-
-<!--        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator-->
-<!--            android:id="@+id/indicators"-->
-<!--            android:layout_width="42dp"-->
-<!--            android:layout_height="16dp"-->
-<!--            app:dotsSize="6dp"-->
-<!--            app:dotsColor="#8275FF"-->
-<!--            app:dotsSpacing="12dp"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/pager"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            android:layout_marginTop="40dp"-->
-
-<!--            />-->
-
     <Button
         android:id="@+id/nextButton"
-        android:layout_width="343dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
-        android:backgroundTint="#8275FF"
-        android:text="Next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+        android:backgroundTint="@color/button_purple"
+        android:text="@string/next"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        android:layout_marginTop="@dimen/dimen_48"/>
 
     <TextView
         android:id="@+id/logInText"
         android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginTop="29dp"
-        android:text="Log to account"
-        android:textColor="#8275FF"
+        android:layout_height="wrap_content"
+        android:text="@string/log_to_account"
+        android:textColor="@color/button_purple"
         android:textSize="14sp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nextButton" />
+        app:layout_constraintTop_toBottomOf="@id/nextButton"
+        android:layout_marginTop="@dimen/dimen_16"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

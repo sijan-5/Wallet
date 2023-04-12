@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="button_purple">#8275FF</color>
+    <color name="bold_text_color">#303030</color>
+    <color name="indicator_color">#E4E4E4</color>
+    <color name="lorem_color">#011024</color>
+</resources>
