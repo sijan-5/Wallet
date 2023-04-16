@@ -1,4 +1,4 @@
-package com.example.sample01.AuthFragments
+package com.generic.wallet.authfragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -35,7 +35,7 @@ class SetPasswordFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_set_password, container, false)
+        return inflater.inflate(com.generic.wallet.R.layout.fragment_set_password, container, false)
     }
 
     companion object {

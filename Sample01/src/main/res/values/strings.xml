@@ -10,4 +10,19 @@
     <string name="skip">Skip</string>
     <string name="create_an_account">Create an Account</string>
     <string name="desc">Please enter your info to continue the process.</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_your_full_name">Enter your full name</string>
+    <string name="please_enter_your_info_to_continue_the_process">Please enter your info to continue the process.</string>
+    <string name="enter_your_mobile_number">Enter your mobile number</string>
+
+    <string name="terms_and_condition_string">By continuing you agree to theTerms &amp; Conditions and Privacy Policy
+    </string>
+    <string name="title_activity_on_board">OnBoardActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

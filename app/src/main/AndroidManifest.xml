@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GenericWallet"
         tools:targetApi="31">
+        <activity android:name="com.example.sample01.onBoard.OnBoardActivity"
+            android:exported="false"
+            android:label="OnBoardActivity"/>
         <activity
             android:name=".AuthActivity"
             android:exported="false"

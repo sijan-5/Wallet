@@ -7,43 +7,43 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.sample01.AuthFragments.RegisterFragment"
+        android:name="com.generic.wallet.authfragments.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
     </fragment>
     <fragment
         android:id="@+id/OTPFragment"
-        android:name="com.example.sample01.AuthFragments.OTPFragment"
+        android:name="com.generic.wallet.authfragments.OTPFragment"
         android:label="fragment_o_t_p"
         tools:layout="@layout/fragment_o_t_p" />
     <fragment
         android:id="@+id/setPasswordFragment"
-        android:name="com.example.sample01.AuthFragments.SetPasswordFragment"
+        android:name="com.generic.wallet.authfragments.SetPasswordFragment"
         android:label="fragment_set_password"
         tools:layout="@layout/fragment_set_password" />
     <fragment
         android:id="@+id/setTansactionPinFragment"
-        android:name="com.example.sample01.AuthFragments.SetTansactionPinFragment"
+        android:name="com.generic.wallet.authfragments.SetTansactionPinFragment"
         android:label="fragment_set_tansaction_pin"
         tools:layout="@layout/fragment_set_tansaction_pin" />
     <fragment
         android:id="@+id/setTansaction1Fragment"
-        android:name="com.example.sample01.AuthFragments.SetTansaction1Fragment"
+        android:name="com.generic.wallet.authfragments.SetTansaction1Fragment"
         android:label="fragment_set_tansaction1"
         tools:layout="@layout/fragment_set_tansaction1" />
     <fragment
         android:id="@+id/successFragment"
-        android:name="com.example.sample01.AuthFragments.SuccessFragment"
+        android:name="com.generic.wallet.authfragments.SuccessFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_success" />
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.example.sample01.AuthFragments.LogInFragment"
+        android:name="com.generic.wallet.authfragments.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" />
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.sample01.AuthFragments.ForgotPasswordFragment"
+        android:name="com.generic.wallet.authfragments.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
 </navigation>

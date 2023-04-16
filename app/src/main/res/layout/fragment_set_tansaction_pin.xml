@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AuthFragments.SetTansactionPinFragment">
+    tools:context="com.generic.wallet.authfragments.SetTansactionPinFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

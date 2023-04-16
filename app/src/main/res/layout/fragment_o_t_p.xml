@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="@dimen/dimen_16"
+    android:paddingEnd="@dimen/dimen_16"
+    tools:context="com.generic.wallet.authfragments.OTPFragment">
+    
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Verification"
+        app:titleTextColor="@color/bold_text_color"
+        />
+    
+    
+    <TextView
+        android:id="@+id/stringPasswordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/set_an_strong_password_to_secure_your_account"
+        app:layout_constraintTop_toBottomOf="@id/toolBar"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:textSize="12sp"
+        android:fontFamily="@font/quicksand"
+        android:textColor="@color/lorem_color"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/verificationImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/verificationpg"
+        app:layout_constraintTop_toBottomOf="@+id/stringPasswordText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/dimen_24"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
