@@ -15,7 +15,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.sample01.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

@@ -45,8 +45,6 @@ class OTPFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbar = view.findViewById(com.generic.wallet.R.id.toolBar)
-
 
     }
     companion object {

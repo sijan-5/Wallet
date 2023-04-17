@@ -10,6 +10,9 @@
         android:name="com.generic.wallet.authfragments.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_OTPFragment"
+            app:destination="@id/OTPFragment" />
     </fragment>
     <fragment
         android:id="@+id/OTPFragment"
@@ -23,12 +26,12 @@
         tools:layout="@layout/fragment_set_password" />
     <fragment
         android:id="@+id/setTansactionPinFragment"
-        android:name="com.generic.wallet.authfragments.SetTansactionPinFragment"
+        android:name="com.generic.wallet.authfragments.SetTransactionPinFragment"
         android:label="fragment_set_tansaction_pin"
         tools:layout="@layout/fragment_set_tansaction_pin" />
     <fragment
         android:id="@+id/setTansaction1Fragment"
-        android:name="com.generic.wallet.authfragments.SetTansaction1Fragment"
+        android:name="com.generic.wallet.authfragments.SetTransaction1Fragment"
         android:label="fragment_set_tansaction1"
         tools:layout="@layout/fragment_set_tansaction1" />
     <fragment

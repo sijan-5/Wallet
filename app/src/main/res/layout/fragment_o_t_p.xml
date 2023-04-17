@@ -1,46 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingStart="@dimen/dimen_16"
     android:paddingEnd="@dimen/dimen_16"
     tools:context="com.generic.wallet.authfragments.OTPFragment">
-    
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Verification"
-        app:titleTextColor="@color/bold_text_color"
-        />
-    
-    
+        app:titleTextColor="@color/bold_text_color" />
+
     <TextView
         android:id="@+id/stringPasswordText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/set_an_strong_password_to_secure_your_account"
-        app:layout_constraintTop_toBottomOf="@id/toolBar"
         android:layout_marginTop="@dimen/dimen_8"
-        android:textSize="12sp"
         android:fontFamily="@font/quicksand"
+        android:text="@string/strong_password"
         android:textColor="@color/lorem_color"
-        />
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/toolBar" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/verificationImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_24"
         android:src="@drawable/verificationpg"
-        app:layout_constraintTop_toBottomOf="@+id/stringPasswordText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="@dimen/dimen_24"/>
+        app:layout_constraintTop_toBottomOf="@+id/stringPasswordText" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/firstPinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:cursorVisible="true"
+        android:hint=""
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:itemCount="6"
+        app:itemRadius="4dp"
+        app:itemSpacing="@dimen/dimen_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/verificationImage"
+        app:lineColor="@color/otp_border"
+        app:lineWidth="2dp"
+        app:viewType="rectangle" />
 
 
+    <Button
+        android:id="@+id/otpContinueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_48"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="Continue"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/firstPinView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:text="Didn't received the code? Retry (02:00)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otpContinueButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.sample01.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -29,8 +30,14 @@ class RegisterFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
+
         }
+
+        findNavController().navigate(com.generic.wallet.R.id.action_registerFragment_to_OTPFragment)
+
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +46,7 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(com.generic.wallet.R.layout.fragment_register, container, false)
     }
+
 
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)

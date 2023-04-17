@@ -9,5 +9,21 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="set_an_strong_password_to_secure_your_account">Set an strong password</string>
+    <string name="strong_password">Set an strong password to secure your account.</string>
+    <string name="Continue">Continue</string>
+    <string name="password">Password</string>
+    <string name="ent_password">Enter your password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="successfully_done">Successfully Done</string>
+    <string name="is_simply_dummy_text_of_the_printing_and_typesetting_industry_lorem_ipsum_has_been_the_industry_s">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s</string>
+    <string name="login">LOGIN</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_to_your_account">Login to your account.</string>
+    <string name="register">Register</string>
+    <string name="email_or_phone_number">Email or Phone Number</string>
+    <string name="enter_your_email_or_phone_number">Enter your Email or Phone Number</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="set_an_transaction_pin_to_secure_your_payments">Set an transaction pin to secure your payments.</string>
 </resources>

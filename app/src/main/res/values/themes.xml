@@ -19,6 +19,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+<!--    <style name="btnSameAttribute" parent="Theme.GenericWallet">-->
+<!--        <item name="fontFamily">@font/quicksand_bold</item>-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--    </style>-->
+
+
     <style name="Theme.GenericWallet.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.GenericWallet.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

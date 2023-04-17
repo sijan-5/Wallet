@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.generic.wallet.authfragments.SetTansaction1Fragment">
+    android:paddingStart="@dimen/dimen_16"
+    android:paddingEnd="@dimen/dimen_16"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.generic.wallet.authfragments.SetTransaction1Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Confirm Transaction Pin"
+        app:titleTextColor="@color/bold_text_color" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/stringPasswordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/strong_password"
+        android:textColor="@color/lorem_color"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/toolBar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/transactionImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:src="@drawable/transactionpinpg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stringPasswordText" />
+
+
+    <com.chaos.view.PinView
+        android:id="@+id/otp_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:itemCount="4"
+        app:layout_constraintTop_toBottomOf="@id/transactionImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dimen_32"
+        app:lineColor="@color/otp_border"
+        app:lineWidth="2dp"
+        android:gravity="center"
+        app:cursorWidth="2dp"
+        android:cursorVisible="true"
+        android:inputType="number"
+        app:itemRadius="4dp"
+        app:viewType="rectangle"
+        app:itemSpacing="@dimen/dimen_16"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        hint=""
+
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm"
+        app:layout_constraintTop_toBottomOf="@id/otp_two"
+        android:layout_marginTop="@dimen/dimen_48"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/quicksand_bold"
+        android:textSize="16sp"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

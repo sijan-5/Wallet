@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="@dimen/dimen_16"
+    android:paddingEnd="@dimen/dimen_16"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.generic.wallet.authfragments.SuccessFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/successImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:src="@drawable/sucessloginpg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.29"
+         />
+
+    <TextView
+        android:id="@+id/successfullyDoneText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/successfully_done"
+        app:layout_constraintTop_toBottomOf="@id/successImg"
+        android:textSize="20sp"
+        android:fontFamily="@font/quicksand_bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/bold_text_color"
+         android:layout_marginTop="@dimen/dimen_32"
+        />
+    <TextView
+        android:id="@+id/loremText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/is_simply_dummy_text_of_the_printing_and_typesetting_industry_lorem_ipsum_has_been_the_industry_s"
+        android:textColor="@color/lorem_color"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/successfullyDoneText"
+        android:layout_marginTop="@dimen/dimen_16"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="center"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintTop_toBottomOf="@id/loremText"
+        android:layout_marginTop="@dimen/dimen_48"
+        android:fontFamily="@font/quicksand_bold"
+        android:textSize="16sp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
