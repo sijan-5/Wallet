@@ -9,6 +9,7 @@ import com.example.sample01.R
 
 class PagerAdapter(fragment: Fragment, context: Context) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = objectList.size
+
     private val objectList = listOf(
         OnBoardScreenParameter(
             context.getString(R.string.instant_payment), R.drawable.instantpaymentpg,

@@ -6,11 +6,10 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="strong_password">Set an strong password to secure your account.</string>
-    <string name="Continue">Continue</string>
+    <string name="Continuee">Continue</string>
     <string name="password">Password</string>
     <string name="ent_password">Enter your password</string>
     <string name="confirm_password">Confirm Password</string>
@@ -26,4 +25,10 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="set_an_transaction_pin_to_secure_your_payments">Set an transaction pin to secure your payments.</string>
+    <string name="email_address">Enter your email address</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="email_addresss">Email Address</string>
+    <string name="Continue">CONTINUE</string>
+    <string name="terms_and_condition_string"><![CDATA[By continuing you agree to the Terms & Conditions and Privacy Policy.]]></string>
+    <string name="recieve_code">Didn\'t received the code? Retry (02:00)</string>
 </resources>

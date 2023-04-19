@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.sample01.R
+import com.generic.wallet.databinding.FragmentSetTansaction1Binding
+import com.generic.wallet.databinding.FragmentSuccessBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +24,8 @@ class SuccessFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var _binding: FragmentSuccessBinding? = null
+    private val binding get()= _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +40,18 @@ class SuccessFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(com.generic.wallet.R.layout.fragment_success, container, false)
+
+        _binding = FragmentSuccessBinding.inflate(inflater,container,false)
+        val view = binding.root
+        return view
+//        return inflater.inflate(com.generic.wallet.R.layout.fragment_success, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.logInButton.setOnClickListener {
+            findNavController().navigate(com.generic.wallet.R.id.action_successFragment_to_logInFragment)
+        }
     }
 
     companion object {
@@ -56,5 +72,10 @@ class SuccessFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

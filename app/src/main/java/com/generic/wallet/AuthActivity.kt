@@ -14,7 +14,5 @@ class AuthActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
 
 
-
-
     }
 }

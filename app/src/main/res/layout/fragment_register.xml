@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:layout="@layout/fragment_register"
@@ -8,6 +8,10 @@
     android:paddingStart="@dimen/dimen_16"
     android:paddingEnd="@dimen/dimen_16"
     tools:context="com.generic.wallet.authfragments.RegisterFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/createAnAccountText"
@@ -28,9 +32,8 @@
         android:layout_marginTop="@dimen/dimen_8"
         android:fontFamily="@font/quicksand"
         android:text="@string/please_enter_your_info_to_continue_the_process"
-        android:textColor="@color/bold_text_color"
+        android:textColor="@color/lorem_color"
         android:textSize="12sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/createAnAccountText" />
 
@@ -38,7 +41,7 @@
         android:id="@+id/loginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login"
         android:textSize="14sp"
         android:fontFamily="@font/quicksand_bold"
         android:textColor="@color/button_purple"
@@ -73,19 +76,28 @@
         android:textColor="@color/above_edit_text_color"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/registerFragmentImage" />
-    
-    <EditText
-        android:id="@+id/fullNameEditText"
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_your_full_name"
+        android:id="@+id/fullNameEditText"
         app:layout_constraintTop_toBottomOf="@id/enterPassword"
         android:layout_marginTop="@dimen/dimen_8"
-        android:background="@drawable/edit_text_border"
-        android:textColor="@color/edit_text_hint_color"
-        android:fontFamily="@font/quicksand"
-        android:textSize="14sp"
-        />
+        app:boxStrokeWidth="0dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp"
+            android:background="@drawable/edit_text_border"
+            android:textColor="@color/edit_text_hint_color"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
 <!--    Mobile Number-->
     <TextView
@@ -94,23 +106,32 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_24"
         android:fontFamily="@font/quicksand_medium"
-        android:text="Mobile Number"
+        android:text="@string/mobile_number"
         android:textColor="@color/above_edit_text_color"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fullNameEditText" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/mobileNumberEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_your_mobile_number"
         app:layout_constraintTop_toBottomOf="@id/mobileNumberText"
         android:layout_marginTop="@dimen/dimen_8"
-        android:background="@drawable/edit_text_border"
-        android:textColor="@color/edit_text_hint_color"
-        android:fontFamily="@font/quicksand"
-        android:textSize="14sp"
-        />
+        app:boxStrokeWidth="0dp"
+        >
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:textSize="14sp"
+          android:textColor="@color/edit_text_hint_color"
+          android:background="@drawable/edit_text_border"
+          android:fontFamily="@font/quicksand"
+          />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 <!--    Email Address-->
     <TextView
         android:id="@+id/emailIdText"
@@ -118,45 +139,60 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_24"
         android:fontFamily="@font/quicksand_medium"
-        android:text="Mobile Number"
+        android:text="@string/email_addresss"
         android:textColor="@color/above_edit_text_color"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mobileNumberEditText" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailIdEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/enter_your_mobile_number"
+        android:hint="@string/email_address"
         app:layout_constraintTop_toBottomOf="@id/emailIdText"
         android:layout_marginTop="@dimen/dimen_8"
-        android:background="@drawable/edit_text_border"
-        android:textColor="@color/edit_text_hint_color"
-        android:fontFamily="@font/quicksand"
-        android:textSize="14sp"
-        />
+        app:boxStrokeWidth="0dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:textColor="@color/edit_text_hint_color"
+            android:textSize="14sp"
+            android:fontFamily="@font/quicksand"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 <!--    Terms and Condition-->
     <TextView
-        android:id="@+id/termsCondition"
+        android:id="@+id/termsConditionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/emailIdEditText"
         android:layout_marginTop="@dimen/dimen_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dimen_56"
+        android:layout_marginEnd="@dimen/dimen_56"
+        android:fontFamily="@font/quicksand"
         android:gravity="center"
         android:textSize="12sp"
         />
 
     <Button
+        android:id="@+id/continueFirst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/terms_condition_color"
-        android:text="CONTINUE"
+        android:text="@string/Continue"
         android:fontFamily="@font/quicksand_bold"
         android:textSize="16sp"
         android:background="@drawable/rounded_button"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/termsCondition"
+        app:layout_constraintTop_toBottomOf="@id/termsConditionText"
         android:layout_marginTop="@dimen/dimen_32"
         />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.generic.wallet.R
+import com.generic.wallet.databinding.FragmentSetTansactionPinBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +23,8 @@ class SetTransactionPinFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var _binding:FragmentSetTansactionPinBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +39,17 @@ class SetTransactionPinFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(com.generic.wallet.R.layout.fragment_set_tansaction_pin, container, false)
+        _binding = FragmentSetTansactionPinBinding.inflate(inflater,container,false)
+        val view = binding.root
+        return  view
+//        return inflater.inflate(com.generic.wallet.R.layout.fragment_set_tansaction_pin, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.setTransactionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_setTansactionPinFragment_to_setTansaction1Fragment)
+        }
     }
 
     companion object {
@@ -55,5 +70,10 @@ class SetTransactionPinFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

@@ -52,8 +52,10 @@ class MainFragment() : Fragment() {
         logInText = view.findViewById(R.id.logInText)
         skipText = view.findViewById(R.id.skipText)
         pager.adapter = pagerAdapter
-        // tablayout and viewpager
+
+        // connecting Tab_layout and viewpager
         TabLayoutMediator(tabIndicator, pager) { tab, positioin ->
+
         }.attach()
 
 
@@ -81,7 +83,6 @@ class MainFragment() : Fragment() {
             {
                 pager.currentItem = pager.currentItem + 1
             }
-
         }
     }
 

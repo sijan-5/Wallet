@@ -1,12 +1,21 @@
 package com.generic.wallet.authfragments
-
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.SpannedString
+import android.text.style.ForegroundColorSpan
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
-import com.example.sample01.R
+import com.generic.wallet.R
+import com.generic.wallet.databinding.FragmentRegisterBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,9 +27,12 @@ private const val ARG_PARAM2 = "param2"
  * Use the [RegisterFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+
 class RegisterFragment : Fragment() {
 
-//    private lateinit var termsAndCondition : TextView
+    private var _binding : FragmentRegisterBinding? = null
+    private val binding get() = _binding!!
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -31,11 +43,7 @@ class RegisterFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
 
-
         }
-
-        findNavController().navigate(com.generic.wallet.R.id.action_registerFragment_to_OTPFragment)
-
     }
 
 
@@ -44,21 +52,30 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(com.generic.wallet.R.layout.fragment_register, container, false)
+
+        _binding = FragmentRegisterBinding.inflate(inflater,container,false)
+        val view = binding.root
+        return view
+//        return inflater.inflate(com.generic.wallet.R.layout.fragment_register, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        val textView = view.findViewById<TextView>(R.id.termsCondition)
-//        val termsAndCondition:String = getString(R.string.terms_and_condition_string)
-//        val spannableStringBuilder = SpannableStringBuilder(termsAndCondition)
-//        val quickSandTypeFace= Typeface.createFromAsset(context?.assets, "font/quicksand.ttf")
-//        val quickSandStyle = StyleSpan(quickSandTypeFace.style)
-//        spannableStringBuilder.setSpan(quickSandStyle,20,20,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-//        textView.text = spannableStringBuilder
-//    }
+
+        val toColorText = resources.getString(R.string.terms_and_condition_string)
+        val spannableString = SpannableString(toColorText)
+        val color = ContextCompat.getColor(requireContext(), com.example.sample01.R.color.button_purple)
+        spannableString.setSpan(ForegroundColorSpan(color), 31, 48, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableString.setSpan(ForegroundColorSpan(color), 53, 68, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.termsConditionText.text = spannableString
+
+
+
+        binding.continueFirst.setOnClickListener {
+            findNavController().navigate(com.generic.wallet.R.id.action_registerFragment_to_OTPFragment)
+        }
+    }
 
     companion object {
         /**
@@ -79,4 +96,12 @@ class RegisterFragment : Fragment() {
                 }
             }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }
+
+
+
