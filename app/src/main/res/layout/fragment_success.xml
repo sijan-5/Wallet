@@ -50,7 +50,7 @@
         android:gravity="center"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,6 +60,7 @@
         android:layout_marginTop="@dimen/dimen_48"
         android:fontFamily="@font/quicksand_bold"
         android:textSize="16sp"
+        android:textColor="@color/white"
         />
 
 

@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.sample01.R
 import com.generic.wallet.databinding.FragmentOTPBinding
+import com.generic.wallet.databinding.FragmentRegisterBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +24,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [OTPFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class OTPFragment : Fragment() {
+class OTPFragment : FragmentWithTitleBar() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -39,15 +40,17 @@ class OTPFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        _binding = FragmentOTPBinding.inflate(inflater,container,false)
-        val view = binding.root
-        return view
-//        return inflater.inflate(com.generic.wallet.R.layout.fragment_o_t_p, container, false)
+    override fun provideView(inflater: LayoutInflater): View{
+        _binding = FragmentOTPBinding.inflate(inflater)
+        return  binding.root
+    }
+
+    override fun getTitle() :String {
+        return resources.getString(com.generic.wallet.R.string.verification)
+    }
+
+    override fun goToPreviousFragment() {
+        findNavController().navigate(com.generic.wallet.R.id.action_OTPFragment_to_registerFragment2)
     }
 
 

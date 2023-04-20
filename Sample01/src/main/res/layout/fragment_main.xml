@@ -46,15 +46,17 @@
         app:tabIndicator="@null"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="@string/next"
+        android:textColor="@color/white"
         android:fontFamily="@font/quicksand_bold"
         app:layout_constraintTop_toBottomOf="@id/tabLayout"
         android:layout_marginTop="@dimen/dimen_48"/>
+
 
     <TextView
         android:id="@+id/logInText"

@@ -29,7 +29,7 @@ private const val ARG_PARAM2 = "param2"
  */
 
 
-class RegisterFragment : Fragment() {
+class RegisterFragment : Fragment(){
 
     private var _binding : FragmentRegisterBinding? = null
     private val binding get() = _binding!!
@@ -47,7 +47,9 @@ class RegisterFragment : Fragment() {
     }
 
 
-    override fun onCreateView(
+
+
+        override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -62,14 +64,12 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         val toColorText = resources.getString(R.string.terms_and_condition_string)
         val spannableString = SpannableString(toColorText)
         val color = ContextCompat.getColor(requireContext(), com.example.sample01.R.color.button_purple)
         spannableString.setSpan(ForegroundColorSpan(color), 31, 48, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         spannableString.setSpan(ForegroundColorSpan(color), 53, 68, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.termsConditionText.text = spannableString
-
 
 
         binding.continueFirst.setOnClickListener {

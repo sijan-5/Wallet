@@ -19,7 +19,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SetTransaction1Fragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SetTransaction1Fragment : Fragment() {
+class SetTransaction1Fragment : FragmentWithTitleBar() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,17 +35,19 @@ class SetTransaction1Fragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-
-        _binding = FragmentSetTansaction1Binding.inflate(inflater,container,false)
-        val view = binding.root
-        return view
-//        return inflater.inflate(com.generic.wallet.R.layout.fragment_set_tansaction1, container, false)
+    override fun provideView(inflater: LayoutInflater): View {
+        _binding = FragmentSetTansaction1Binding.inflate(inflater)
+        return binding.root
     }
+
+    override fun getTitle(): String {
+        return resources.getString(R.string.confirm_password)
+    }
+
+    override fun goToPreviousFragment() {
+        findNavController().navigate(R.id.action_setTansaction1Fragment_to_setTansactionPinFragment)
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

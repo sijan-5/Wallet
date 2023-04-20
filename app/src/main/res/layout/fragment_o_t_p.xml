@@ -8,24 +8,18 @@
     android:paddingEnd="@dimen/dimen_16"
     tools:context="com.generic.wallet.authfragments.OTPFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Verification"
-        app:titleTextColor="@color/bold_text_color" />
 
     <TextView
         android:id="@+id/stringPasswordText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/dimen_8"
         android:fontFamily="@font/quicksand"
         android:text="@string/strong_password"
         android:textColor="@color/lorem_color"
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/toolBar" />
+        />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/verificationImage"
@@ -58,7 +52,7 @@
         app:viewType="rectangle" />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/secondContinueButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,6 +60,7 @@
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/quicksand_bold"
         android:text="Continue"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/firstPinView" />
 

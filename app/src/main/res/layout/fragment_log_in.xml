@@ -140,7 +140,7 @@
         android:fontFamily="@font/quicksand_medium"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login"
@@ -148,6 +148,7 @@
         android:background="@drawable/rounded_button"
         app:layout_constraintTop_toBottomOf="@id/forgetPasswordText"
         android:layout_marginTop="@dimen/dimen_48"
+        android:textColor="@color/white"
         />
 
 

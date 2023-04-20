@@ -73,17 +73,26 @@ class MainFragment() : Fragment() {
                 super.onPageSelected(position)
             }
         })
+        skipText.setOnClickListener {
+            finishActivity()
+        }
+
         nextButton.setOnClickListener {
             if(nextButton.text.equals("Create Account"))
             {
-                requireActivity().setResult(Activity.RESULT_OK)
-                requireActivity().finish()
+               finishActivity()
             }
             else
             {
                 pager.currentItem = pager.currentItem + 1
             }
         }
+    }
+
+    fun finishActivity()
+    {
+        requireActivity().setResult(Activity.RESULT_OK)
+        requireActivity().finish()
     }
 
 }

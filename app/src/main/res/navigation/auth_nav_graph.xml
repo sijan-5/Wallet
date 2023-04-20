@@ -23,6 +23,10 @@
         <action
             android:id="@+id/action_OTPFragment_to_setPasswordFragment"
             app:destination="@id/setPasswordFragment" />
+        <action
+            android:id="@+id/action_OTPFragment_to_registerFragment2"
+            app:destination="@id/registerFragment" />
+
     </fragment>
 
     <fragment
@@ -33,6 +37,9 @@
         <action
             android:id="@+id/action_setPasswordFragment_to_setTansactionPinFragment"
             app:destination="@id/setTansactionPinFragment" />
+        <action
+            android:id="@+id/action_setPasswordFragment_to_OTPFragment"
+            app:destination="@id/OTPFragment" />
     </fragment>
     <fragment
         android:id="@+id/setTansactionPinFragment"
@@ -42,6 +49,9 @@
         <action
             android:id="@+id/action_setTansactionPinFragment_to_setTansaction1Fragment"
             app:destination="@id/setTansaction1Fragment" />
+        <action
+            android:id="@+id/action_setTansactionPinFragment_to_setPasswordFragment"
+            app:destination="@id/setPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/setTansaction1Fragment"
@@ -51,6 +61,9 @@
         <action
             android:id="@+id/action_setTansaction1Fragment_to_successFragment"
             app:destination="@id/successFragment" />
+        <action
+            android:id="@+id/action_setTansaction1Fragment_to_setTansactionPinFragment"
+            app:destination="@id/setTansactionPinFragment" />
     </fragment>
     <fragment
         android:id="@+id/successFragment"
@@ -75,5 +88,9 @@
         android:id="@+id/forgotPasswordFragment"
         android:name="com.generic.wallet.authfragments.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" />
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
 </navigation>

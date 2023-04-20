@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.sample01.R
+import com.generic.wallet.databinding.FragmentForgotPasswordBinding
+import com.generic.wallet.databinding.FragmentSetTansaction1Binding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,10 +20,12 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ForgotPasswordFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ForgotPasswordFragment : Fragment() {
+class ForgotPasswordFragment : FragmentWithTitleBar() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var _binding: FragmentForgotPasswordBinding? = null
+    private val binding get()= _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +35,26 @@ class ForgotPasswordFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(com.generic.wallet.R.layout.fragment_forgot_password, container, false)
+    override fun provideView(inflater: LayoutInflater): View {
+        _binding = FragmentForgotPasswordBinding.inflate(inflater)
+        return binding.root
     }
+
+    override fun getTitle(): String {
+        return resources.getString(com.generic.wallet.R.string.forgot_password)
+    }
+
+    override fun goToPreviousFragment() {
+        findNavController().navigate(com.generic.wallet.R.id.action_forgotPasswordFragment_to_logInFragment)
+    }
+
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(com.generic.wallet.R.layout.fragment_forgot_password, container, false)
+//    }
 
     companion object {
         /**

@@ -9,24 +9,17 @@
     tools:context="com.generic.wallet.authfragments.SetTransaction1Fragment">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Confirm Transaction Pin"
-        app:titleTextColor="@color/bold_text_color" />
-
     <TextView
         android:id="@+id/stringPasswordText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/dimen_8"
         android:fontFamily="@font/quicksand"
         android:text="@string/strong_password"
         android:textColor="@color/lorem_color"
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/toolBar" />
+         />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/transactionImg"
@@ -65,7 +58,7 @@
         />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/confirmTransactionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,9 +68,8 @@
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/quicksand_bold"
         android:textSize="16sp"
+        android:textColor="@color/white"
         />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
