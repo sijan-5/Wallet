@@ -13,7 +13,11 @@
         <action
             android:id="@+id/action_registerFragment_to_OTPFragment"
             app:destination="@id/OTPFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
     </fragment>
+    
 
     <fragment
         android:id="@+id/OTPFragment"
@@ -23,10 +27,6 @@
         <action
             android:id="@+id/action_OTPFragment_to_setPasswordFragment"
             app:destination="@id/setPasswordFragment" />
-        <action
-            android:id="@+id/action_OTPFragment_to_registerFragment2"
-            app:destination="@id/registerFragment" />
-
     </fragment>
 
     <fragment
@@ -37,10 +37,8 @@
         <action
             android:id="@+id/action_setPasswordFragment_to_setTansactionPinFragment"
             app:destination="@id/setTansactionPinFragment" />
-        <action
-            android:id="@+id/action_setPasswordFragment_to_OTPFragment"
-            app:destination="@id/OTPFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/setTansactionPinFragment"
         android:name="com.generic.wallet.authfragments.SetTransactionPinFragment"
@@ -49,9 +47,6 @@
         <action
             android:id="@+id/action_setTansactionPinFragment_to_setTansaction1Fragment"
             app:destination="@id/setTansaction1Fragment" />
-        <action
-            android:id="@+id/action_setTansactionPinFragment_to_setPasswordFragment"
-            app:destination="@id/setPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/setTansaction1Fragment"
@@ -61,36 +56,36 @@
         <action
             android:id="@+id/action_setTansaction1Fragment_to_successFragment"
             app:destination="@id/successFragment" />
-        <action
-            android:id="@+id/action_setTansaction1Fragment_to_setTansactionPinFragment"
-            app:destination="@id/setTansactionPinFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/successFragment"
         android:name="com.generic.wallet.authfragments.SuccessFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_success" >
-
         <action
+            app:popUpTo="@id/successFragment"
+            app:popUpToInclusive="true"
             android:id="@+id/action_successFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/logInFragment"
         android:name="com.generic.wallet.authfragments.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" >
         <action
+            app:popUpTo="@id/logInFragment"
+            app:popUpToInclusive="true"
             android:id="@+id/action_logInFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.generic.wallet.authfragments.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
-        <action
-            android:id="@+id/action_forgotPasswordFragment_to_logInFragment"
-            app:destination="@id/logInFragment" />
     </fragment>
 </navigation>

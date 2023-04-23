@@ -45,7 +45,7 @@ class SetTransaction1Fragment : FragmentWithTitleBar() {
     }
 
     override fun goToPreviousFragment() {
-        findNavController().navigate(R.id.action_setTansaction1Fragment_to_setTansactionPinFragment)
+        findNavController().popBackStack()
     }
 
 

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.sample01.R
 import com.generic.wallet.databinding.FragmentLogInBinding
@@ -51,9 +52,13 @@ class LogInFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.forgetPasswordText.setOnClickListener {
-            findNavController().navigate(com.generic.wallet.R.id.action_logInFragment_to_forgotPasswordFragment)
+            findNavController().popBackStack()
         }
+
+
+
     }
+
 
     companion object {
         /**

@@ -36,5 +36,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="set_password">Set Password</string>
     <string name="transaction_password">Set Transaction Pin</string>
+    <string name="tap_to_fill_kyc">Tap to Fill KYC</string>
+    <string name="complete_kyc">Complete your KYC to increase your monthly limit of NRP 5,000.</string>
 
 </resources>

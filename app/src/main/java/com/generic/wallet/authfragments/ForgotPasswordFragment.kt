@@ -45,7 +45,7 @@ class ForgotPasswordFragment : FragmentWithTitleBar() {
     }
 
     override fun goToPreviousFragment() {
-        findNavController().navigate(com.generic.wallet.R.id.action_forgotPasswordFragment_to_logInFragment)
+        findNavController().popBackStack()
     }
 
 //    override fun onCreateView(

@@ -50,7 +50,7 @@ class OTPFragment : FragmentWithTitleBar() {
     }
 
     override fun goToPreviousFragment() {
-        findNavController().navigate(com.generic.wallet.R.id.action_OTPFragment_to_registerFragment2)
+        findNavController().popBackStack()
     }
 
 

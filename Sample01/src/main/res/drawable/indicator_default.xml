@@ -7,7 +7,6 @@
             android:thickness="6dp"
             android:useLevel="false">
             <solid android:color="@color/indicator_color"/>
-
         </shape>
 
     </item>

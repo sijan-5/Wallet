@@ -55,10 +55,9 @@ class MainFragment() : Fragment() {
 
         // connecting Tab_layout and viewpager
         TabLayoutMediator(tabIndicator, pager) { tab, positioin ->
-
         }.attach()
 
-
+        //listening viewPager page change
         pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 if (position == 2) {
@@ -74,24 +73,30 @@ class MainFragment() : Fragment() {
             }
         })
         skipText.setOnClickListener {
-            finishActivity()
+            finishActivity("pressedSkip")
         }
 
         nextButton.setOnClickListener {
             if(nextButton.text.equals("Create Account"))
             {
-               finishActivity()
+                finishActivity("pressedNext")
             }
             else
             {
                 pager.currentItem = pager.currentItem + 1
             }
         }
+
+        logInText.setOnClickListener {
+            finishActivity("logInText")
+        }
     }
 
-    fun finishActivity()
+    private fun finishActivity(buttonType :String)
     {
-        requireActivity().setResult(Activity.RESULT_OK)
+        val intent = Intent()
+        intent.putExtra("result",buttonType)
+        requireActivity().setResult(Activity.RESULT_OK,intent)
         requireActivity().finish()
     }
 

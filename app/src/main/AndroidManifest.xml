@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GenericWallet"
         tools:targetApi="31">
-        <activity android:name="com.example.sample01.onBoard.OnBoardActivity"
+        <activity
+            android:name=".DashBoardActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.sample01.onBoard.OnBoardActivity"
             android:exported="false"
-            android:label="OnBoardActivity"/>
+            android:label="OnBoardActivity" />
         <activity
             android:name=".AuthActivity"
             android:exported="false"
@@ -29,6 +33,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

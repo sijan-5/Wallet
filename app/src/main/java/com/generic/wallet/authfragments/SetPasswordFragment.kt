@@ -44,7 +44,7 @@ class SetPasswordFragment : FragmentWithTitleBar() {
     }
 
     override fun goToPreviousFragment() {
-        findNavController().navigate(com.generic.wallet.R.id.action_setPasswordFragment_to_OTPFragment)
+        findNavController().popBackStack()
     }
 
 
