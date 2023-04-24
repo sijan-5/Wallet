@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.generic.wallet.authfragments.RegisterFragment"
+        android:name="com.generic.wallet.dashboard.DashboardFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
