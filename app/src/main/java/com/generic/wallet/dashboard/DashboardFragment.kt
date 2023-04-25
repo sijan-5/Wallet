@@ -63,72 +63,42 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val array = listOf(
-            R.drawable.send_money,
-            R.drawable.request_money,
-            R.drawable.load_wallet,
-            R.drawable.bank_transfer_01
-        )
-
-        val linearLayout = binding.servicesHorizontalLayout
-
-        linearLayout.apply {
-            orientation = LinearLayout.HORIZONTAL
-            array.forEach {
-                val imageView = ImageView(requireContext())
-
-                imageView.layoutParams = LayoutParams(
-                    0,
-                    LayoutParams.WRAP_CONTENT, 1.0f
-                ).apply {
-                    setMargins(50, 16, 12, 50)
-                }
-
-                imageView.setPadding(20, 40, 20, 40)
-                imageView.setBackgroundResource(R.drawable.wallet_corner_radius)
-
-                imageView.setImageResource(it)
-                addView(imageView)
-            }
-            gravity = Gravity.CENTER_VERTICAL
 
 
-            (layoutParams as ConstraintLayout.LayoutParams).setMargins(
-                16, 50, 16, 0
-            )
-        }
+//        val array = listOf(
+//            R.drawable.send_money,
+//            R.drawable.request_money,
+//            R.drawable.load_wallet,
+//            R.drawable.bank_transfer_01
+//        )
 
-        class ViewHolder(val textView:TextView): RecyclerView.ViewHolder(textView) {
-            fun setText(text:String){
-                textView.text = text
-            }
-
-        }
-
-        val items = (1..100).map {
-            "Hello $it"
-        }
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
-
-        binding.recyclerView.adapter = object : RecyclerView.Adapter<ViewHolder>() {
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-                return ViewHolder(
-                    TextView(context)
-                )
-            }
-
-            override fun getItemCount(): Int {
-               return items.size
-            }
-
-            override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-                items[position].let {
-                    holder.setText(it)
-                }
-            }
-
-        }
-
+//        val linearLayout = binding.servicesHorizontalLayout
+//
+//        linearLayout.apply {
+//            orientation = LinearLayout.HORIZONTAL
+//            array.forEach {
+//                val imageView = ImageView(requireContext())
+//
+//                imageView.layoutParams = LayoutParams(
+//                    0,
+//                    LayoutParams.WRAP_CONTENT, 1.0f
+//                ).apply {
+//                    setMargins(50, 16, 12, 50)
+//                }
+//
+//                imageView.setPadding(20, 40, 20, 40)
+//                imageView.setBackgroundResource(R.drawable.wallet_corner_radius)
+//
+//                imageView.setImageResource(it)
+//                addView(imageView)
+//            }
+//            gravity = Gravity.CENTER_VERTICAL
+//
+//
+//            (layoutParams as ConstraintLayout.LayoutParams).setMargins(
+//                16, 50, 16, 0
+//            )
+//        }
 
     }
 

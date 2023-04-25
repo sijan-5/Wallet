@@ -8,4 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="otp_border">#9D9D9D</color>
+    <color name="iconBackground">#F9F9FF</color>
+    <color name="topUpBackground">#FFF9FE</color>
+    <color name="landlineBackground">#F3FDFF</color>
+    <color name="electricityBackground">#FFFCF1</color>
+    <color name="internetBackground">#EFFFFA</color>
+    <color name="waterBackground">#F5FBFF</color>
+    <color name="tvBackground">#FFF9F9</color>
+    <color name="dataPackBackground">#FBFBFF</color>
+    <color name="morebackgroundcolor">#FFFAF3</color>
+    <color name="merchantBackgroundColor">#FBFBFB</color>
+
 </resources>
