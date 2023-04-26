@@ -12,27 +12,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GenericWallet"
         tools:targetApi="31">
+
         <activity
-            android:name=".DashBoardActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.sample01.onBoard.OnBoardActivity"
-            android:exported="false"
-            android:label="OnBoardActivity" />
-        <activity
-            android:name=".AuthActivity"
-            android:exported="false"
-            android:label="@string/title_activity_auth"
-            android:theme="@style/Theme.GenericWallet.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.GenericWallet.NoActionBar">
+            android:name=".dashboard.BottomNavigationActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.sample01.onBoard.OnBoardActivity"
+            android:exported="false"
+            android:label="OnBoardActivity" >
+        </activity>
+
+        <activity
+            android:name=".authfragments.AuthActivity"
+            android:exported="false"
+            android:label="@string/title_activity_auth"
+            android:theme="@style/Theme.GenericWallet.NoActionBar" />
+        <activity
+            android:name=".authfragments.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.GenericWallet.NoActionBar">
 
             <meta-data
                 android:name="android.app.lib_name"

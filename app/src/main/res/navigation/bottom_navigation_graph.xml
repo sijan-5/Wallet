@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_nav_graph"
+    app:startDestination="@id/dashBoardFragment">
+
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.generic.wallet.dashboard.DashboardFragment"
+        android:label = "dash_board"
+        tools:layout ="@layout/fragment_dashboard"
+        >
+        <action
+            android:id="@+id/action_dashBoardFragment_to_reportFragment"
+            app:destination="@id/reportFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.generic.wallet.dashboard.ReportsFragment"
+        android:label="report"
+        tools:layout = "@layout/fragment_reports"
+        >
+        <action
+            android:id="@+id/action_reportFragment_to_scanFragment"
+            app:destination="@id/scanFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanFragment"
+        android:label="scan"
+        tools:layout="@layout/fragment_scan"
+        android:name="com.generic.wallet.dashboard.ScanFragment"
+        >
+        <action
+            android:id="@+id/action_scanFragment_to_bankFragment"
+            app:destination="@id/bankFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bankFragment"
+        tools:layout="@layout/fragment_banks"
+        android:label="banks"
+        android:name="com.generic.wallet.dashboard.BanksFragment"
+        >
+        <action
+            android:id="@+id/action_bankFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:label="profile"
+        android:name="com.generic.wallet.dashboard.ProfileFragment"
+        />
+
+
+
+</navigation>

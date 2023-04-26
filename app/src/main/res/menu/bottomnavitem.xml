@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashBoardFragment"
+        android:icon="@drawable/home_black_24dp_svg"
+        android:title="Home"
+        />
+
+    <item
+        android:id="@+id/reportFragment"
+        android:icon="@drawable/home_black_24dp_svg"
+        android:title="Home"
+        />
+
+    <item
+        android:id="@+id/scanFragment"
+        android:icon="@drawable/home_black_24dp_svg"
+        android:title="Home"
+        />
+
+    <item
+        android:id="@+id/bankFragment"
+        android:icon="@drawable/home_black_24dp_svg"
+        android:title="Home"
+        />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/home_black_24dp_svg"
+        android:title="Home"
+        />
+
+</menu>

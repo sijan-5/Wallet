@@ -54,7 +54,6 @@ abstract class FragmentWithTitleBar : Fragment() {
         val verticalLinearLayout = LinearLayout(requireContext()).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(16,42,0,0)
-
         }
 
         //base fragment toolbar
@@ -85,8 +84,6 @@ abstract class FragmentWithTitleBar : Fragment() {
                 ViewGroup.LayoutParams.WRAP_CONTENT
             )
         )
-
-
         toolBarHorizontalLayout.addView(textView, LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
         ViewGroup.LayoutParams.WRAP_CONTENT).apply {
             this.marginStart = 16
@@ -94,8 +91,8 @@ abstract class FragmentWithTitleBar : Fragment() {
 
         //fragment container
         val frameLayoutView = FrameLayout(requireContext())
-        frameLayoutView.addView(provideView(inflater))
 
+        frameLayoutView.addView(provideView(inflater))
         verticalLinearLayout.addView(toolBarHorizontalLayout)
         verticalLinearLayout.addView(frameLayoutView)
 

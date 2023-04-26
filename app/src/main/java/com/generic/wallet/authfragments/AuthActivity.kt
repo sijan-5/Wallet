@@ -1,10 +1,10 @@
-package com.generic.wallet
+package com.generic.wallet.authfragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
+import com.generic.wallet.R
 
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

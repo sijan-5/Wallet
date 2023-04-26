@@ -64,7 +64,6 @@ class DashboardFragment : Fragment() {
 
 
 
-
 //        val array = listOf(
 //            R.drawable.send_money,
 //            R.drawable.request_money,

@@ -44,5 +44,14 @@
     <string name="see_all">See all</string>
     <string name="offers">Offers</string>
     <string name="name_lastname">Name LastName</string>
+    <string name="wallet_balance">Wallet Balance</string>
+    <string name="npr">NPR</string>
+    <string name="_5892_00">5892.00</string>
+    <string name="reports">Reports</string>
+    <string name="top_up">Top Up</string>
+    <string name="bank_transfer">Bank Transfer</string>
+    <string name="electricity">Electricity</string>
+    <string name="other">Other</string>
+    <string name="statements">Statements</string>
 
 </resources>
