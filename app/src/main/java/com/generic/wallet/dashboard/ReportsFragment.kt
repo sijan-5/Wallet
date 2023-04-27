@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.generic.wallet.R
-import com.generic.wallet.ReportAdapter
 import com.generic.wallet.databinding.FragmentReportsBinding
 
 // TODO: Rename parameter arguments, choose names that match

@@ -18,5 +18,12 @@
     <color name="dataPackBackground">#FBFBFF</color>
     <color name="morebackgroundcolor">#FFFAF3</color>
     <color name="merchantBackgroundColor">#FBFBFB</color>
+    <color name="viewbackgroundcolor">#EFEFEF</color>
+    <color name="accountBackgroundColor">#EFFFFA</color>
+    <color name="settingBackgroundColor">#EFFFFA</color>
+    <color name="appBackgroundColor">#F5FBFF</color>
+    <color name="supportBackgroundColor">#FFF9FC</color>
+    <color name="logoutBackgroundColor">#FFC4C4</color>
+    <color name="fill_kyc_backgroundColor">#FFFBF3</color>
 
 </resources>

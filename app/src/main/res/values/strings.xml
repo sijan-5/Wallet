@@ -53,5 +53,6 @@
     <string name="electricity">Electricity</string>
     <string name="other">Other</string>
     <string name="statements">Statements</string>
+    <string name="fill_kyc">Fill KYC</string>
 
 </resources>

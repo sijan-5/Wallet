@@ -1,14 +1,12 @@
-package com.generic.wallet
+package com.generic.wallet.dashboard
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.generic.wallet.dashboard.DataClassForReport
-import org.w3c.dom.Text
+import com.generic.wallet.R
 
 class ReportAdapter(private val list:MutableList<DataClassForReport>) : RecyclerView.Adapter<ReportAdapter.ViewHolder>() {
 
