@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_8"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="@string/_5892_00"
+                android:text="@string/xxxx"
                 android:textColor="@color/bold_text_color"
                 android:textSize="20sp" />
 

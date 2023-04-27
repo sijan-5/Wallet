@@ -59,7 +59,7 @@ class ProfileFragment() : Fragment() {
            ProfileItems.Divider,
 
            ProfileItems.DataClassForProfileItems(
-              R.drawable.log,
+              R.drawable.support,
                R.color.logoutBackgroundColor, "Log Out"
            )
         )

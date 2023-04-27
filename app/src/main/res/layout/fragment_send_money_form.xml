@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/dimen_16"
+    android:paddingEnd="@dimen/dimen_16"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".sendmoney.SendMoneyForm">
+
+    <include
+        android:id="@+id/dashBoardInfo"
+        layout="@layout/dashboard_priceinfo"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/dashBoardInfo"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:text="select_from_recent_transactions"
+        android:textSize="14sp"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@color/extraBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingLeft="@dimen/dimen_12"
+        />
+
+    <TextView
+        android:id="@+id/walletUserId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Wallet User ID"
+        android:textSize="14sp"
+        android:textColor="@color/light_black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBox" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/walletIdEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter_wallet_user_id"
+        app:layout_constraintTop_toBottomOf="@id/walletUserId"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:boxStrokeWidth="0dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:textColor="@color/edit_text_hint_color"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Amount"
+        android:textSize="14sp"
+        android:textColor="@color/light_black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/walletIdEditText" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/amountEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Amount"
+        app:layout_constraintTop_toBottomOf="@id/amount"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:boxStrokeWidth="0dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:textColor="@color/edit_text_hint_color"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TextView
+        android:id="@+id/purpose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Purpose"
+        android:textSize="14sp"
+        android:textColor="@color/light_black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/amountEditText" />
+
+    <Spinner
+        android:id="@+id/purposeDropDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select Purpose"
+        app:layout_constraintTop_toBottomOf="@id/purpose"
+        android:layout_marginTop="@dimen/dimen_8"
+        />
+
+
+    <TextView
+        android:id="@+id/remarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Remarks"
+        android:textSize="14sp"
+        android:textColor="@color/light_black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/purposeDropDown" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/remarksEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Remarks"
+        app:layout_constraintTop_toBottomOf="@id/remarks"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:boxStrokeWidth="0dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:textColor="@color/edit_text_hint_color"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Continue"
+        android:fontFamily="@font/quicksand_bold"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintTop_toBottomOf="@id/remarksEditText"
+        android:layout_marginTop="@dimen/dimen_48"
+        android:textColor="@color/white"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

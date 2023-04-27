@@ -12,23 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GenericWallet"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ScanActivity"
+            android:exported="false" />
         <activity
             android:name=".dashboard.BottomNavigationActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.example.sample01.onBoard.OnBoardActivity"
             android:exported="false"
-            android:label="OnBoardActivity" >
-        </activity>
-
+            android:label="OnBoardActivity"></activity>
         <activity
             android:name=".authfragments.AuthActivity"
             android:exported="false"
@@ -38,7 +37,6 @@
             android:name=".authfragments.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.GenericWallet.NoActionBar">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

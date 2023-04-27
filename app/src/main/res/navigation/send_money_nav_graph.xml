@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/send_money"
+    app:startDestination="@id/sendMoneyForm">
+
+    <fragment
+        android:id="@+id/sendMoneyForm"
+        android:name="com.generic.wallet.sendmoney.SendMoneyForm"
+        android:label="fragment_send_money_form"
+        tools:layout="@layout/fragment_send_money_form" />
+    <fragment
+        android:id="@+id/sendMoneySecondForm"
+        android:name="com.generic.wallet.sendmoney.SendMoneySecondForm"
+        android:label="fragment_send_money_second_form"
+        tools:layout="@layout/fragment_send_money_second_form" />
+    <fragment
+        android:id="@+id/sendMoneyPaymentMethod"
+        android:name="com.generic.wallet.sendmoney.SendMoneyPaymentMethod"
+        android:label="fragment_send_money_payment_method"
+        tools:layout="@layout/fragment_send_money_payment_method" />
+    <fragment
+        android:id="@+id/sendMoneyTrasactionPin"
+        android:name="com.generic.wallet.sendmoney.SendMoneyTrasactionPin"
+        android:label="fragment_send_money_trasaction_pin"
+        tools:layout="@layout/fragment_send_money_trasaction_pin" />
+    <fragment
+        android:id="@+id/successFullSendMoney"
+        android:name="com.generic.wallet.sendmoney.SuccessFullSendMoney"
+        android:label="fragment_success_full_send_money"
+        tools:layout="@layout/fragment_success_full_send_money" />
+</navigation>

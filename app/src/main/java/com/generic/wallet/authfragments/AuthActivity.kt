@@ -13,7 +13,6 @@ class AuthActivity : AppCompatActivity() {
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navigation_graph) as NavHostFragment
-
         val navController = navHostFragment.navController
 
         val data = intent.getStringExtra("actionFromMainActivity")

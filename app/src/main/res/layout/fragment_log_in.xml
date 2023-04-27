@@ -64,13 +64,13 @@
 
     <!--  Email or   Phone number-->
     <TextView
-        android:id="@+id/enterPassword"
+        android:id="@+id/walletUserId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_32"
         android:fontFamily="@font/quicksand_medium"
         android:text="@string/email_or_phone_number"
-        android:textColor="@color/above_edit_text_color"
+        android:textColor="@color/light_black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/registerFragmentImage" />
 
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_your_email_or_phone_number"
         android:id="@+id/phoneNumberEditText"
-        app:layout_constraintTop_toBottomOf="@id/enterPassword"
+        app:layout_constraintTop_toBottomOf="@id/walletUserId"
         android:layout_marginTop="@dimen/dimen_8"
         app:boxStrokeWidth="0dp"
         >
@@ -103,7 +103,7 @@
         android:layout_marginTop="@dimen/dimen_24"
         android:fontFamily="@font/quicksand_medium"
         android:text="Password"
-        android:textColor="@color/above_edit_text_color"
+        android:textColor="@color/light_black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/phoneNumberEditText" />
 

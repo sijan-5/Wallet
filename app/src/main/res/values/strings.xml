@@ -54,5 +54,8 @@
     <string name="other">Other</string>
     <string name="statements">Statements</string>
     <string name="fill_kyc">Fill KYC</string>
+    <string name="xxxx">XXXX</string>
+    <string name="select_from_recent_transactions">Select From Recent Transactions</string>
+    <string name="enter_wallet_user_id">Enter Wallet User ID</string>
 
 </resources>
