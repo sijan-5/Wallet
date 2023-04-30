@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BankTransferFormFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dimen_16"
+        android:paddingEnd="@dimen/dimen_16"
+        android:paddingTop="@dimen/dimen_40"
+        >
+
+
+
+    <include
+        layout="@layout/dashboard_priceinfo"
+        android:id="@+id/walletPriceInfo"
+        />
+
+
+
+    <TextView
+        android:id="@+id/bankText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bank"
+        android:textSize="14sp"
+        android:textColor="@color/light_black"
+        android:fontFamily="@font/quicksand_medium"
+        app:layout_constraintTop_toBottomOf="@id/walletPriceInfo"
+        android:layout_marginTop="@dimen/dimen_24"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/bank_name"
+        android:id="@+id/bankNameEditText"
+        app:layout_constraintTop_toBottomOf="@id/bankText"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:boxStrokeWidth="0dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:textColor="@color/bold_text_color"
+            android:fontFamily="@font/quicksand_medium"
+            android:textSize="14sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/transferUsingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transfer_using"
+        android:textSize="14sp"
+        android:textColor="@color/lorem_color"
+        android:fontFamily="@font/quicksand_medium"
+        app:layout_constraintTop_toBottomOf="@id/bankNameEditText"
+        android:layout_marginTop="@dimen/dimen_24"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/transferUsingText"
+        android:layout_marginTop="@dimen/dimen_8"
+        >
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_number"
+            android:buttonTint="@color/button_purple"
+            android:textSize="14sp"
+            android:fontFamily="@font/quicksand_medium"
+            android:layout_weight="1"
+            />
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile_number"
+            android:layout_weight="1"
+            android:buttonTint="@color/button_purple"
+            android:textSize="14sp"
+            android:fontFamily="@font/quicksand_medium"
+            />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/accountNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account_number"
+        android:textSize="14sp"
+        android:textColor="@color/light_black"
+        android:fontFamily="@font/quicksand_medium"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        android:layout_marginTop="@dimen/dimen_24"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_account_number"
+        android:id="@+id/accountNumberEditText"
+        app:layout_constraintTop_toBottomOf="@id/accountNumberText"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:boxStrokeWidth="0dp"
+        >
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/edit_text_border"
+        android:textColor="@color/edit_text_hint_color"
+        android:fontFamily="@font/quicksand"
+        android:textSize="14sp"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/amountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account_number"
+        android:textSize="14sp"
+        android:textColor="@color/light_black"
+        android:fontFamily="@font/quicksand_medium"
+        app:layout_constraintTop_toBottomOf="@id/accountNumberEditText"
+        android:layout_marginTop="@dimen/dimen_24"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_amount"
+        android:id="@+id/amountEditText"
+        app:layout_constraintTop_toBottomOf="@id/amountText"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:boxStrokeWidth="0dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:textColor="@color/edit_text_hint_color"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/purposeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account_number"
+        android:textSize="14sp"
+        android:textColor="@color/light_black"
+        android:fontFamily="@font/quicksand_medium"
+        app:layout_constraintTop_toBottomOf="@id/amountEditText"
+        android:layout_marginTop="@dimen/dimen_24"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/purposeSpinner"
+        app:layout_constraintTop_toBottomOf="@id/purposeText"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:boxStrokeWidth="0dp"
+        android:background="@drawable/edit_text_border"
+        >
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/secondContinueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_48"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/purposeSpinner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -22,6 +22,8 @@ class BottomNavigationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
+
 //        navController = Navigation.findNavController(this, R.id.navHostFragment)
 //        setupWithNavController(binding.bottomNavigationBottom,navController)
 

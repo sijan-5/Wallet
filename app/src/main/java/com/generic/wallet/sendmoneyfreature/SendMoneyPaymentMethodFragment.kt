@@ -1,29 +1,31 @@
-package com.generic.wallet.sendmoney
+package com.generic.wallet.sendmoneyfreature
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.generic.wallet.ARG_PARAM1
-import com.generic.wallet.ARG_PARAM2
+import androidx.navigation.fragment.findNavController
+
 import com.generic.wallet.R
+import com.generic.wallet.databinding.FragmentSendMoneyPaymentMethodBinding
 
 /**
  * A simple [Fragment] subclass.
- * Use the [SuccessFullSendMoney.newInstance] factory method to
+ * Use the [SendMoneyPaymentMethodFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SuccessFullSendMoney : Fragment() {
+class SendMoneyPaymentMethodFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var _binding:FragmentSendMoneyPaymentMethodBinding? = null
+    private val binding get() = _binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -32,7 +34,16 @@ class SuccessFullSendMoney : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_success_full_send_money, container, false)
+        _binding = FragmentSendMoneyPaymentMethodBinding.inflate(inflater,container,false)
+        return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding?.continueButton?.setOnClickListener {
+            findNavController().navigate(R.id.action_sendMoneyPaymentMethod_to_sendMoneyTransistionPinFragment)
+        }
     }
 
     companion object {
@@ -42,15 +53,14 @@ class SuccessFullSendMoney : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment SuccessFullSendMoney.
+         * @return A new instance of fragment SendMoneyPaymentMethod.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            SuccessFullSendMoney().apply {
+            SendMoneyPaymentMethodFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
                 }
             }
     }

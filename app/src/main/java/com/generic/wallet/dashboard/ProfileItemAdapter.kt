@@ -74,7 +74,6 @@ class ProfileItemAdapter(
             }
             ProfileItems.Divider -> {
 
-
             }
 
         }

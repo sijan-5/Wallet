@@ -11,6 +11,8 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
 
+
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navigation_graph) as NavHostFragment
         val navController = navHostFragment.navController

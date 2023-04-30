@@ -1,21 +1,24 @@
-package com.generic.wallet.sendmoney
+package com.generic.wallet.sendmoneyfreature
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.generic.wallet.R
+
+import com.generic.wallet.databinding.FragmentSendMoneySecondFormBinding
 
 /**
  * A simple [Fragment] subclass.
- * Use the [SendMoneyForm.newInstance] factory method to
+ * Use the [SendMoneySecondFormFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SendMoneyForm : Fragment() {
+class SendMoneySecondFormFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var _binding : FragmentSendMoneySecondFormBinding? = null
+    private val binding get()= _binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +32,14 @@ class SendMoneyForm : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_send_money_form, container, false)
+        _binding = FragmentSendMoneySecondFormBinding.inflate(inflater,container,false)
+        return binding?.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 
     companion object {
@@ -39,12 +49,12 @@ class SendMoneyForm : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment SendMoneyForm.
+         * @return A new instance of fragment SendMoneySecondForm.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            SendMoneyForm().apply {
+            SendMoneySecondFormFragment().apply {
                 arguments = Bundle().apply {
 
                 }

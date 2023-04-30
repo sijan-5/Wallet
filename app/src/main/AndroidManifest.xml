@@ -13,7 +13,11 @@
         android:theme="@style/Theme.GenericWallet"
         tools:targetApi="31">
         <activity
-            android:name=".ScanActivity"
+            android:name=".BankTransferFeature.BankTransferFeatureActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".sendmoneyfreature.SendMoneyActivity"
             android:exported="false" />
         <activity
             android:name=".dashboard.BottomNavigationActivity"
@@ -27,7 +31,7 @@
         <activity
             android:name="com.example.sample01.onBoard.OnBoardActivity"
             android:exported="false"
-            android:label="OnBoardActivity"></activity>
+            android:label="OnBoardActivity" />
         <activity
             android:name=".authfragments.AuthActivity"
             android:exported="false"

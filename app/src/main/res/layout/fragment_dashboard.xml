@@ -156,6 +156,7 @@
             app:layout_constraintTop_toBottomOf="@id/cardView" >
 
            <LinearLayout
+               android:id="@+id/sendMoney"
                android:layout_width="0dp"
                android:layout_height="wrap_content"
                android:orientation="vertical"
@@ -164,6 +165,7 @@
                android:gravity="center"
                >
                <androidx.appcompat.widget.AppCompatImageView
+
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:src="@drawable/send_money"
@@ -247,6 +249,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/bankTransfer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

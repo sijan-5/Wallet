@@ -57,5 +57,33 @@
     <string name="xxxx">XXXX</string>
     <string name="select_from_recent_transactions">Select From Recent Transactions</string>
     <string name="enter_wallet_user_id">Enter Wallet User ID</string>
+    <string name="amount_to_be_sent">Amount To Be Sent</string>
+    <string name="npr_xxxx">NPR XXXX</string>
+    <string name="wallet_user">Wallet User</string>
+    <string name="wallet_user_id">Wallet User ID</string>
+    <string name="purpose">Purpose</string>
+    <string name="user_name">User Name</string>
+    <string name="hash">########</string>
+    <string name="bill_payment">Bill Payment</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="wallet">Wallet</string>
+    <string name="generic_wallet">Generic Wallet</string>
+    <string name="_98">98*******</string>
+    <string name="sufficient_balance">Sufficient Balance</string>
+    <string name="your_transaction_has_been_successful">Your transaction has been successful.</string>
+    <string name="amount">Amount</string>
+    <string name="service">Service</string>
+    <string name="download_pdf">Download PDF</string>
+    <string name="dashboard">DashBoard</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="select_purpose">Select Purpose</string>
+    <string name="remarks">Remarks</string>
+    <string name="enter_remarks">Enter Remarks</string>
+    <string name="search_bank">Search Bank</string>
+    <string name="bank">Bank</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="account_number">Account Number</string>
+    <string name="transfer_using">Transfer Using</string>
+    <string name="enter_account_number">Enter Account Number</string>
 
 </resources>

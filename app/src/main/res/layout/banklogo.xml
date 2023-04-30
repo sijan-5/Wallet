@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="@dimen/dimen_24"
+    android:orientation="vertical">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bankLogo"
+        android:layout_width="@dimen/dimen_56"
+        android:layout_height="@dimen/dimen_56"
+        android:src="@drawable/garima_1"/>
+
+
+</androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/bankName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADBL"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:textSize="11sp"
+        android:textColor="@color/bold_text_color"
+        android:fontFamily="@font/quicksand_medium"
+        />
+
+</LinearLayout>

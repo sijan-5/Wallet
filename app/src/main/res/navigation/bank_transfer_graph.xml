@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bank_transfer_login_graph"
+    app:startDestination="@id/banksListFragment">
+
+    <fragment
+        android:id="@+id/banksListFragment"
+        android:name="com.generic.wallet.BankTransferFeature.BanksListFragment"
+        android:label="fragment_banks_list"
+        tools:layout="@layout/fragment_banks_list" >
+        <action
+            android:id="@+id/action_banksListFragment_to_bankTransferFormFragment"
+            app:destination="@id/bankTransferFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankTransferFormFragment"
+        android:name="com.generic.wallet.BankTransferFormFragment"
+        android:label="fragment_bank_transfer_form"
+        tools:layout="@layout/fragment_bank_transfer_form" />
+</navigation>

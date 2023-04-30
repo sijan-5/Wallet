@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="@dimen/dimen_16"
-    android:paddingEnd="@dimen/dimen_16"
+    android:id="@+id/constraint"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".sendmoney.SendMoneyForm">
+    tools:context=".sendmoneyfreature.SendMoneyFormFragment">
 
     <include
         android:id="@+id/dashBoardInfo"
@@ -19,12 +18,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/dashBoardInfo"
         android:layout_marginTop="@dimen/dimen_24"
-        android:text="select_from_recent_transactions"
+        android:text="@string/select_from_recent_transactions"
         android:textSize="14sp"
         android:fontFamily="@font/quicksand_medium"
         android:textColor="@color/extraBlack"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingLeft="@dimen/dimen_12"
+        android:paddingStart="@dimen/dimen_12"
+        android:paddingEnd="@dimen/dimen_12"
         />
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_32"
         android:fontFamily="@font/quicksand_medium"
-        android:text="Wallet User ID"
+        android:text="@string/wallet_user_id"
         android:textSize="14sp"
         android:textColor="@color/light_black"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -43,7 +43,7 @@
         android:id="@+id/walletIdEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="enter_wallet_user_id"
+        android:hint="@string/enter_wallet_user_id"
         app:layout_constraintTop_toBottomOf="@id/walletUserId"
         android:layout_marginTop="@dimen/dimen_8"
         app:boxStrokeWidth="0dp"
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_32"
         android:fontFamily="@font/quicksand_medium"
-        android:text="Amount"
+        android:text="@string/amount"
         android:textSize="14sp"
         android:textColor="@color/light_black"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -76,7 +76,7 @@
         android:id="@+id/amountEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Amount"
+        android:hint="@string/enter_amount"
         app:layout_constraintTop_toBottomOf="@id/amount"
         android:layout_marginTop="@dimen/dimen_8"
         app:boxStrokeWidth="0dp"
@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_32"
         android:fontFamily="@font/quicksand_medium"
-        android:text="Purpose"
+        android:text="@string/purpose"
         android:textSize="14sp"
         android:textColor="@color/light_black"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -109,7 +109,7 @@
         android:id="@+id/purposeDropDown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Select Purpose"
+        android:hint="@string/select_purpose"
         app:layout_constraintTop_toBottomOf="@id/purpose"
         android:layout_marginTop="@dimen/dimen_8"
         />
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_32"
         android:fontFamily="@font/quicksand_medium"
-        android:text="Remarks"
+        android:text="@string/remarks"
         android:textSize="14sp"
         android:textColor="@color/light_black"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -131,7 +131,7 @@
         android:id="@+id/remarksEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Remarks"
+        android:hint="@string/enter_remarks"
         app:layout_constraintTop_toBottomOf="@id/remarks"
         android:layout_marginTop="@dimen/dimen_8"
         app:boxStrokeWidth="0dp"
@@ -148,6 +148,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continueButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Continue"

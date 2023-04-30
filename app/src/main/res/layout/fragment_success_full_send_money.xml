@@ -1,14 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sendmoney.SuccessFullSendMoney">
+    tools:context=".sendmoneyfreature.SuccessFullSendMoneyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/successImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_80"
+        android:src="@drawable/sucessloginpg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/successfullytDoneText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/successfully_done"
+        android:textColor="@color/bold_text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/successImage" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/transistionSuccessfulText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/your_transaction_has_been_successful"
+        android:textColor="@color/lorem_color"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/successfullytDoneText" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sendingSuccessCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/transistionSuccessfulText"
+        android:layout_marginTop="@dimen/dimen_32">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F9F9FF"
+            android:paddingTop="@dimen/dimen_16"
+            android:paddingBottom="@dimen/dimen_16">
+
+            <TextView
+                android:id="@+id/amountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="@string/amount"
+                android:textColor="@color/button_purple"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dimen_40"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="@string/npr_xxxx"
+                android:textColor="@color/bold_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/amountText"
+                app:layout_constraintEnd_toEndOf="@id/amountText"
+                app:layout_constraintTop_toBottomOf="@id/amountText"
+                android:layout_marginTop="@dimen/dimen_8"
+                />
+
+            <View
+                android:id="@+id/viewOne"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="#e3e2"
+                app:layout_constraintStart_toEndOf="@id/amountText"
+                android:layout_marginStart="@dimen/dimen_32"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                />
+
+
+
+            <TextView
+                android:id="@+id/serviceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="@string/service"
+                android:textColor="@color/button_purple"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/sendMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="@string/npr_xxxx"
+                android:textColor="@color/bold_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/serviceText"
+                app:layout_constraintEnd_toEndOf="@id/serviceText"
+                app:layout_constraintTop_toBottomOf="@id/serviceText"
+                android:layout_marginTop="@dimen/dimen_8"
+
+                />
+
+            <View
+                android:id="@+id/viewTwo"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/viewbackgroundcolor"
+                app:layout_constraintStart_toEndOf="@id/serviceText"
+                android:layout_marginStart="@dimen/dimen_32"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                />
+
+
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="@string/service"
+                android:textColor="@color/button_purple"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/dimen_40"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="DD/MM/YYYY"
+                android:textColor="@color/bold_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/dateText"
+                app:layout_constraintEnd_toEndOf="@id/dateText"
+                app:layout_constraintTop_toBottomOf="@id/serviceText"
+                android:layout_marginTop="@dimen/dimen_8"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/confirmButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_48"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/dashboard"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/sendingSuccessCard" />
+
+
+    <TextView
+        android:id="@+id/downLoadPdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/download_pdf"
+        android:textColor="@color/button_purple"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirmButton"
+        android:layout_marginTop="@dimen/dimen_8"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
