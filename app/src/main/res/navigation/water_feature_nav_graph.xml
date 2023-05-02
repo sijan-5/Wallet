@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/water_feature_nav_graph"
+    app:startDestination="@id/waterFeatureHomeFragment">
+
+    <fragment
+        android:id="@+id/waterFeatureHomeFragment"
+        android:name="com.generic.wallet.waterFeature.WaterFeatureHomeFragment"
+        android:label="fragment_water_feature_home"
+        tools:layout="@layout/fragment_water_feature_home" >
+        <action
+            android:id="@+id/action_waterFeatureHomeFragment_to_waterForm"
+            app:destination="@id/waterForm" />
+    </fragment>
+    <fragment
+        android:id="@+id/waterForm"
+        android:name="com.generic.wallet.waterFeature.WaterForm"
+        android:label="fragment_water_form"
+        tools:layout="@layout/fragment_water_form" />
+</navigation>

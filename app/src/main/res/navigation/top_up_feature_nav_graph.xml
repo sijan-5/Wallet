@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_up_feature"
+    app:startDestination="@id/topUpFragment">
+
+    <fragment
+        android:id="@+id/topUpFragment"
+        android:name="com.generic.wallet.topUpFeature.TopUpFragment"
+        android:label="fragment_top_up"
+        tools:layout="@layout/fragment_top_up" >
+        <action
+            android:id="@+id/action_topUpFragment_to_topUpDetailFragment"
+            app:destination="@id/topUpDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/topUpDetailFragment"
+        android:name="com.generic.wallet.topUpFeature.TopUpDetailFragment"
+        android:label="fragment_top_up_detail"
+        tools:layout="@layout/fragment_top_up_detail" />
+</navigation>

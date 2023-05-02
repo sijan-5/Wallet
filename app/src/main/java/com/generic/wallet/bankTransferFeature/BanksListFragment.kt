@@ -1,4 +1,4 @@
-package com.generic.wallet.BankTransferFeature
+package com.generic.wallet.bankTransferFeature
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -20,7 +20,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [BanksListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BanksListFragment : Fragment(),BankListAdapter.MyInterface {
+class BanksListFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,6 +38,9 @@ class BanksListFragment : Fragment(),BankListAdapter.MyInterface {
             BankLogoAndNameDataClass(R.drawable.rbb_1, "RBBL"),
             BankLogoAndNameDataClass(R.drawable.nimb, "NIBL"),
             BankLogoAndNameDataClass(R.drawable.garima_1, "GBBL"),
+            BankLogoAndNameDataClass(R.drawable.ncc_1, "NCCBL"),
+            BankLogoAndNameDataClass(R.drawable.nabil_bank_1, "RBBL"),
+            BankLogoAndNameDataClass(R.drawable.garima_1, ""),
             BankLogoAndNameDataClass(R.drawable.ncc_1, "NCCBL"),
             BankLogoAndNameDataClass(R.drawable.nabil_bank_1, "RBBL"),
         )
@@ -69,7 +72,11 @@ class BanksListFragment : Fragment(),BankListAdapter.MyInterface {
 
         binding.bankListRecyclerView.layoutManager = GridLayoutManager(requireContext(),4,GridLayoutManager.VERTICAL,
         false)
-        binding.bankListRecyclerView.adapter = BankListAdapter(bankImageAndNameList,this)
+        binding.bankListRecyclerView.adapter = BankListAdapter(bankImageAndNameList) {
+            changeFragment()
+        }
+
+
 
 
     }
@@ -93,7 +100,7 @@ class BanksListFragment : Fragment(),BankListAdapter.MyInterface {
             }
     }
 
-    override fun changeFragment() {
+     private fun changeFragment() {
         findNavController().navigate(R.id.action_banksListFragment_to_bankTransferFormFragment)
     }
 }

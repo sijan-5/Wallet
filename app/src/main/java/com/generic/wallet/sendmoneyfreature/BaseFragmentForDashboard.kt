@@ -50,8 +50,7 @@ abstract class BaseFragmentForDashboard : Fragment() {
         var title = binding.title
         title.text = getTitle()
 
-        val serviceView = getView(inflater)
-        frameLayout.addView(serviceView)
+        frameLayout.addView(getView(inflater))
 
         return binding.root
 

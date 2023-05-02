@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/internet_feature_nav_graph"
+    app:startDestination="@id/internetPaymentMethodForm">
+
+    <fragment
+        android:id="@+id/internetPaymentMethodForm"
+        android:name="com.generic.wallet.internetFeature.InternetPaymentMethodForm"
+        android:label="InternetPaymentMethodForm" />
+    <fragment
+        android:id="@+id/internetFormFragment"
+        android:name="com.generic.wallet.internetFeature.InternetFormFragment"
+        android:label="fragment_internet_form"
+        tools:layout="@layout/fragment_internet_form" >
+        <action
+            android:id="@+id/action_internetFormFragment_to_internetPaymentMethodForm"
+            app:destination="@id/internetPaymentMethodForm" />
+    </fragment>
+    <fragment
+        android:id="@+id/internetHomeFragment"
+        android:name="com.generic.wallet.internetFeature.InternetHomeFragment"
+        android:label="fragment_internet_home"
+        tools:layout="@layout/fragment_internet_home" >
+        <action
+            android:id="@+id/action_internetHomeFragment_to_internetFormFragment"
+            app:destination="@id/internetFormFragment" />
+    </fragment>
+</navigation>

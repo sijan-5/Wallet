@@ -13,9 +13,11 @@
         android:theme="@style/Theme.GenericWallet"
         tools:targetApi="31">
         <activity
-            android:name=".BankTransferFeature.BankTransferFeatureActivity"
+            android:name=".loadWalletFeature.LoadWalletActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".bankTransferFeature.BankTransferFeatureActivity"
+            android:exported="false" />
         <activity
             android:name=".sendmoneyfreature.SendMoneyActivity"
             android:exported="false" />

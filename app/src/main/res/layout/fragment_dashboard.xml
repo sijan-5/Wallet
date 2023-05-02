@@ -189,6 +189,7 @@
 
 
             <LinearLayout
+                android:id="@+id/requestMoney"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -219,6 +220,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/load_wallet"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -313,6 +315,7 @@
                 app:layout_constraintTop_toBottomOf="@id/cardView" >
 
                 <LinearLayout
+                    android:id="@+id/topUp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -343,6 +346,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/landLine"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -372,6 +376,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/electricity"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -402,6 +407,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/internet"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -445,6 +451,7 @@
                 app:layout_constraintTop_toBottomOf="@id/cardView" >
 
                 <LinearLayout
+                    android:id="@+id/water"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"

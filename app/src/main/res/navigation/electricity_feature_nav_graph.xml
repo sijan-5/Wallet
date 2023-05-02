@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/electricity_feature_nav_graph"
+    app:startDestination="@id/electricityHomeFragment">
+
+    <fragment
+        android:id="@+id/electricityHomeFragment"
+        android:name="com.generic.wallet.electricityFeature.ElectricityHomeFragment"
+        android:label="fragment_electricity_home"
+        tools:layout="@layout/fragment_electricity_home" >
+        <action
+            android:id="@+id/action_electricityHomeFragment_to_electricityFormFragment"
+            app:destination="@id/electricityFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/electricityFormFragment"
+        android:name="com.generic.wallet.electricityFeature.ElectricityFormFragment"
+        android:label="fragment_electricity_form"
+        tools:layout="@layout/fragment_electricity_form" >
+        <action
+            android:id="@+id/action_electricityFormFragment_to_electricityPaymentMethodFragment2"
+            app:destination="@id/electricityPaymentMethodFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/electricityPaymentMethodFragment2"
+        android:name="com.generic.wallet.electricityFeature.ElectricityPaymentMethodFragment"
+        android:label="ElectricityPaymentMethodFragment" />
+</navigation>

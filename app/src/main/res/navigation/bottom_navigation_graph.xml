@@ -11,6 +11,35 @@
         android:label = "dash_board"
         tools:layout ="@layout/fragment_dashboard"
         >
+        <action
+            android:id="@+id/action_dashBoardFragment_to_bank_transfer_login_graph"
+            app:destination="@id/bank_transfer_login_graph" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_landline_feature_nav_graph"
+            app:destination="@id/landline_feature_nav_graph" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_load_wallet_nav_graph"
+            app:destination="@id/load_wallet_nav_graph" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_electricity_feature_nav_graph"
+            app:destination="@id/electricity_feature_nav_graph" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_electricity_feature_nav_graph2"
+            app:destination="@id/electricity_feature_nav_graph" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_water_feature_nav_graph"
+            app:destination="@id/water_feature_nav_graph" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_top_up_feature"
+            app:destination="@id/top_up_feature" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_internet_feature_nav_graph"
+            app:destination="@id/internet_feature_nav_graph" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_send_money"
+            app:destination="@id/send_money" />
+
+
 
     </fragment>
 
@@ -20,8 +49,6 @@
         android:label="report"
         tools:layout = "@layout/fragment_reports"
         >
-
-
     </fragment>
 
     <fragment
@@ -38,17 +65,24 @@
         android:label="banks"
         android:name="com.generic.wallet.dashboard.BanksFragment"
         >
-
     </fragment>
+
+
+    <include app:graph="@navigation/bank_transfer_graph"/>
+    <include app:graph="@navigation/electricity_feature_nav_graph"/>
+    <include app:graph="@navigation/internet_feature_nav_graph"/>
+    <include app:graph="@navigation/landline_feature_nav_graph"/>
+    <include app:graph="@navigation/load_wallet_nav_graph"/>
+    <include app:graph="@navigation/send_money_nav_graph"/>
+    <include app:graph="@navigation/top_up_feature_nav_graph"/>
+    <include app:graph="@navigation/water_feature_nav_graph"/>
+    <include app:graph="@navigation/pin_authentication_nav_graph"/>
 
     <fragment
         android:id="@+id/profileFragment"
-        tools:layout="@layout/fragment_profile"
-        android:label="profile"
         android:name="com.generic.wallet.dashboard.ProfileFragment"
-        />
-
-
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 
 
 </navigation>

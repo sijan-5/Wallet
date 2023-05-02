@@ -65,7 +65,7 @@
 
 <!--    Full name-->
     <TextView
-        android:id="@+id/walletUserId"
+        android:id="@+id/mobileNumberText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_32"
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_your_full_name"
         android:id="@+id/fullNameEditText"
-        app:layout_constraintTop_toBottomOf="@id/walletUserId"
+        app:layout_constraintTop_toBottomOf="@id/mobileNumberText"
         android:layout_marginTop="@dimen/dimen_8"
         app:boxStrokeWidth="0dp"
         >
@@ -99,7 +99,7 @@
 
 <!--    Mobile Number-->
     <TextView
-        android:id="@+id/mobileNumberText"
+        android:id="@+id/mobileNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_24"
@@ -114,7 +114,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_your_mobile_number"
-        app:layout_constraintTop_toBottomOf="@id/mobileNumberText"
+        app:layout_constraintTop_toBottomOf="@id/mobileNumber"
         android:layout_marginTop="@dimen/dimen_8"
         app:boxStrokeWidth="0dp"
         >

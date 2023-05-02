@@ -1,7 +1,5 @@
-package com.generic.wallet.BankTransferFeature
+package com.generic.wallet.bankTransferFeature
 
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.annotation.DrawableRes
 
 

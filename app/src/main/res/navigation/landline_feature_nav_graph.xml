@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/landline_feature_nav_graph"
+    app:startDestination="@id/landLineHomeFragment">
+
+    <fragment
+        android:id="@+id/landLineHomeFragment"
+        android:name="com.generic.wallet.landLineFeature.LandLineHomeFragment"
+        android:label="fragment_land_line_home"
+        tools:layout="@layout/fragment_land_line_home" >
+        <action
+            android:id="@+id/action_landLineHomeFragment_to_landLinePaymentMethodFragment"
+            app:destination="@id/landLinePaymentMethodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/landLinePaymentMethodFragment"
+        android:name="com.generic.wallet.landLineFeature.LandLinePaymentMethodFragment"
+        android:label="fragment_land_line_payment_method"
+        tools:layout="@layout/fragment_land_line_payment_method" >
+        <action
+            android:id="@+id/action_landLinePaymentMethodFragment_to_top_up_paymentmethod"
+            app:destination="@id/top_up_paymentmethod" />
+    </fragment>
+    <fragment
+        android:id="@+id/top_up_paymentmethod"
+        android:name="com.generic.wallet.topUpFeature.top_up_paymentmethod"
+        android:label="top_up_paymentmethod" />
+</navigation>

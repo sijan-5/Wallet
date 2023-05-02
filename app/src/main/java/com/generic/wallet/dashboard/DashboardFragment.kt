@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.generic.wallet.BankTransferFeature.BankTransferFeatureActivity
+import androidx.navigation.fragment.findNavController
+import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentDashboardBinding
-import com.generic.wallet.sendmoneyfreature.SendMoneyActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,25 +39,55 @@ class DashboardFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         return binding.root
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         binding.sendMoney.setOnClickListener {
-
-            startActivity(Intent(requireContext(),SendMoneyActivity::class.java))
+            findNavController().navigate(R.id.action_dashBoardFragment_to_send_money)
         }
+        binding.requestMoney.setOnClickListener {
+            findNavController().navigate(R.id.action_dashBoardFragment_to_send_money)
 
+        }
+        binding.loadWallet.setOnClickListener {
+            findNavController().navigate(R.id.action_dashBoardFragment_to_load_wallet_nav_graph)
+
+        }
         binding.bankTransfer.setOnClickListener {
-            startActivity(Intent(requireContext(),BankTransferFeatureActivity::class.java))
+
+            findNavController().navigate(R.id.action_dashBoardFragment_to_bank_transfer_login_graph)
+
         }
+        binding.topUp.setOnClickListener {
+
+            findNavController().navigate(R.id.action_dashBoardFragment_to_top_up_feature)
+
+        }
+        binding.landLine.setOnClickListener {
+            findNavController().navigate(R.id.action_dashBoardFragment_to_landline_feature_nav_graph)
+
+        }
+        binding.electricity.setOnClickListener {
+            findNavController().navigate(R.id.action_dashBoardFragment_to_electricity_feature_nav_graph)
+
+        }
+        binding.internet.setOnClickListener {
+            findNavController().navigate(R.id.action_dashBoardFragment_to_internet_feature_nav_graph)
+
+        }
+        binding.water.setOnClickListener {
+            findNavController().navigate(R.id.action_dashBoardFragment_to_water_feature_nav_graph)
+
+        }
+
     }
 
     companion object {

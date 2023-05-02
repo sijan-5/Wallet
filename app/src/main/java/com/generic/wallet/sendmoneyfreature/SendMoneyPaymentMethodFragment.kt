@@ -15,12 +15,12 @@ import com.generic.wallet.databinding.FragmentSendMoneyPaymentMethodBinding
  * Use the [SendMoneyPaymentMethodFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SendMoneyPaymentMethodFragment : Fragment() {
+class SendMoneyPaymentMethodFragment : BaseFragmentForDashboard() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var _binding:FragmentSendMoneyPaymentMethodBinding? = null
-    private val binding get() = _binding
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,20 +29,33 @@ class SendMoneyPaymentMethodFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        _binding = FragmentSendMoneyPaymentMethodBinding.inflate(inflater,container,false)
-        return binding?.root
+    override fun getTitle(): String {
+        return resources.getString(R.string.payment_method)
     }
+
+    override fun getView(inflater: LayoutInflater): View {
+       _binding = FragmentSendMoneyPaymentMethodBinding.inflate(inflater)
+
+        return binding.root
+    }
+
+    override fun goToPreviousFragment() {
+        findNavController().popBackStack()
+    }
+
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        _binding = FragmentSendMoneyPaymentMethodBinding.inflate(inflater,container,false)
+//        return binding.root
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.continueButton?.setOnClickListener {
-            findNavController().navigate(R.id.action_sendMoneyPaymentMethod_to_sendMoneyTransistionPinFragment)
+        binding.continueButton.setOnClickListener {
         }
     }
 

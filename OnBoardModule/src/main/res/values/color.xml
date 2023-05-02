@@ -5,18 +5,18 @@
     <color name="indicator_color">#E4E4E4</color>
     <color name="lorem_color">#011024</color>
     <color name="light_black">#212121</color>
-    <color name="lower_by_continue_color">#242424</color>
+    <color name="black24">#242424</color>
     <color name="edit_text_border_color">#C2C2C2</color>
     <color name="edit_text_hint_color">#AFAFAF</color>
     <color name="terms_condition_color">#8275FF</color>
     <color name="white">#FFFFFF</color>
     <color name="extraBlack">#242424</color>
-    <color name="outGoingBalanceColor">#33AD7A</color>
+    <color name="green">#33AD7A</color>
     <color name="dash_line_color">#C2C2C2</color>
     <color name="radio_button_selected_color">#F9F9FF</color>
     <color name="radio_button_unselected_color">#EBEBEB</color>
     <color name="radio_button_unselected_text_color">#AFAFAF</color>
-
+    <color name="light_red">#FF6363</color>
     <color name="search_box_background_color">#F9F9FF</color>
 
 </resources>

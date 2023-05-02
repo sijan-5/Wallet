@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dimen_16"
+        android:paddingEnd="@dimen/dimen_16"
+        android:paddingTop="@dimen/dimen_40"
+        android:paddingBottom="@dimen/dimen_24"
+        tools:context=".electricityFeature.ElectricityPaymentMethodFragment">
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_method"
+            android:textSize="20sp"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/bold_text_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/backArrow"
+            android:layout_marginStart="@dimen/dimen_16"
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/paymentMethodStatusCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="@dimen/dimen_12"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sendingmoneyinformation"
+                android:paddingStart="@dimen/dimen_16"
+                android:paddingEnd="@dimen/dimen_16"
+                android:paddingBottom="@dimen/dimen_16">
+
+                <TextView
+                    android:id="@+id/walletBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:text="@string/wallet_balance"
+                    android:textColor="@color/button_purple"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/amountToBeSent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:text="Payable Amount"
+                    android:textColor="@color/button_purple"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="@string/npr_xxxx"
+                    android:textColor="@color/bold_text_color"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/walletBalance" />
+
+                <TextView
+                    android:id="@+id/outGoingBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="@string/npr_xxxx"
+                    android:textColor="@color/green"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/walletBalance" />
+
+                <View
+                    android:id="@+id/dash_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:background="@drawable/dash_line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/outGoingBalance" />
+
+                <TextView
+                    android:id="@+id/walletUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand"
+                    android:text="@string/username"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dash_line" />
+
+                <TextView
+                    android:id="@+id/mobileNumberText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand"
+                    android:text="@string/service_provider"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/walletUser" />
+
+                <TextView
+                    android:id="@+id/totalAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand"
+                    android:text="@string/status"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mobileNumberText" />
+
+                <TextView
+                    android:id="@+id/customerID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand"
+                    android:text="@string/selected_plan"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/totalAmount" />
+
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:text="@string/hash"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dash_line" />
+
+                <TextView
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:text="@string/hash"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userName" />
+
+                <TextView
+                    android:id="@+id/totalRemountText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:text="@string/active"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/phoneNumber" />
+
+                <TextView
+                    android:id="@+id/billPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:text="@string/neahash"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/totalAmount" />
+
+
+                <TextView
+                    android:id="@+id/totalPaymentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand"
+                    android:text="@string/duration"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/customerID" />
+
+
+                <TextView
+                    android:id="@+id/totalBill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:text="Months"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/billPayment" />
+
+
+                <TextView
+                    android:id="@+id/previousDueText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand"
+                    android:text="@string/total_amount"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/totalPaymentText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand"
+                    android:text="Cashback"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/previousDueText" />
+
+
+                <TextView
+                    android:id="@+id/previousDues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:text="@string/npr_xxxx"
+                    android:textColor="@color/light_red"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/totalBill" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:text="@string/npr_xxxx"
+                    android:textColor="@color/green"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/previousDues" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <TextView
+            android:id="@+id/planText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_24"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/plan"
+            android:textColor="@color/light_black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/paymentMethodStatusCardView" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/internetPlanCounterSpinner"
+            app:layout_constraintTop_toBottomOf="@id/planText"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:boxStrokeWidth="0dp"
+            android:background="@drawable/edit_text_border"
+            >
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <TextView
+            android:id="@+id/durationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_24"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/counter"
+            android:textColor="@color/light_black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/internetPlanCounterSpinner" />
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/internetDurationSpinner"
+            app:layout_constraintTop_toBottomOf="@id/durationText"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:boxStrokeWidth="0dp"
+            android:background="@drawable/edit_text_border"
+            >
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/paymentMethodText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_method"
+            android:textSize="14sp"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/bold_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/internetDurationSpinner"
+            android:layout_marginTop="@dimen/dimen_16"
+            />
+
+        <RadioGroup
+            android:id="@+id/selectorWalletBank"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/paymentMethodText"
+            android:layout_marginTop="@dimen/dimen_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/dimen_64"
+            android:layout_marginEnd="@dimen/dimen_64"
+            android:padding="@dimen/dimen_4"
+            android:background="@color/radio_button_unselected_color"
+            >
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet"
+                android:textColor="@color/radio_button_unselected_text_color"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:layout_marginEnd="1dp"
+                android:gravity="center"
+                android:fontFamily="@font/quicksand_bold"
+                android:button="@android:color/transparent"
+                android:background="@drawable/radio_button_wallet_selector"
+                />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bank"
+                android:textColor="@color/radio_button_unselected_text_color"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/quicksand_bold"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:background="@drawable/radio_button_bank_selector"
+                />
+
+        </RadioGroup>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/genericCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/selectorWalletBank"
+            android:layout_marginTop="@dimen/dimen_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="@dimen/dimen_8"
+            app:cardUseCompatPadding="true"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <RadioButton
+                    android:id="@+id/radioButtonGenericWallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:buttonTint="@color/button_purple"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/genericWalletText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/generic_wallet"
+                    android:textColor="@color/light_black"
+                    app:layout_constraintLeft_toRightOf="@id/radioButtonGenericWallet"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/quicksand_medium"
+                    />
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_98"
+                    android:textColor="@color/light_black"
+                    app:layout_constraintLeft_toRightOf="@+id/radioButtonGenericWallet"
+                    app:layout_constraintTop_toBottomOf="@id/genericWalletText"
+                    android:layout_marginTop="@dimen/dimen_4"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/quicksand"
+                    />
+
+                <TextView
+                    android:id="@+id/balanceStatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sufficient_balance"
+                    android:textColor="@color/green"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/quicksand"
+                    android:paddingBottom="@dimen/dimen_32"
+                    />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/continueButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_48"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/pay"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/genericCardView" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/dimen_16"
+    android:paddingEnd="@dimen/dimen_16"
+    android:paddingTop="@dimen/dimen_40"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".internetFeature.InternetFormFragment">
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title"
+        app:layout_constraintBottom_toBottomOf="@id/title"
+
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/world_link"
+        android:textSize="20sp"
+        android:fontFamily="@font/quicksand_bold"
+        android:textColor="@color/bold_text_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/backArrow"
+        android:layout_marginStart="@dimen/dimen_16"
+        />
+
+
+    <TextView
+        android:id="@+id/customerIDNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:fontFamily="@font/quicksand_medium"
+        android:text="@string/user_name"
+        android:textColor="@color/light_black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_isp_username"
+        android:id="@+id/ISPUserNameEditText"
+        app:layout_constraintTop_toBottomOf="@id/customerIDNumberText"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:boxStrokeWidth="0dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:textColor="@color/edit_text_hint_color"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Continue"
+        android:fontFamily="@font/quicksand_bold"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintTop_toBottomOf="@id/ISPUserNameEditText"
+        android:layout_marginTop="@dimen/dimen_48"
+        android:textColor="@color/white"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

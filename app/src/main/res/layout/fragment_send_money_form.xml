@@ -28,7 +28,7 @@
         />
 
     <TextView
-        android:id="@+id/walletUserId"
+        android:id="@+id/mobileNumberText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_32"
@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_wallet_user_id"
-        app:layout_constraintTop_toBottomOf="@id/walletUserId"
+        app:layout_constraintTop_toBottomOf="@id/mobileNumberText"
         android:layout_marginTop="@dimen/dimen_8"
         app:boxStrokeWidth="0dp"
         >
@@ -94,7 +94,7 @@
 
 
     <TextView
-        android:id="@+id/purpose"
+        android:id="@+id/customerID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_32"
@@ -110,7 +110,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/select_purpose"
-        app:layout_constraintTop_toBottomOf="@id/purpose"
+        app:layout_constraintTop_toBottomOf="@id/customerID"
         android:layout_marginTop="@dimen/dimen_8"
         />
 

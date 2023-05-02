@@ -28,10 +28,11 @@
 
     <TextView
         android:id="@+id/bankName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ADBL"
         android:layout_marginTop="@dimen/dimen_8"
+        android:gravity="center"
         android:textSize="11sp"
         android:textColor="@color/bold_text_color"
         android:fontFamily="@font/quicksand_medium"

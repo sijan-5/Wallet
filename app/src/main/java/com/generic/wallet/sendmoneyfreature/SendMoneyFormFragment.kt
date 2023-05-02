@@ -32,7 +32,7 @@ class SendMoneyFormFragment : BaseFragmentForDashboard() {
     }
 
     override fun goToPreviousFragment() {
-       requireActivity().finish()
+      findNavController().popBackStack()
     }
 
     override fun getView(inflater: LayoutInflater): View? {
@@ -54,7 +54,7 @@ class SendMoneyFormFragment : BaseFragmentForDashboard() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.continueButton?.setOnClickListener {
-            findNavController().navigate(R.id.action_sendMoneyForm_to_sendMoneyPaymentMethod)
+
         }
     }
 

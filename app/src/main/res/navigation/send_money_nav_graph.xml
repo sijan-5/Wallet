@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/send_money"
@@ -14,34 +15,21 @@
             android:id="@+id/action_sendMoneyForm_to_sendMoneyPaymentMethod"
             app:destination="@id/sendMoneyPaymentMethod" />
     </fragment>
+
     <fragment
         android:id="@+id/sendMoneySecondForm"
         android:name="com.generic.wallet.sendmoneyfreature.SendMoneySecondFormFragment"
         android:label="fragment_send_money_second_form"
         tools:layout="@layout/fragment_send_money_second_form" >
     </fragment>
+
     <fragment
         android:id="@+id/sendMoneyPaymentMethod"
         android:name="com.generic.wallet.sendmoneyfreature.SendMoneyPaymentMethodFragment"
         android:label="fragment_send_money_payment_method"
         tools:layout="@layout/fragment_send_money_payment_method" >
-        <action
-            android:id="@+id/action_sendMoneyPaymentMethod_to_sendMoneyTransistionPinFragment"
-            app:destination="@id/sendMoneyTransistionPinFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/successFullSendMoney"
-        android:name="com.generic.wallet.sendmoneyfreature.SuccessFullSendMoneyFragment"
-        android:label="fragment_success_full_send_money"
-        tools:layout="@layout/fragment_success_full_send_money" />
-    <fragment
-        android:id="@+id/sendMoneyTransistionPinFragment"
-        android:name="com.generic.wallet.sendmoneyfreature.SendMoneyTransistionPinFragment"
-        android:label="fragment_send_money_transistion_pin"
-        tools:layout="@layout/fragment_send_money_transistion_pin" >
-        <action
-            android:id="@+id/action_sendMoneyTransistionPinFragment_to_successFullSendMoney"
-            app:destination="@id/successFullSendMoney" />
-    </fragment>
+
+
 </navigation>
