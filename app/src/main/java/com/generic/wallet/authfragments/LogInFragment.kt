@@ -1,5 +1,6 @@
 package com.generic.wallet.authfragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.sample01.R
+import com.generic.wallet.dashboard.BottomNavigationActivity
 import com.generic.wallet.databinding.FragmentLogInBinding
 import com.generic.wallet.databinding.FragmentSuccessBinding
 
@@ -53,6 +55,12 @@ class LogInFragment : Fragment() {
 
         binding.forgetPasswordText.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        binding.loginButton.setOnClickListener {
+
+            startActivity(Intent(requireContext(), BottomNavigationActivity::class.java))
+            requireActivity().finish()
         }
 
     }

@@ -8,7 +8,12 @@
     <fragment
         android:id="@+id/internetPaymentMethodForm"
         android:name="com.generic.wallet.internetFeature.InternetPaymentMethodForm"
-        android:label="InternetPaymentMethodForm" />
+        android:label="InternetPaymentMethodForm" >
+
+
+        <action android:id="@+id/action_internet_to_transitionPin"
+            app:destination="@id/pin_authentication_nav_graph"/>
+    </fragment>
     <fragment
         android:id="@+id/internetFormFragment"
         android:name="com.generic.wallet.internetFeature.InternetFormFragment"

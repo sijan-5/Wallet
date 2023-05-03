@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private val getContent =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { resultFromSample01->
+
             val data = resultFromSample01.data
             val exactData = data?.getStringExtra("result")
             val intent = Intent(this, AuthActivity::class.java)

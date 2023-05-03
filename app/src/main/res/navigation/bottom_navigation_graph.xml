@@ -8,9 +8,9 @@
     <fragment
         android:id="@+id/dashBoardFragment"
         android:name="com.generic.wallet.dashboard.DashboardFragment"
-        android:label = "dash_board"
-        tools:layout ="@layout/fragment_dashboard"
-        >
+        android:label="dash_board"
+        tools:layout="@layout/fragment_dashboard">
+
         <action
             android:id="@+id/action_dashBoardFragment_to_bank_transfer_login_graph"
             app:destination="@id/bank_transfer_login_graph" />
@@ -39,44 +39,42 @@
             android:id="@+id/action_dashBoardFragment_to_send_money"
             app:destination="@id/send_money" />
 
-
-
     </fragment>
+
+
 
     <fragment
         android:id="@+id/reportFragment"
         android:name="com.generic.wallet.dashboard.ReportsFragment"
         android:label="report"
-        tools:layout = "@layout/fragment_reports"
-        >
-    </fragment>
+        tools:layout="@layout/fragment_reports"/>
 
     <fragment
         android:id="@+id/scanFragment"
-        android:label="scan"
-        tools:layout="@layout/fragment_scan"
         android:name="com.generic.wallet.dashboard.ScanFragment"
-        >
-    </fragment>
+        android:label="scan"
+        tools:layout="@layout/fragment_scan"/>
 
     <fragment
         android:id="@+id/bankFragment"
-        tools:layout="@layout/fragment_banks"
-        android:label="banks"
         android:name="com.generic.wallet.dashboard.BanksFragment"
-        >
-    </fragment>
+        android:label="banks"
+        tools:layout="@layout/fragment_banks"/>
 
 
-    <include app:graph="@navigation/bank_transfer_graph"/>
-    <include app:graph="@navigation/electricity_feature_nav_graph"/>
-    <include app:graph="@navigation/internet_feature_nav_graph"/>
-    <include app:graph="@navigation/landline_feature_nav_graph"/>
-    <include app:graph="@navigation/load_wallet_nav_graph"/>
-    <include app:graph="@navigation/send_money_nav_graph"/>
-    <include app:graph="@navigation/top_up_feature_nav_graph"/>
+    <include app:graph="@navigation/bank_transfer_graph">
+
+    </include>
+
+
+    <include app:graph="@navigation/electricity_feature_nav_graph" />
+    <include app:graph="@navigation/internet_feature_nav_graph" />
+    <include app:graph="@navigation/landline_feature_nav_graph" />
+    <include app:graph="@navigation/load_wallet_nav_graph" />
+    <include app:graph="@navigation/send_money_nav_graph" />
+    <include app:graph="@navigation/top_up_feature_nav_graph" />
     <include app:graph="@navigation/water_feature_nav_graph"/>
-    <include app:graph="@navigation/pin_authentication_nav_graph"/>
+    <include app:graph="@navigation/pin_authentication_nav_graph" />
 
     <fragment
         android:id="@+id/profileFragment"

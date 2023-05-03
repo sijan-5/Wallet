@@ -17,18 +17,17 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [BanksListFragment.newInstance] factory method to
+ * Use the [BanksTranferHomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BanksListFragment : Fragment() {
+class BanksTranferHomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var _binding: FragmentBanksListBinding? = null
     private val binding get() = _binding!!
 
-    val bankImageAndNameList:List<BankLogoAndNameDataClass> = getItemList()
-
+    private val bankImageAndNameList:List<BankLogoAndNameDataClass> = getItemList()
     private fun getItemList(): List<BankLogoAndNameDataClass> {
 
         return  listOf(
@@ -39,10 +38,6 @@ class BanksListFragment : Fragment() {
             BankLogoAndNameDataClass(R.drawable.nimb, "NIBL"),
             BankLogoAndNameDataClass(R.drawable.garima_1, "GBBL"),
             BankLogoAndNameDataClass(R.drawable.ncc_1, "NCCBL"),
-            BankLogoAndNameDataClass(R.drawable.nabil_bank_1, "RBBL"),
-            BankLogoAndNameDataClass(R.drawable.garima_1, ""),
-            BankLogoAndNameDataClass(R.drawable.ncc_1, "NCCBL"),
-            BankLogoAndNameDataClass(R.drawable.nabil_bank_1, "RBBL"),
         )
 
 
@@ -76,8 +71,9 @@ class BanksListFragment : Fragment() {
             changeFragment()
         }
 
-
-
+        binding.backArrow.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
     }
     companion object {
@@ -92,7 +88,7 @@ class BanksListFragment : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            BanksListFragment().apply {
+            BanksTranferHomeFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

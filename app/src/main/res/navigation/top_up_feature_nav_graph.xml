@@ -18,5 +18,10 @@
         android:id="@+id/topUpDetailFragment"
         android:name="com.generic.wallet.topUpFeature.TopUpDetailFragment"
         android:label="fragment_top_up_detail"
-        tools:layout="@layout/fragment_top_up_detail" />
+        tools:layout="@layout/fragment_top_up_detail" >
+
+        <action android:id="@+id/action_topUpFragment_to_transitionPin"
+            app:destination="@id/pin_authentication_nav_graph"/>
+
+    </fragment>
 </navigation>

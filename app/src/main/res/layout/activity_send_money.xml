@@ -8,7 +8,7 @@
     android:name="androidx.navigation.fragment.NavHostFragment"
     app:defaultNavHost ="true"
     app:navGraph = "@navigation/send_money_nav_graph"
-    tools:context=".sendmoneyfreature.SendMoneyActivity">
+    tools:context=".sendMoneyFeature.SendMoneyActivity">
 
 
 </androidx.fragment.app.FragmentContainerView>

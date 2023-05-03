@@ -18,5 +18,9 @@
         android:id="@+id/waterForm"
         android:name="com.generic.wallet.waterFeature.WaterForm"
         android:label="fragment_water_form"
-        tools:layout="@layout/fragment_water_form" />
+        tools:layout="@layout/fragment_water_form" >
+
+        <action android:id="@+id/action_water_to_transitionPin"
+            app:destination="@id/pin_authentication_nav_graph"/>
+    </fragment>
 </navigation>

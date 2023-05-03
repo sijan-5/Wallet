@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentTopUpBinding
 
 /**
@@ -33,6 +35,17 @@ class TopUpFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentTopUpBinding.inflate(inflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.backArrow.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        binding.continueButton.setOnClickListener {
+            findNavController().navigate(R.id.action_topUpFragment_to_topUpDetailFragment)
+        }
     }
 
     companion object {

@@ -26,5 +26,9 @@
     <fragment
         android:id="@+id/electricityPaymentMethodFragment2"
         android:name="com.generic.wallet.electricityFeature.ElectricityPaymentMethodFragment"
-        android:label="ElectricityPaymentMethodFragment" />
+        android:label="ElectricityPaymentMethodFragment" >
+
+        <action android:id="@+id/action_electricity_to_transitionPin"
+            app:destination="@id/pin_authentication_nav_graph"/>
+    </fragment>
 </navigation>

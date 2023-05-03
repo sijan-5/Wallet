@@ -1,4 +1,4 @@
-package com.generic.wallet.sendmoneyfreature
+package com.generic.wallet.sendMoneyFeature
 
 import android.os.Bundle
 import android.view.LayoutInflater

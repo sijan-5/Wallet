@@ -8,14 +8,12 @@
     tools:context=".landLineFeature.LandLineHomeFragment">
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/dimen_16"
         android:paddingTop="@dimen/dimen_40"
         android:paddingEnd="@dimen/dimen_16">
-
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/backArrow"
@@ -208,6 +206,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continueButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_16"

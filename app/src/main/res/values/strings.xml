@@ -118,5 +118,6 @@
     <string name="plan">Plan</string>
     <string name="active">Active</string>
     <string name="enter_transistion_pin">Enter Transaction Pin</string>
+    <string name="send">send</string>
 
 </resources>

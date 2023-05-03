@@ -6,16 +6,19 @@
     app:startDestination="@id/sendMoneyTransistionPinFragment">
     <fragment
         android:id="@+id/sendMoneyTransistionPinFragment"
-        android:name="com.generic.wallet.sendmoneyfreature.SendMoneyTransistionPinFragment"
+        android:name="com.generic.wallet.sendMoneyFeature.SendMoneyTransistionPinFragment"
         android:label="fragment_send_money_transistion_pin"
         tools:layout="@layout/fragment_send_money_transistion_pin" >
         <action
             android:id="@+id/action_sendMoneyTransistionPinFragment_to_successFullSendMoneyFragment"
-            app:destination="@id/successFullSendMoneyFragment" />
+            app:destination="@id/successFullSendMoneyFragment"
+            app:popUpTo="@id/dashBoardFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
+
     <fragment
         android:id="@+id/successFullSendMoneyFragment"
-        android:name="com.generic.wallet.sendmoneyfreature.SuccessFullSendMoneyFragment"
+        android:name="com.generic.wallet.sendMoneyFeature.SuccessFullSendMoneyFragment"
         android:label="fragment_success_full_send_money"
         tools:layout="@layout/fragment_success_full_send_money" />
 </navigation>

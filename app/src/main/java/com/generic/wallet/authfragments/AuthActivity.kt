@@ -12,7 +12,6 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_auth)
 
 
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navigation_graph) as NavHostFragment
         val navController = navHostFragment.navController
@@ -22,12 +21,7 @@ class AuthActivity : AppCompatActivity() {
         if (data == "pressedSkip" || data == "logInText") {
 
             navController.navigate(
-                resId = R.id.action_registerFragment_to_logInFragment,
-                navOptions = NavOptions.Builder().setPopUpTo(
-                    R.id.action_registerFragment_to_logInFragment,
-                    true
-                ).build(), args = null
-            )
+                resId = R.id.action_registerFragment_to_logInFragment)
         }
 
     }

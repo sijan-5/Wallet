@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.bankTransferFeature.BankListAdapter
 import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
@@ -32,12 +33,24 @@ class LoadWalletHomeFragment : Fragment() {
     private val loadFundingItemsList = getLoadFundingItems()
 
 
-    private fun getLoadFundingItems() : List<BankLogoAndNameDataClass>
+    private fun getLoadFundingItems() : List<LoadWalletDataClass>
     {
         return listOf(
-            BankLogoAndNameDataClass(R.drawable.m_bank, "M-Banking"),
-            BankLogoAndNameDataClass(R.drawable.e_bank, "E-Banking"),
-            BankLogoAndNameDataClass(R.drawable.link_fill0_wght100_grad_25_opsz48, "Linked Bank"),
+            LoadWalletDataClass(R.drawable.m_bank, "M-Banking"){
+
+                if(findNavController().currentDestination?.id == R.id.loadWalletHomeFragment)
+                {
+                    findNavController().navigate(R.id.action_loadWalletHomeFragment_to_bank_transfer_login_graph)
+                }
+            },
+            LoadWalletDataClass(R.drawable.e_bank, "E-Banking") {
+
+                Toast.makeText(requireContext(),"clicked", Toast.LENGTH_LONG).show()
+            },
+            LoadWalletDataClass(R.drawable.link_fill0_wght100_grad_25_opsz48, "Linked Bank"){
+                Toast.makeText(requireContext(),"clicked", Toast.LENGTH_LONG).show()
+            },
+
         )
     }
 
@@ -64,15 +77,15 @@ class LoadWalletHomeFragment : Fragment() {
         binding.loadWalletRecyclerView.layoutManager = GridLayoutManager(requireContext(),4,GridLayoutManager.VERTICAL,
         false)
 
-        binding.loadWalletRecyclerView.adapter = BankListAdapter(loadFundingItemsList) { ->
-
-            Toast.makeText(requireContext(),"clicked position",Toast.LENGTH_LONG).show()
+        binding.loadWalletRecyclerView.adapter = LoadWalletAdapter(loadFundingItemsList){
 
         }
 
         binding.backArrow.setOnClickListener {
-            requireActivity().finish()
+            findNavController().popBackStack()
         }
+
+
 
     }
 

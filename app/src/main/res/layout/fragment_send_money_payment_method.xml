@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sendmoneyfreature.SendMoneyPaymentMethodFragment">
+    tools:context=".sendMoneyFeature.SendMoneyPaymentMethodFragment">
 
 
     <androidx.cardview.widget.CardView
@@ -315,13 +315,13 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/continueButton"
+        android:id="@+id/sendButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_48"
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/quicksand_bold"
-        android:text="@string/Continue"
+        android:text="@string/send"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/genericCardView" />

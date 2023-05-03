@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sendmoneyfreature.SuccessFullSendMoneyFragment">
+    tools:context=".sendMoneyFeature.SuccessFullSendMoneyFragment">
 
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -175,7 +175,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/confirmButton"
+        android:id="@+id/goToDashBoardFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_48"
@@ -184,6 +184,8 @@
         android:text="@string/dashboard"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
         app:layout_constraintTop_toBottomOf="@id/sendingSuccessCard" />
 
 
@@ -197,9 +199,8 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/confirmButton"
+        app:layout_constraintTop_toBottomOf="@id/goToDashBoardFragment"
         android:layout_marginTop="@dimen/dimen_8"
-
         />
 
 

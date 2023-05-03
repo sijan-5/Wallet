@@ -19,12 +19,9 @@
         android:name="com.generic.wallet.landLineFeature.LandLinePaymentMethodFragment"
         android:label="fragment_land_line_payment_method"
         tools:layout="@layout/fragment_land_line_payment_method" >
-        <action
-            android:id="@+id/action_landLinePaymentMethodFragment_to_top_up_paymentmethod"
-            app:destination="@id/top_up_paymentmethod" />
+
+        <action android:id="@+id/action_landLine_to_transitionPin"
+            app:destination="@id/pin_authentication_nav_graph"/>
     </fragment>
-    <fragment
-        android:id="@+id/top_up_paymentmethod"
-        android:name="com.generic.wallet.topUpFeature.top_up_paymentmethod"
-        android:label="top_up_paymentmethod" />
+
 </navigation>

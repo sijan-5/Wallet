@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.bankTransferFeature.BankListAdapter
 import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
@@ -51,7 +52,10 @@ class InternetHomeFragment : Fragment() {
 
         binding.internetRecyclerView.layoutManager = GridLayoutManager(requireContext(),4,GridLayoutManager.VERTICAL,false)
         binding.internetRecyclerView.adapter = BankListAdapter(getISPList()) {
+        }
 
+        binding.backArrow.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

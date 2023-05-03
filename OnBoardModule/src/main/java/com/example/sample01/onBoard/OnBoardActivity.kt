@@ -10,5 +10,7 @@ class OnBoardActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_on_board2)
 
+
     }
+
 }

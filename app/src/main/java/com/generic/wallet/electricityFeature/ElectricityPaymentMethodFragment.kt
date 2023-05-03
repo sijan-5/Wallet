@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
+import com.generic.wallet.databinding.FragmentELectricityPaymentMethodBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +24,9 @@ class ElectricityPaymentMethodFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding :FragmentELectricityPaymentMethodBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,7 +40,20 @@ class ElectricityPaymentMethodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_e_lectricity_payment_method, container, false)
+        _binding = FragmentELectricityPaymentMethodBinding.inflate(inflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.backArrow.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        binding.payButton.setOnClickListener {
+            findNavController().navigate(R.id.action_electricity_to_transitionPin)
+        }
     }
 
     companion object {

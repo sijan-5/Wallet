@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/sendMoneyForm"
-        android:name="com.generic.wallet.sendmoneyfreature.SendMoneyFormFragment"
+        android:name="com.generic.wallet.sendMoneyFeature.SendMoneyFormFragment"
         android:label="fragment_send_money_form"
         tools:layout="@layout/fragment_send_money_form" >
         <action
@@ -18,16 +18,19 @@
 
     <fragment
         android:id="@+id/sendMoneySecondForm"
-        android:name="com.generic.wallet.sendmoneyfreature.SendMoneySecondFormFragment"
+        android:name="com.generic.wallet.sendMoneyFeature.SendMoneySecondFormFragment"
         android:label="fragment_send_money_second_form"
         tools:layout="@layout/fragment_send_money_second_form" >
     </fragment>
 
     <fragment
         android:id="@+id/sendMoneyPaymentMethod"
-        android:name="com.generic.wallet.sendmoneyfreature.SendMoneyPaymentMethodFragment"
+        android:name="com.generic.wallet.sendMoneyFeature.SendMoneyPaymentMethodFragment"
         android:label="fragment_send_money_payment_method"
         tools:layout="@layout/fragment_send_money_payment_method" >
+
+        <action android:id="@+id/action_sendMoneyPaymentMethod_to_transitionPin"
+            app:destination="@id/pin_authentication_nav_graph"/>
     </fragment>
 
 

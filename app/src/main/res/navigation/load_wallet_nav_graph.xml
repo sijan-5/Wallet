@@ -9,5 +9,15 @@
         android:id="@+id/loadWalletHomeFragment"
         android:name="com.generic.wallet.loadWalletFeature.LoadWalletHomeFragment"
         android:label="fragment_load_wallet_home"
-        tools:layout="@layout/fragment_load_wallet_home" />
+        tools:layout="@layout/fragment_load_wallet_home" >
+
+        <action
+            android:id="@+id/action_loadWalletHomeFragment_to_bank_transfer_login_graph"
+            app:destination="@id/bank_transfer_login_graph" />
+
+        <action android:id="@+id/action_bankTransfer_to_transitionPin"
+            app:destination="@id/pin_authentication_nav_graph"/>
+    </fragment>
+
+
 </navigation>

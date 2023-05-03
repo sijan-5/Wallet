@@ -14,7 +14,7 @@ class BankListAdapter(
 ) : RecyclerView.Adapter<BankListAdapter.ViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BankListAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.banklogo, parent, false)
 
         return ViewHolder(view).apply {
@@ -27,18 +27,14 @@ class BankListAdapter(
 
     override fun onBindViewHolder(holder: BankListAdapter.ViewHolder, position: Int) {
 
-        if (position in 0..4) {
             val item = list[position]
             holder.bankLogoImage.setImageResource(item.bankImageResource)
             holder.bankName.text = item.bankTextView
-        }
     }
 
     override fun getItemCount(): Int = list.size
 
     class ViewHolder(val itemV: View) : RecyclerView.ViewHolder(itemV) {
-
-
         val bankLogoImage: ImageView = itemView.findViewById(R.id.bankLogo)
         val bankName: TextView = itemView.findViewById(R.id.bankName)
 

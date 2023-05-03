@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
+import com.generic.wallet.databinding.FragmentBankTransferFormBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -16,6 +18,8 @@ class BankTransferFormFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var _binding : FragmentBankTransferFormBinding?= null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +30,26 @@ class BankTransferFormFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bank_transfer_form, container, false)
+
+        _binding = FragmentBankTransferFormBinding.inflate(inflater)
+        return  binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.continueButton.setOnClickListener {
+            findNavController().navigate(R.id.action_bankTransfer_to_transitionPin)
+        }
+
+        binding.backArrow.setOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
+
+
 
     companion object {
         /**
