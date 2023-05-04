@@ -56,8 +56,8 @@ class RegisterFragment : Fragment(){
         // Inflate the layout for this fragment
 
         _binding = FragmentRegisterBinding.inflate(inflater,container,false)
-        val view = binding.root
-        return view
+        return  binding.root
+
 //        return inflater.inflate(com.generic.wallet.R.layout.fragment_register, container, false)
     }
 
@@ -72,8 +72,15 @@ class RegisterFragment : Fragment(){
         binding.termsConditionText.text = spannableString
 
 
-        binding.continueFirst.setOnClickListener {
-            findNavController().navigate(com.generic.wallet.R.id.action_registerFragment_to_OTPFragment)
+        binding.continueButton.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_OTPFragment)
+        }
+
+        binding.loginText.setOnClickListener {
+
+            findNavController().navigate(R.id.action_registerFragment_to_logInFragment)
+            Log.d("from_reg_to_log",findNavController().currentDestination?.id.toString())
+
         }
     }
 

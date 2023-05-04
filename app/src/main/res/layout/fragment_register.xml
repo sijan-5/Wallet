@@ -179,7 +179,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/continueFirst"
+        android:id="@+id/continueButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/terms_condition_color"

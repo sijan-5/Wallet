@@ -10,7 +10,6 @@ import com.generic.wallet.R
 
 
 class MainActivity : AppCompatActivity() {
-
     private val getContent =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { resultFromSample01->
 

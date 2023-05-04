@@ -15,7 +15,9 @@
             app:destination="@id/OTPFragment" />
         <action
             android:id="@+id/action_registerFragment_to_logInFragment"
-            app:destination="@id/logInFragment" />
+            app:destination="@id/logInFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     
 

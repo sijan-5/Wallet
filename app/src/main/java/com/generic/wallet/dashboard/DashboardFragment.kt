@@ -5,9 +5,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.R
+import    android.graphics.Matrix.ScaleToFit
+import android.graphics.Rect
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+
+
+import com.generic.wallet.bankTransferFeature.BankListAdapter
+import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
 import com.generic.wallet.databinding.FragmentDashboardBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -49,45 +60,45 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        binding.sendMoney.setOnClickListener {
-            findNavController().navigate(R.id.action_dashBoardFragment_to_send_money)
-        }
-        binding.requestMoney.setOnClickListener {
-            findNavController().navigate(R.id.action_dashBoardFragment_to_send_money)
-
-        }
-        binding.loadWallet.setOnClickListener {
-            findNavController().navigate(R.id.action_dashBoardFragment_to_load_wallet_nav_graph)
-
-        }
-        binding.bankTransfer.setOnClickListener {
-
-            findNavController().navigate(R.id.action_dashBoardFragment_to_bank_transfer_login_graph)
-
-        }
-        binding.topUp.setOnClickListener {
-
-            findNavController().navigate(R.id.action_dashBoardFragment_to_top_up_feature)
-
-        }
-        binding.landLine.setOnClickListener {
-            findNavController().navigate(R.id.action_dashBoardFragment_to_landline_feature_nav_graph)
-
-        }
-        binding.electricity.setOnClickListener {
-            findNavController().navigate(R.id.action_dashBoardFragment_to_electricity_feature_nav_graph)
-
-        }
-        binding.internet.setOnClickListener {
-            findNavController().navigate(R.id.action_dashBoardFragment_to_internet_feature_nav_graph)
-
-        }
-        binding.water.setOnClickListener {
-            findNavController().navigate(R.id.action_dashBoardFragment_to_water_feature_nav_graph)
+        val noOfColumns = 4
+        binding.walletServicesRecyclerView.layoutManager = GridLayoutManager(
+            requireContext(), noOfColumns, GridLayoutManager.VERTICAL,
+            false
+        )
+        binding.walletServicesRecyclerView.adapter = DashBoardAdapter(getListWalletServices()) {
 
         }
 
+//        binding.walletServicesRecyclerView.addItemDecoration(GridLayoutDecorator(noOfColumns,requireContext()))
+
+
+    }
+
+
+    private fun getListWalletServices(): List<DashBoardItemDataClass> {
+
+        return listOf(
+            DashBoardItemDataClass(
+                R.drawable.send_money,
+                "Send Money",
+                R.drawable.icon_back_ground
+            ),
+            DashBoardItemDataClass(
+                R.drawable.request_money,
+                "Request Money",
+                R.drawable.icon_back_ground
+            ),
+            DashBoardItemDataClass(
+                R.drawable.load_wallet,
+                "Load Wallet",
+                R.drawable.icon_back_ground
+            ),
+            DashBoardItemDataClass(
+                R.drawable.bank_transfer_01,
+                "Bank Transfer",
+                R.drawable.icon_back_ground
+            )
+        )
     }
 
     companion object {
@@ -111,6 +122,9 @@ class DashboardFragment : Fragment() {
     }
 
 
+
 }
+
+
 
 

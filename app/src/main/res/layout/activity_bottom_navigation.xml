@@ -7,23 +7,38 @@
     tools:context=".dashboard.BottomNavigationActivity">
 
 
-   <androidx.fragment.app.FragmentContainerView
-       android:id="@+id/navHostFragmentContainer"
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
-       android:name="androidx.navigation.fragment.NavHostFragment"
-       app:defaultNavHost="true"
-        app:navGraph="@navigation/bottom_navigation_graph"
-       />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navHostFragmentContainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottomnavitem" />
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/bottom_navigation_graph" />
+
+
+        <com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="start|bottom"
+            app:circleColor="@color/button_purple"
+            app:darkIcon="true"
+            app:menu="@menu/bottomnavitem" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--android:id="@+id/bottomNavigation"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/black"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:menu="@menu/bottomnavitem" />-->
+
+
+

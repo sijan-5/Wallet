@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_margin="@dimen/dimen_12"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/dashboardItemLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/send_money"
+        android:padding="@dimen/dimen_16"
+        />
+
+    <TextView
+        android:id="@+id/dashBoardItemName"
+        app:layout_constraintStart_toStartOf="@id/dashboardItemLogo"
+        app:layout_constraintEnd_toEndOf="@id/dashboardItemLogo"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="logoServiceName"
+        app:layout_constraintTop_toBottomOf="@id/dashboardItemLogo"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:textColor="@color/bold_text_color"
+        android:textSize="11sp"
+        android:fontFamily="@font/quicksand_medium"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
