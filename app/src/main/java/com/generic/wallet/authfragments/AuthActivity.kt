@@ -30,9 +30,6 @@ class AuthActivity : AppCompatActivity() {
         navController.navigate(R.id.action_registerFragment_to_logInFragment)
 
 
-
-
-
 //            findNavController(R.id.registerFragment).navigate(R.id.action_registerFragment_to_logInFragment)
     }
 
