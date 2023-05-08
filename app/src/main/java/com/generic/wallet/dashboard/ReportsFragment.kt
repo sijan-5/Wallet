@@ -1,13 +1,16 @@
 package com.generic.wallet.dashboard
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentReportsBinding
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +27,7 @@ class ReportsFragment : Fragment(){
     private var param1: String? = null
     private var param2: String? = null
     private var _binding: FragmentReportsBinding?= null
-    private val binding get() = _binding
+    private val binding get() = _binding!!
 
     private lateinit var mutableList: MutableList<DataClassForReport>
 
@@ -39,10 +42,10 @@ class ReportsFragment : Fragment(){
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentReportsBinding.inflate(inflater,container,false)
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,14 +53,18 @@ class ReportsFragment : Fragment(){
 
         mutableList = mutableListOf()
 
+
         for (i in 1..10)
         {
             val dataClassForReport = DataClassForReport(R.drawable.wallet,"NIC","9843434","17th June,2023")
             mutableList.add(dataClassForReport)
         }
 
-        binding?.recyclerView?.layoutManager = LinearLayoutManager(requireContext())
-        binding?.recyclerView?.adapter = ReportAdapter(mutableList)
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = ReportAdapter(mutableList)
+        binding.backArrow.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
     }
 

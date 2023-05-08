@@ -11,8 +11,8 @@
         android:id="@+id/paymentMethodStatusCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         app:cardCornerRadius="@dimen/dimen_12"
+        android:layout_marginTop="@dimen/dimen_24"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout

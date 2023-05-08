@@ -23,12 +23,14 @@
         android:id="@+id/bankFragment"
         android:icon="@drawable/home_black_24dp_svg"
         android:title="Home"
+
         />
 
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/home_black_24dp_svg"
         android:title="Home"
+
         />
 
 

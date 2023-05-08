@@ -2,11 +2,13 @@ package com.generic.wallet.dashboard
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentProfileBinding
@@ -26,7 +28,7 @@ class ProfileFragment() : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var _binding: FragmentProfileBinding? = null
-    private val binding get() = _binding
+    private val binding get() = _binding!!
     private var listOfProfileItems = getListOfProfileItems()
 
     private fun getListOfProfileItems(): List<ProfileItems> {
@@ -79,15 +81,22 @@ class ProfileFragment() : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        return binding?.root
+        return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.recyclerView?.layoutManager = LinearLayoutManager(requireContext())
-        binding?.recyclerView?.adapter = ProfileItemAdapter(listOfProfileItems,requireContext())
+        val currentDestinationID = findNavController().currentDestination?.id
+        Log.d("currentID", currentDestinationID.toString())
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = ProfileItemAdapter(listOfProfileItems,requireContext())
+
+        binding.backArrow.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
 

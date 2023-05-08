@@ -53,14 +53,18 @@ class LogInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.forgetPasswordText.setOnClickListener {
-            findNavController().popBackStack()
+        binding.registerText.setOnClickListener {
+            findNavController().navigate(com.generic.wallet.R.id.action_logInFragment_to_registerFragment)
         }
 
         binding.loginButton.setOnClickListener {
-
             startActivity(Intent(requireContext(), BottomNavigationActivity::class.java))
             requireActivity().finish()
+        }
+
+        binding.forgetPasswordText.setOnClickListener {
+
+            this.findNavController().navigate(com.generic.wallet.R.id.action_logInFragment_to_forgotPasswordFragment)
         }
 
     }

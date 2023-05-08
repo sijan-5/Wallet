@@ -110,14 +110,21 @@
     <string name="world_link">World Link</string>
     <string name="enter_isp_username">Enter ISP Username</string>
     <string name="username">Username</string>
+    <string name="tv">TV</string>
     <string name="service_provider">Service Provider</string>
     <string name="status">Status</string>
     <string name="selected_plan">Selected Plan</string>
     <string name="duration">Duration</string>
     <string name="cashback">Cashback</string>
     <string name="plan">Plan</string>
+    <string name="dataPack">Data Pack</string>
     <string name="active">Active</string>
     <string name="enter_transistion_pin">Enter Transaction Pin</string>
     <string name="send">send</string>
+    <string name="more">More</string>
+    <string name="Daraz">Daraz</string>
+    <string name="food_mandu">Foodmandu</string>
+    <string name="platinum">Club Platinum</string>
+    <string name="annapurna">Aanapurna V.</string>
 
 </resources>

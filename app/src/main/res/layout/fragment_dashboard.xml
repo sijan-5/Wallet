@@ -60,14 +60,14 @@
             android:background="@drawable/icon_back_ground"
             android:padding="@dimen/dimen_8"
             android:src="@drawable/notification"
-            app:layout_constraintBottom_toBottomOf="@id/profileImage"
-            app:layout_constraintRight_toLeftOf="@id/profileImage"
+            app:layout_constraintBottom_toBottomOf="@id/profileImageIcon"
+            app:layout_constraintRight_toLeftOf="@id/profileImageIcon"
             app:layout_constraintTop_toTopOf="parent"
 
             />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/profileImage"
+            android:id="@+id/profileImageIcon"
             android:layout_width="@dimen/dimen_40"
             android:layout_height="@dimen/dimen_40"
             android:layout_marginTop="@dimen/dimen_48"
@@ -81,7 +81,7 @@
 
         <include
             android:id="@+id/walletPriceInfo"
-            layout="@layout/dashboard_priceinfo"
+            layout="@layout/dashboard_price_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_16"
@@ -171,6 +171,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_24"
+            android:paddingStart="@dimen/dimen_4"
+            android:paddingEnd="@dimen/dimen_4"
             app:layout_constraintTop_toBottomOf="@id/utilitiesTextView">
 
         </androidx.recyclerview.widget.RecyclerView>

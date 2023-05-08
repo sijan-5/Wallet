@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_margin="@dimen/dimen_12"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_12"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -11,9 +11,10 @@
         android:id="@+id/dashboardItemLogo"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:src="@drawable/send_money"
         android:padding="@dimen/dimen_16"
+        app:layout_constraintDimensionRatio="1:1"
         />
 
     <TextView

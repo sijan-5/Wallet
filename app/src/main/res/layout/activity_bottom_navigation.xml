@@ -18,19 +18,30 @@
         app:navGraph="@navigation/bottom_navigation_graph" />
 
 
-        <com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles
-            android:id="@+id/bottomNavigation"
-            android:layout_width="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_gravity="start|bottom"
-            app:circleColor="@color/button_purple"
-            app:darkIcon="true"
-            app:menu="@menu/bottomnavitem" />
+    <com.generic.wallet.BottomNavigationCircles
+        android:id="@+id/bottomNavigation"
+        android:backgroundTint="#84848417"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottomnavitem"/>
 
 
+
+
+<!--        <com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles-->
+<!--            android:id="@+id/bottomNavigation"-->
+<!--            android:layout_width="match_parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:layout_gravity="start|bottom"-->
+<!--            app:circleColor="@color/button_purple"-->
+<!--            app:darkIcon="true"-->
+<!--            app:menu="@menu/bottomnavitem" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     <!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
     <!--android:id="@+id/bottomNavigation"-->

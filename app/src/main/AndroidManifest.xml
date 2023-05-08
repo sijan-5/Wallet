@@ -12,20 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GenericWallet"
         tools:targetApi="31">
-        <activity
-            android:name=".loadWalletFeature.LoadWalletActivity"
-            android:exported="false" />
-        <activity
-            android:name=".bankTransferFeature.BankTransferFeatureActivity"
-            android:exported="false" />
-        <activity
-            android:name=".sendMoneyFeature.SendMoneyActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".loadWalletFeature.LoadWalletActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".bankTransferFeature.BankTransferFeatureActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".sendMoneyFeature.SendMoneyActivity"-->
+<!--            android:exported="false" />-->
 
         <activity
             android:name=".dashboard.BottomNavigationActivity"
             android:exported="true">
         </activity>
+
 
         <activity
             android:name="com.example.sample01.onBoard.OnBoardActivity"
@@ -40,13 +41,16 @@
             android:name=".authfragments.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.GenericWallet.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
         </activity>
     </application>
 

@@ -10,7 +10,7 @@
 
     <include
         android:id="@+id/dashBoardInfo"
-        layout="@layout/dashboard_priceinfo"
+        layout="@layout/dashboard_price_info"
         />
 
     <CheckBox

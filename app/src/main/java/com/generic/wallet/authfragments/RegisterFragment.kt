@@ -13,6 +13,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentRegisterBinding
@@ -77,9 +79,9 @@ class RegisterFragment : Fragment(){
         }
 
         binding.loginText.setOnClickListener {
+            val navOptions = NavOptions.Builder().setPopUpTo(R.id.registerFragment, false).build()
+            findNavController().navigate(R.id.action_registerFragment_to_logInFragment,null, navOptions)
 
-            findNavController().navigate(R.id.action_registerFragment_to_logInFragment)
-            Log.d("from_reg_to_log",findNavController().currentDestination?.id.toString())
 
         }
     }

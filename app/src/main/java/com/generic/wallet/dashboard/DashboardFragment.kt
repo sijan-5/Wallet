@@ -1,25 +1,18 @@
 package com.generic.wallet.dashboard
 
-import android.content.Intent
+
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.R
-import    android.graphics.Matrix.ScaleToFit
-import android.graphics.Rect
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ItemDecoration
-
-
-import com.generic.wallet.bankTransferFeature.BankListAdapter
-import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
 import com.generic.wallet.databinding.FragmentDashboardBinding
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,44 +54,184 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val noOfColumns = 4
+
+        val currentDestinationID = findNavController().currentDestination?.id
+        Log.d("currentID", currentDestinationID.toString())
+        //wallet Services
         binding.walletServicesRecyclerView.layoutManager = GridLayoutManager(
             requireContext(), noOfColumns, GridLayoutManager.VERTICAL,
             false
         )
-        binding.walletServicesRecyclerView.adapter = DashBoardAdapter(getListWalletServices()) {
+        binding.walletServicesRecyclerView.adapter = DashBoardAdapter(getListWalletServices())
 
+        //utilities
+        binding.utilitiesRecyclerView.layoutManager = GridLayoutManager(
+            requireContext(), noOfColumns, GridLayoutManager.VERTICAL,
+            false
+        )
+        binding.utilitiesRecyclerView.adapter = DashBoardAdapter(getWalletUtilitiesServices())
+
+        //merchants
+        binding.merchantRecyclerView.layoutManager = GridLayoutManager(
+            requireContext(), noOfColumns, GridLayoutManager.VERTICAL,
+            false
+        )
+        binding.merchantRecyclerView.adapter = DashBoardAdapter(getMerchantServices())
+
+        //clicking on profile icon
+        binding.profileImageIcon.setOnClickListener {
+
+
+            val activity = requireActivity()
+            if (activity is BottomNavigationActivity) {
+
+                val menuItem = activity.getMenuItem(R.id.profileFragment)
+                NavigationUI.onNavDestinationSelected(menuItem, findNavController())
+
+            }
         }
 
 //        binding.walletServicesRecyclerView.addItemDecoration(GridLayoutDecorator(noOfColumns,requireContext()))
+    }
+    private fun getWalletUtilitiesServices(): List<DashBoardItemDataClass> {
+
+        return listOf(
+            DashBoardItemDataClass(
+                R.drawable.top__up,
+                resources.getString(R.string.top_up),
+                R.drawable.top_up_background
+            ) {
+                findNavController().navigate(R.id.action_dashBoardFragment_to_top_up_feature)
+            },
+            DashBoardItemDataClass(
+                R.drawable.landline,
+                resources.getString(R.string.landline),
+                R.drawable.landline_background
+            ) {
+
+                findNavController().navigate(R.id.action_dashBoardFragment_to_landline_feature_nav_graph)
+            },
+            DashBoardItemDataClass(
+                R.drawable.electricity,
+                resources.getString(R.string.electricity),
+                R.drawable.electricitybackground
+            ) {
+
+                findNavController().navigate(R.id.action_dashBoardFragment_to_electricity_feature_nav_graph2)
+            },
+            DashBoardItemDataClass(
+                R.drawable.internet,
+                resources.getString(R.string.internet),
+                R.drawable.internetbackground
+            ) {
+
+                findNavController().navigate(R.id.action_dashBoardFragment_to_internet_feature_nav_graph)
+            },
+            DashBoardItemDataClass(
+                R.drawable.water,
+                resources.getString(R.string.water),
+                R.drawable.waterbackground
+            ) {
+
+                findNavController().navigate(R.id.action_dashBoardFragment_to_water_feature_nav_graph)
+            },
+            DashBoardItemDataClass(
+                R.drawable.tv,
+                resources.getString(R.string.tv),
+                R.drawable.tvbackground
+            ) {
+
+            },
+            DashBoardItemDataClass(
+                R.drawable.datapack,
+                resources.getString(R.string.dataPack),
+                R.drawable.tvbackground
+            ) {
+
+            },
+            DashBoardItemDataClass(
+                R.drawable.more,
+                resources.getString(R.string.more),
+                R.drawable.tvbackground
+            ) {
+
+            }
+        )
 
 
     }
-
-
     private fun getListWalletServices(): List<DashBoardItemDataClass> {
+
 
         return listOf(
             DashBoardItemDataClass(
                 R.drawable.send_money,
-                "Send Money",
+                resources.getString(R.string.send_money),
                 R.drawable.icon_back_ground
-            ),
+            ) {
+                findNavController().navigate(R.id.action_dashBoardFragment_to_send_money)
+            },
+
             DashBoardItemDataClass(
                 R.drawable.request_money,
-                "Request Money",
+                resources.getString(R.string.request_money),
                 R.drawable.icon_back_ground
-            ),
+            ) {
+                findNavController().navigate(R.id.action_dashBoardFragment_to_send_money)
+            },
+
             DashBoardItemDataClass(
                 R.drawable.load_wallet,
-                "Load Wallet",
+                resources.getString(R.string.load_wallet),
                 R.drawable.icon_back_ground
-            ),
+            ) {
+
+                findNavController().navigate(R.id.action_dashBoardFragment_to_load_wallet_nav_graph)
+            },
+
             DashBoardItemDataClass(
                 R.drawable.bank_transfer_01,
-                "Bank Transfer",
+                resources.getString(R.string.bank_transfer),
                 R.drawable.icon_back_ground
-            )
+            ) {
+                findNavController().navigate(R.id.action_dashBoardFragment_to_bank_transfer_login_graph)
+            }
+
         )
+    }
+
+    private fun getMerchantServices(): List<DashBoardItemDataClass> {
+        return listOf(
+            DashBoardItemDataClass(
+                R.drawable.daraz,
+                resources.getString(R.string.Daraz),
+                R.drawable.icon_back_ground
+            ) {
+
+            },
+            DashBoardItemDataClass(
+                R.drawable.foodmandu,
+                resources.getString(R.string.food_mandu),
+                R.drawable.icon_back_ground
+            ) {
+
+            },
+            DashBoardItemDataClass(
+                R.drawable.platinum,
+                resources.getString(R.string.platinum),
+                R.drawable.icon_back_ground
+            ) {
+
+            },
+            DashBoardItemDataClass(
+                R.drawable.aanapurna,
+                resources.getString(R.string.annapurna),
+                R.drawable.icon_back_ground
+            ) {
+
+            },
+
+            )
     }
 
     companion object {
@@ -120,7 +253,6 @@ class DashboardFragment : Fragment() {
                 }
             }
     }
-
 
 
 }

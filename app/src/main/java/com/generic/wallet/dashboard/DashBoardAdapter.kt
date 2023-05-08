@@ -10,7 +10,7 @@ import com.generic.wallet.R
 import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
 import org.w3c.dom.Text
 
-class DashBoardAdapter(val list : List<DashBoardItemDataClass> , val click : () -> Unit) : RecyclerView.Adapter<DashBoardAdapter.ViewHolder> () {
+class DashBoardAdapter(val list : List<DashBoardItemDataClass>) : RecyclerView.Adapter<DashBoardAdapter.ViewHolder> () {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashBoardAdapter.ViewHolder {
 
@@ -20,7 +20,10 @@ class DashBoardAdapter(val list : List<DashBoardItemDataClass> , val click : () 
         return  ViewHolder(view).apply {
 
             dashBoardItemView.setOnClickListener {
-                click.invoke()
+
+                val position = list[adapterPosition]
+                position.clickedItem.invoke()
+
             }
         }
     }
@@ -31,7 +34,6 @@ class DashBoardAdapter(val list : List<DashBoardItemDataClass> , val click : () 
         holder.logoName.text = item.logoName
 
         holder.logoImage.apply {
-
             setImageResource(item.imageResource)
             setBackgroundResource(item.backGroundResource)
         }

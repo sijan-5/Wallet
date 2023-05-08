@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_send_money"
             app:destination="@id/send_money" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
 
     </fragment>
 
