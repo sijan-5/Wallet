@@ -165,7 +165,7 @@ class BottomNavigationCircles : BottomNavigationView {
             icon.layoutParams.height = 100
             icon.layoutParams.width= 100
 
-            icon.background =
+
                 ContextCompat.getDrawable(context, R.drawable.bottom_nav_item_background)
             disableClipOnParents(icon)
             val subText = getSubTextView(itemView)
