@@ -13,6 +13,7 @@
     <color name="extraBlack">#242424</color>
     <color name="green">#33AD7A</color>
     <color name="dash_line_color">#C2C2C2</color>
+    <color name="chips_border">#D5D5D5</color>
     <color name="radio_button_selected_color">#F9F9FF</color>
     <color name="radio_button_unselected_color">#EBEBEB</color>
     <color name="radio_button_unselected_text_color">#AFAFAF</color>

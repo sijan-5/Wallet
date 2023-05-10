@@ -167,7 +167,7 @@ class DashboardFragment : Fragment() {
             DashBoardItemDataClass(
                 R.drawable.send_money,
                 resources.getString(R.string.send_money),
-                R.drawable.icon_back_ground
+                R.drawable.dashboard_one_icon_bg
             ) {
                 findNavController().navigate(R.id.action_dashBoardFragment_to_send_money)
             },
@@ -175,7 +175,7 @@ class DashboardFragment : Fragment() {
             DashBoardItemDataClass(
                 R.drawable.request_money,
                 resources.getString(R.string.request_money),
-                R.drawable.icon_back_ground
+                R.drawable.dashboard_one_icon_bg
             ) {
                 findNavController().navigate(R.id.action_dashBoardFragment_to_send_money)
             },
@@ -183,7 +183,7 @@ class DashboardFragment : Fragment() {
             DashBoardItemDataClass(
                 R.drawable.load_wallet,
                 resources.getString(R.string.load_wallet),
-                R.drawable.icon_back_ground
+                R.drawable.dashboard_one_icon_bg
             ) {
 
                 findNavController().navigate(R.id.action_dashBoardFragment_to_load_wallet_nav_graph)
@@ -192,7 +192,7 @@ class DashboardFragment : Fragment() {
             DashBoardItemDataClass(
                 R.drawable.bank_transfer_01,
                 resources.getString(R.string.bank_transfer),
-                R.drawable.icon_back_ground
+                R.drawable.dashboard_one_icon_bg
             ) {
                 findNavController().navigate(R.id.action_dashBoardFragment_to_bank_transfer_login_graph)
             }
@@ -205,28 +205,28 @@ class DashboardFragment : Fragment() {
             DashBoardItemDataClass(
                 R.drawable.daraz,
                 resources.getString(R.string.Daraz),
-                R.drawable.icon_back_ground
+                R.drawable.dashboard_one_icon_bg
             ) {
 
             },
             DashBoardItemDataClass(
                 R.drawable.foodmandu,
                 resources.getString(R.string.food_mandu),
-                R.drawable.icon_back_ground
+                R.drawable.dashboard_one_icon_bg
             ) {
 
             },
             DashBoardItemDataClass(
                 R.drawable.platinum,
                 resources.getString(R.string.platinum),
-                R.drawable.icon_back_ground
+                R.drawable.dashboard_one_icon_bg
             ) {
 
             },
             DashBoardItemDataClass(
                 R.drawable.aanapurna,
                 resources.getString(R.string.annapurna),
-                R.drawable.icon_back_ground
+                R.drawable.dashboard_one_icon_bg
             ) {
 
             },

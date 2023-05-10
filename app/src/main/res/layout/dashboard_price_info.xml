@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_16"
-        android:background="@drawable/icon_back_ground"
+        android:background="@drawable/dashboard_one_icon_bg"
         android:padding="@dimen/dimen_12"
         android:src="@drawable/wallet"
         app:layout_constraintBottom_toBottomOf="parent"

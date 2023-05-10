@@ -25,5 +25,8 @@
     <color name="supportBackgroundColor">#FFF9FC</color>
     <color name="logoutBackgroundColor">#FFC4C4</color>
     <color name="fill_kyc_backgroundColor">#FFFBF3</color>
+    <color name="bottom_nav_item_disable_color">#BEBEBE</color>
+    <color name="white_fb">#FBFBFB</color>
+    <color name="card_bgc">#F5F5F5</color>
 
 </resources>

@@ -126,5 +126,14 @@
     <string name="food_mandu">Foodmandu</string>
     <string name="platinum">Club Platinum</string>
     <string name="annapurna">Aanapurna V.</string>
+    <string name="balance">Balance</string>
+    <string name="bill_payments">Bill Payments</string>
+    <string name="bookings">Bookings</string>
+    <string name="free_payment">Free Payment</string>
+    <string name="merchant">Merchant</string>
+    <string name="food">Food</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="utilities">Utilities</string>
+    <string name="welcome">welcome,</string>
 
 </resources>

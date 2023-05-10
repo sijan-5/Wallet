@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dashboard_one.DashboardOneHome">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <View
+        android:id="@+id/bg_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/dashboard_one_background_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/carViewFillKyc"
+        android:layout_marginBottom="@dimen/dimen_12"
+        />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/profileImage"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginStart="16dp"
+           app:layout_constraintBottom_toTopOf="@id/balanceText"
+            android:layout_marginBottom="@dimen/dimen_40"
+            android:src="@drawable/dhoni"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/wallet_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/amount_wallet"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/dimen_16"
+            app:layout_constraintTop_toTopOf="@id/balanceText"
+            app:layout_constraintBottom_toBottomOf="@id/balanceText"
+
+        />
+
+        <TextView
+            android:id="@+id/balanceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/balance"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/wallet_image"
+            app:layout_constraintBottom_toTopOf="@id/balanceAmount"
+            android:layout_marginBottom="@dimen/dimen_4"
+            />
+
+        <TextView
+            android:id="@+id/balanceAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/npr_xxxx"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/dimen_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/bg_view"
+            android:layout_marginBottom="20dp"
+             />
+
+    <include
+        android:id="@+id/carViewFillKyc"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/cardview_fill_kyc"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="192dp"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/carViewFillKyc"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:id="@+id/servicesRecyclerView"
+        />
+    <TextView
+        android:id="@+id/utilitiesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/utilities"
+        android:textSize="12sp"
+        android:textColor="@color/bold_text_color"
+        android:fontFamily="@font/quicksand_bold"
+        app:layout_constraintTop_toBottomOf="@id/servicesRecyclerView"
+        android:layout_marginTop="@dimen/dimen_12"
+        android:layout_marginStart="@dimen/dimen_16"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/utilitiesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/utilitiesText"
+        android:layout_marginTop="@dimen/dimen_12"
+        />
+
+
+        <TextView
+            android:id="@+id/offersText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/offers"
+            android:textSize="12sp"
+            android:textColor="@color/bold_text_color"
+            android:fontFamily="@font/quicksand_bold"
+            app:layout_constraintTop_toBottomOf="@id/utilitiesRecyclerView"
+            android:layout_marginTop="@dimen/dimen_24"
+            android:layout_marginStart="@dimen/dimen_16"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="@string/see_all"
+            app:layout_constraintEnd_toStartOf="@id/seeAllArrow"
+            app:layout_constraintTop_toTopOf="@id/offersText"
+            app:layout_constraintBottom_toBottomOf="@id/offersText"
+            android:textColor="@color/button_purple"
+            android:textSize="11sp" />
+
+
+        <ImageView
+            android:id="@+id/seeAllArrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/dimen_16"
+            app:layout_constraintTop_toTopOf="@id/offersText"
+            app:layout_constraintBottom_toBottomOf="@id/offersText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_forward_24" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_24"
+            app:layout_constraintTop_toBottomOf="@id/offersText">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_24"
+                    android:layout_weight="1"
+                    android:src="@drawable/mountain" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/food" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+
+        <TextView
+            android:id="@+id/merchantsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Merchant"
+            android:textSize="12sp"
+            android:textColor="@color/bold_text_color"
+            android:fontFamily="@font/quicksand_bold"
+            app:layout_constraintTop_toBottomOf="@id/horizontalScrollView"
+            android:layout_marginTop="@dimen/dimen_24"
+            android:layout_marginStart="@dimen/dimen_16"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="@string/see_all"
+            app:layout_constraintEnd_toStartOf="@id/seeAllArrow"
+            app:layout_constraintTop_toTopOf="@id/merchantsText"
+            app:layout_constraintBottom_toBottomOf="@id/merchantsText"
+            android:textColor="@color/button_purple"
+            android:textSize="11sp" />
+
+
+        <ImageView
+            android:id="@+id/seeAllArrowSecond"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/dimen_16"
+            app:layout_constraintTop_toTopOf="@id/merchantsText"
+            app:layout_constraintBottom_toBottomOf="@id/merchantsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_forward_24" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/merchantRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/merchantsText"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:paddingBottom="@dimen/dimen_24"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -20,8 +20,10 @@
 
     <com.generic.wallet.BottomNavigationCircles
         android:id="@+id/bottomNavigation"
-        android:backgroundTint="#84848417"
+        android:background="#FFF"
         android:layout_width="match_parent"
+        android:elevation="@dimen/dimen_110"
+        app:labelVisibilityMode="labeled"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottomnavitem"/>

@@ -10,11 +10,9 @@
             <gradient
                 android:startColor="#B4ACFF"
                 android:endColor="#6054DE"
-                android:angle="45"
+                android:angle="180"
                 />
         </shape>
     </item>
-
-
 
 </layer-list>

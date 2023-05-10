@@ -6,7 +6,7 @@
         android:radius="@dimen/dimen_12"
         />
 
-    <solid android:color="#F9F9FF"
+    <solid android:color="@color/iconBackground"
         />
 
 </shape>

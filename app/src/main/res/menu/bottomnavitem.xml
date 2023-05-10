@@ -3,33 +3,33 @@
 
     <item
         android:id="@+id/dashBoardFragment"
-        android:icon="@drawable/home_black_24dp_svg"
+        android:icon="@drawable/home"
         android:title="Home"
         />
 
     <item
         android:id="@+id/reportFragment"
-        android:icon="@drawable/home_black_24dp_svg"
-        android:title="Home"
+        android:icon="@drawable/report"
+        android:title="Reports"
         />
 
     <item
         android:id="@+id/scanFragment"
-        android:icon="@drawable/home_black_24dp_svg"
-        android:title="Home"
+        android:icon="@drawable/qr_code"
+        android:title="Scan"
         />
 
     <item
         android:id="@+id/bankFragment"
-        android:icon="@drawable/home_black_24dp_svg"
-        android:title="Home"
+        android:icon="@drawable/bank"
+        android:title="Banks"
 
         />
 
     <item
         android:id="@+id/profileFragment"
-        android:icon="@drawable/home_black_24dp_svg"
-        android:title="Home"
+        android:icon="@drawable/profile"
+        android:title="Profile"
 
         />
 
