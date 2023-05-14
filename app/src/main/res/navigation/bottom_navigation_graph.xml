@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/dashBoardFragment"
-        android:name="com.generic.wallet.dashboard_one.DashboardOneHome"
+        android:name="com.generic.wallet.dashboard.DashboardFragment"
         android:label="dash_board"
-        tools:layout="@layout/fragment_dashboard__one_home">
+        tools:layout="@layout/fragment_dashboard">
 
         <action
             android:id="@+id/action_dashBoardFragment_to_bank_transfer_login_graph"

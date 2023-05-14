@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -71,10 +72,16 @@ class ProfileItemAdapter(
                         item.backgroundColorId
                     ))
 
+                holder.overflowArrow.setOnClickListener {
+                    holder.childItems.visibility = View.VISIBLE
+                    holder.overflowArrow.setImageResource(R.drawable.hide_child_items)
+                }
+
             }
             ProfileItems.Divider -> {
 
             }
+
 
         }
     }
@@ -114,6 +121,8 @@ class ProfileItemAdapter(
 
         val profileItemImage: ImageView = itemView.findViewById(R.id.profileItemImage)
         val profileItemName: TextView = itemView.findViewById(R.id.profileItemName)
+        val childItems : LinearLayout = itemView.findViewById(R.id.childItems)
+        val overflowArrow : ImageView = itemView.findViewById(R.id.overflowArrow)
     }
 
     class DividerViewHolder(view: View) : RecyclerView.ViewHolder(view) {

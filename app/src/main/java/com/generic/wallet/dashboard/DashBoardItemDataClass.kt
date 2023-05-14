@@ -7,6 +7,5 @@ data class DashBoardItemDataClass(
     @DrawableRes val imageResource: Int,
     val logoName: String,
     @DrawableRes val backGroundResource: Int,
-
     val clickedItem: () -> Unit
 )

@@ -12,11 +12,11 @@
     <string name="Continuee">Continue</string>
     <string name="password">Password</string>
     <string name="ent_password">Enter your password</string>
-    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm_password">Confirm Transaction Pin</string>
     <string name="confirm">CONFIRM</string>
     <string name="successfully_done">Successfully Done</string>
     <string name="is_simply_dummy_text_of_the_printing_and_typesetting_industry_lorem_ipsum_has_been_the_industry_s">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s</string>
-    <string name="login">LOGIN</string>
+    <string name="login">Login</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="login_to_your_account">Login to your account.</string>
     <string name="register">Register</string>
@@ -135,5 +135,7 @@
     <string name="subscriptions">Subscriptions</string>
     <string name="utilities">Utilities</string>
     <string name="welcome">welcome,</string>
+    <string name="profile">Profile</string>
+    <string name="edit">Edit</string>
 
 </resources>

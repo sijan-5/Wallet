@@ -352,14 +352,14 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-         <androidx.recyclerview.widget.RecyclerView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:id="@+id/merchantsRecyclerView"
-             app:layout_constraintTop_toBottomOf="@id/chipsScrollViewSecond"
-             android:layout_marginTop="@dimen/dimen_24"
-             android:paddingBottom="@dimen/dimen_24"
-             />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/merchantsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingBottom="@dimen/dimen_24"
+            app:layout_constraintTop_toBottomOf="@id/chipsScrollViewSecond"
+            tools:layout_editor_absoluteX="80dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

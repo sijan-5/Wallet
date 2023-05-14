@@ -14,12 +14,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/confirm_password"
+        android:textColor="@color/bold_text_color"
+        android:textSize="20sp"
+         />
+
+    <TextView
+        android:id="@+id/loremText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_8"
         android:fontFamily="@font/quicksand"
-        android:text="@string/strong_password"
+        android:text="Set an transaction pin to secure your payments."
         android:textColor="@color/lorem_color"
         android:textSize="12sp"
-         />
+        app:layout_constraintTop_toBottomOf="@id/stringPasswordText"
+        />
+
+
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/transactionImg"
@@ -29,7 +43,7 @@
         android:src="@drawable/transactionpinpg"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stringPasswordText" />
+        app:layout_constraintTop_toBottomOf="@+id/loremText" />
 
 
     <com.chaos.view.PinView

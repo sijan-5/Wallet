@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/dimen_24"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".dashboard.ProfileFragment">
 
@@ -29,13 +30,17 @@
             app:layout_constraintBottom_toBottomOf="@id/profileText"
             app:layout_constraintStart_toStartOf="parent"
             android:paddingStart="@dimen/dimen_16"
+            android:paddingEnd="@dimen/dimen_16"
             />
+
+
+
 
         <TextView
             android:id="@+id/profileText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
+            android:text="@string/profile"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:fontFamily="@font/quicksand_bold"
@@ -43,6 +48,19 @@
             android:layout_marginTop="@dimen/dimen_40"
             app:layout_constraintStart_toEndOf="@id/backArrow"
             android:layout_marginStart="@dimen/dimen_16"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="@id/profileText"
+            app:layout_constraintBottom_toBottomOf="@id/profileText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:textSize="11sp"
+            android:fontFamily="@font/quicksand_medium"
             />
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -85,8 +103,7 @@
             app:layout_constraintTop_toBottomOf="@id/profileImageIcon"
             android:layout_marginTop="@dimen/dimen_24"
             android:paddingStart="@dimen/dimen_16"
-            android:paddingEnd="@dimen/dimen_16"
-            >
+            android:paddingEnd="@dimen/dimen_16">
 
             <TextView
                 android:id="@+id/userName"
@@ -116,6 +133,25 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     />
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/blue_amount_wallet"
+                    app:layout_constraintEnd_toStartOf="@id/wallet_balance"
+                    app:layout_constraintTop_toTopOf="@id/wallet_balance"
+                    app:layout_constraintBottom_toBottomOf="@id/wallet_balance"
+                    android:layout_marginEnd="@dimen/dimen_8"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/blue_amount_wallet"
+                    app:layout_constraintEnd_toStartOf="@id/walletPoint"
+                    app:layout_constraintTop_toTopOf="@id/walletPoint"
+                    app:layout_constraintBottom_toBottomOf="@id/walletPoint"
+                    android:layout_marginEnd="@dimen/dimen_8"
+                    />
 
                 <TextView
                     android:id="@+id/wallet_balance"
@@ -135,7 +171,7 @@
                     android:id="@+id/balance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NPR 2,123.00"
+                    android:text="@string/npr_xxxx"
                     android:textSize="16sp"
                     android:textColor="@color/bold_text_color"
                     android:fontFamily="@font/quicksand_bold"
@@ -162,7 +198,7 @@
                     android:id="@+id/walletPointValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NPR 2,123.00"
+                    android:text="@string/npr_xxxx"
                     android:textSize="16sp"
                     android:textColor="@color/bold_text_color"
                     android:fontFamily="@font/quicksand_bold"
@@ -222,8 +258,6 @@
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

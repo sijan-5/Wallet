@@ -41,7 +41,7 @@ class ProfileFragment() : Fragment() {
            ),
            ProfileItems.DataClassForProfileItems(
                R.drawable.account,
-               R.color.accountBackgroundColor, "Fill Kyc"
+               R.color.accountBackgroundColor, "Account"
            ),
 
            ProfileItems.DataClassForProfileItems(

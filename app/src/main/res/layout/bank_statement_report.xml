@@ -52,7 +52,7 @@
         android:id="@+id/currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NPR"
+        android:text="+ NPR"
         android:textSize="12sp"
         android:textColor="#33AD7A"
         app:layout_constraintEnd_toStartOf="@id/amount"

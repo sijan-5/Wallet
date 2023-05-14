@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:src="@drawable/fill_kyc"
+        android:scaleType="fitCenter"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/dimen_32"
         android:padding="@dimen/dimen_8"
@@ -31,6 +32,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/overflowArrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/greater_icon"
@@ -39,5 +41,28 @@
         app:layout_constraintBottom_toBottomOf="@id/profileItemName"
         />
 
+    <LinearLayout
+        android:id="@+id/childItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/profileItemImage"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

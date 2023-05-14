@@ -15,7 +15,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dimen_16"
+            android:paddingStart="@dimen/dimen_16"
+            android:paddingEnd="@dimen/dimen_16"
             >
         <ImageView
             android:id="@+id/itemLogo"
@@ -25,6 +26,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="@dimen/dimen_24"
+            android:paddingBottom="@dimen/dimen_24"
            />
 
         <TextView

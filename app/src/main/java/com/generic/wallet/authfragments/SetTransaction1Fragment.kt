@@ -19,7 +19,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SetTransaction1Fragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SetTransaction1Fragment : FragmentWithTitleBar() {
+class SetTransaction1Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,18 +35,17 @@ class SetTransaction1Fragment : FragmentWithTitleBar() {
         }
     }
 
-    override fun provideView(inflater: LayoutInflater): View {
-        _binding = FragmentSetTansaction1Binding.inflate(inflater)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+       _binding = FragmentSetTansaction1Binding.inflate(inflater)
         return binding.root
+
     }
 
-    override fun getTitle(): String {
-        return resources.getString(R.string.confirm_password)
-    }
-
-    override fun goToPreviousFragment() {
-        findNavController().popBackStack()
-    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
