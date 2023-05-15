@@ -37,8 +37,7 @@ class ProfileFragment() : Fragment() {
            ProfileItems.DataClassForProfileItems(
                R.drawable.fill_kyc,
                R.color.fill_kyc_backgroundColor,
-               "Fill Kyc"
-           ),
+               "Fill Kyc"),
            ProfileItems.DataClassForProfileItems(
                R.drawable.account,
                R.color.accountBackgroundColor, "Account"
@@ -78,7 +77,7 @@ class ProfileFragment() : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root

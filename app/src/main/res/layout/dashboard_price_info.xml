@@ -4,63 +4,99 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/new_wallet_bg"
-    app:layout_constraintEnd_toEndOf="parent"
+    android:background="@drawable/wallet_info_container"
     android:layout_marginTop="@dimen/dimen_24"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:padding="@dimen/dimen_16"
+ >
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/walletPng"
+        android:id="@+id/wallet_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimen_16"
-        android:background="@drawable/dashboard_one_icon_bg"
-        android:padding="@dimen/dimen_12"
         android:src="@drawable/wallet"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/dashboard_one_icon_bg"
+        android:padding="@dimen/dimen_16"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/walletBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/wallet_balance"
+        android:textSize="12sp"
+        android:textColor="@color/button_purple"
+        android:fontFamily="@font/quicksand_bold"
+        app:layout_constraintStart_toEndOf="@id/wallet_image"
         android:layout_marginStart="@dimen/dimen_16"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/walletPng"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@id/wallet_image"
+        android:layout_marginTop="@dimen/dimen_8"
+        />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/quicksand_medium"
-            android:text="@string/wallet_balance"
-            android:textColor="@color/button_purple" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/npr_xxxx"
+        android:textSize="20sp"
+        android:textColor="@color/bold_text_color"
+        android:fontFamily="@font/quicksand_bold"
+        app:layout_constraintStart_toStartOf="@id/walletBalance"
+        app:layout_constraintTop_toTopOf="@id/walletBalance"
+        android:layout_marginTop="@dimen/dimen_24"
+        />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/walletPng"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/dimen_16"-->
+<!--        android:background="@drawable/dashboard_one_icon_bg"-->
+<!--        android:padding="@dimen/dimen_12"-->
+<!--        android:src="@drawable/wallet"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="@string/npr"
-                android:textColor="@color/bold_text_color"
-                android:textSize="20sp" />
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/dimen_16"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/walletPng"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_8"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="@string/xxxx"
-                android:textColor="@color/bold_text_color"
-                android:textSize="20sp" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/quicksand_medium"-->
+<!--            android:text="@string/wallet_balance"-->
+<!--            android:textColor="@color/button_purple" />-->
 
-        </LinearLayout>
-    </LinearLayout>
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/quicksand_bold"-->
+<!--                android:text="@string/npr"-->
+<!--                android:textColor="@color/bold_text_color"-->
+<!--                android:textSize="20sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/dimen_8"-->
+<!--                android:fontFamily="@font/quicksand_bold"-->
+<!--                android:text="@string/xxxx"-->
+<!--                android:textColor="@color/bold_text_color"-->
+<!--                android:textSize="20sp" />-->
+
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
 

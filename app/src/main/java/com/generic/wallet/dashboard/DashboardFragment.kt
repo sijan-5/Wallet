@@ -225,7 +225,7 @@ class DashboardFragment : Fragment() {
             },
             DashBoardItemDataClass(
                 R.drawable.aanapurna,
-                resources.getString(R.string.annapurna),
+                resources.getString(R.string.aanapurna),
                 R.drawable.dashboard_one_icon_bg
             ) {
 

@@ -11,75 +11,86 @@
         android:layout_height="wrap_content">
 
 
+        <View
+            android:id="@+id/viewOne"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/custom_background"
+            app:layout_constraintBottom_toBottomOf="@id/view_to_clip_bg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_to_clip_bg"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="@id/walletPriceInfo"
+            app:layout_constraintTop_toTopOf="@id/walletPriceInfo"
+            app:layout_constraintVertical_bias="0.8" />
+
         <TextView
-            android:id="@+id/amount"
+            android:id="@+id/welcomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimen_48"
-            android:layout_marginTop="@dimen/dimen_110"
-            android:fontFamily="@font/quicksand_bold"
-            android:text="@string/npr_xxxx"
-            android:textColor="@color/bold_text_color"
-            android:textSize="18sp"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_48"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="@string/welcome"
+            android:textColor="@color/white"
+            android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/walletAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/black_amount_wallet"
-            app:layout_constraintBottom_toBottomOf="@id/balanceText"
-            app:layout_constraintStart_toStartOf="@id/amount"
-            app:layout_constraintTop_toTopOf="@id/balanceText" />
-
         <TextView
-            android:id="@+id/balanceText"
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimen_8"
-            android:layout_marginTop="@dimen/dimen_8"
-            android:fontFamily="@font/quicksand_medium"
-            android:text="@string/balance"
-            android:textColor="@color/bold_text_color"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/walletAmount"
-            app:layout_constraintTop_toBottomOf="@id/amount" />
-
-        <TextView
-            android:id="@+id/point"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_110"
-            android:layout_marginEnd="@dimen/dimen_48"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="2dp"
             android:fontFamily="@font/quicksand_bold"
-            android:text="XX.X"
-            android:textColor="@color/bold_text_color"
-            android:textSize="18sp"
+            android:text="@string/name_lastname"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcomeText" />
+
+        <ImageView
+            android:layout_width="@dimen/dimen_32"
+            android:layout_height="@dimen/dimen_32"
+            android:layout_marginTop="@dimen/dimen_48"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:background="@drawable/dashboard_one_icon_bg"
+            android:padding="@dimen/dimen_8"
+            android:src="@drawable/notification"
+            app:layout_constraintBottom_toBottomOf="@id/profileImageIcon"
+            app:layout_constraintRight_toLeftOf="@id/profileImageIcon"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileImageIcon"
+            android:layout_width="@dimen/dimen_40"
+            android:layout_height="@dimen/dimen_40"
+            android:layout_marginTop="@dimen/dimen_48"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:src="@drawable/dhoni"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/imageViewRounded"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/walletPoint"
-            android:layout_width="wrap_content"
+        <include
+            android:id="@+id/walletPriceInfo"
+            layout="@layout/dashboard_wallet_container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dimen_8"
-            android:src="@drawable/wallet_point"
-            app:layout_constraintBottom_toBottomOf="@id/walletPointText"
-            app:layout_constraintEnd_toStartOf="@id/walletPointText"
-            app:layout_constraintTop_toTopOf="@id/walletPointText" />
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:layout_marginEnd="@dimen/dimen_16"
+            app:layout_constraintTop_toBottomOf="@id/userName" />
 
-        <TextView
-            android:id="@+id/walletPointText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_8"
-            android:fontFamily="@font/quicksand_medium"
-            android:text="Wallet Point"
-            android:textColor="@color/bold_text_color"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@id/point"
-            app:layout_constraintTop_toBottomOf="@id/point" />
+
 
 
         <androidx.cardview.widget.CardView
@@ -88,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_24"
             android:backgroundTint="@color/card_bgc"
-            app:layout_constraintTop_toBottomOf="@id/balanceText">
+            app:layout_constraintTop_toBottomOf="@id/walletPriceInfo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -138,14 +149,17 @@
             android:id="@+id/servicesRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_8"
             app:layout_constraintTop_toBottomOf="@id/cardView" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/mountainImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_24"
+            android:scaleType="fitXY"
+            android:layout_marginTop="@dimen/dimen_8"
+             android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_16"
             android:src="@drawable/mountain"
             app:layout_constraintTop_toBottomOf="@id/servicesRecyclerView" />
 
@@ -263,7 +277,7 @@
             android:id="@+id/utilitiesRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_8"
             app:layout_constraintTop_toBottomOf="@id/chipsScrollView"/>
 
 
@@ -272,8 +286,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_16"
-            android:layout_marginTop="@dimen/dimen_24"
             android:scrollbars="none"
+            android:layout_marginTop="@dimen/dimen_8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/utilitiesRecyclerView">
 
@@ -356,7 +370,6 @@
             android:id="@+id/merchantsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:paddingBottom="@dimen/dimen_24"
             app:layout_constraintTop_toBottomOf="@id/chipsScrollViewSecond"
             tools:layout_editor_absoluteX="80dp" />

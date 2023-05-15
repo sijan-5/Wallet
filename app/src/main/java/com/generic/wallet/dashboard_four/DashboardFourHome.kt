@@ -5,14 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.R
 import com.generic.wallet.dashboard.DashBoardAdapter
 import com.generic.wallet.dashboard.DashBoardItemDataClass
 import com.generic.wallet.dashboard_one.DashboardOneAdapter
 import com.generic.wallet.dashboard_one.DashboardOneDataClass
-import com.generic.wallet.dashboard_third.AdapterThirdServices
 import com.generic.wallet.databinding.FragmentDashboardFourHomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -172,7 +170,7 @@ class DashboardFourHome : Fragment() {
                 R.drawable.dashboard_one_icon_bg
             ){},
             DashboardOneDataClass(
-                resources.getString(R.string.annapurna),
+                resources.getString(R.string.aanapurna),
                 R.drawable.aanapurna,
                 R.drawable.dashboard_one_icon_bg
             ){},

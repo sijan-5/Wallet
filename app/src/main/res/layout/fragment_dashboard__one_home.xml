@@ -21,7 +21,7 @@
         android:layout_marginBottom="@dimen/dimen_12"
         />
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profileImage"
             android:layout_width="@dimen/dimen_48"
             android:layout_height="@dimen/dimen_48"
@@ -29,6 +29,7 @@
            app:layout_constraintBottom_toTopOf="@id/balanceText"
             android:layout_marginBottom="@dimen/dimen_40"
             android:src="@drawable/dhoni"
+            app:shapeAppearanceOverlay="@style/imageViewRounded"
             app:layout_constraintStart_toStartOf="parent"
             />
 
@@ -184,7 +185,7 @@
             android:id="@+id/merchantsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Merchant"
+            android:text="@string/merchant"
             android:textSize="12sp"
             android:textColor="@color/bold_text_color"
             android:fontFamily="@font/quicksand_bold"
@@ -222,7 +223,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/merchantsText"
-            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginTop="@dimen/dimen_8"
             android:paddingBottom="@dimen/dimen_24"
             />
 

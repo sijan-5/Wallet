@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.R
+import com.generic.wallet.dashboard.DashBoardAdapter
+import com.generic.wallet.dashboard.DashBoardItemDataClass
 import com.generic.wallet.databinding.FragmentDashboardOneHomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -50,7 +52,7 @@ class DashboardOneHome : Fragment() {
         binding.servicesRecyclerView.layoutManager =
             GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
         binding.servicesRecyclerView.adapter =
-            DashboardOneAdapter(getServices())
+            DashBoardAdapter(getServices())
 
         //utilities
         binding.utilitiesRecyclerView.layoutManager =
@@ -62,31 +64,31 @@ class DashboardOneHome : Fragment() {
         binding.merchantRecyclerView.layoutManager =
             GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
         binding.merchantRecyclerView.adapter =
-            DashboardOneAdapter(getMerchant())
+            DashBoardAdapter(getMerchant())
     }
 
-    private fun getMerchant(): List<DashboardOneDataClass> {
+    private fun getMerchant(): List<DashBoardItemDataClass> {
         return listOf(
-            DashboardOneDataClass(
-                resources.getString(R.string.Daraz),
+            DashBoardItemDataClass(
                 R.drawable.daraz,
+                resources.getString(R.string.Daraz),
                 R.drawable.dashboard_one_icon_bg
-            ){},
-            DashboardOneDataClass(
-                resources.getString(R.string.food_mandu),
+            ) {},
+            DashBoardItemDataClass(
                 R.drawable.foodmandu,
+                resources.getString(R.string.food_mandu),
                 R.drawable.dashboard_one_icon_bg
-            ){},
-            DashboardOneDataClass(
-                resources.getString(R.string.annapurna),
+            ) {},
+            DashBoardItemDataClass(
                 R.drawable.aanapurna,
+                resources.getString(R.string.aanapurna),
                 R.drawable.dashboard_one_icon_bg
-            ){},
-            DashboardOneDataClass(
-                resources.getString(R.string.platinum),
+            ) {},
+            DashBoardItemDataClass(
                 R.drawable.platinum,
+                resources.getString(R.string.platinum),
                 R.drawable.dashboard_one_icon_bg
-            ){}
+            ) {}
         )
 
     }
@@ -143,29 +145,28 @@ class DashboardOneHome : Fragment() {
             )
     }
 
-    private fun getServices(): List<DashboardOneDataClass> {
+    private fun getServices(): List<DashBoardItemDataClass> {
         return listOf(
-            DashboardOneDataClass(
-                resources.getString(R.string.send_money),
+            DashBoardItemDataClass(
                 R.drawable.send_money,
-                R.drawable.dashboard_one_icon_bg,
+                resources.getString(R.string.send_money),
+                R.drawable.dashboard_one_icon_bg
             ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.request_money),
+            DashBoardItemDataClass(
                 R.drawable.request_money,
-                R.drawable.dashboard_one_icon_bg,
+                resources.getString(R.string.send_money),
+                R.drawable.dashboard_one_icon_bg
             ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.load_wallet),
+            DashBoardItemDataClass(
                 R.drawable.load_wallet,
-                R.drawable.dashboard_one_icon_bg,
+                resources.getString(R.string.send_money),
+                R.drawable.dashboard_one_icon_bg
             ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.bank_transfer),
+            DashBoardItemDataClass(
                 R.drawable.bank_transfer_01,
-                R.drawable.dashboard_one_icon_bg,
-            ) {},
-        )
+                resources.getString(R.string.send_money),
+                R.drawable.dashboard_one_icon_bg
+            ) {})
     }
 
 

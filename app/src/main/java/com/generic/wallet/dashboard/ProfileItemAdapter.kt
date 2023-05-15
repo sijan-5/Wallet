@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.generic.wallet.R
+import org.w3c.dom.Text
 
 class ProfileItemAdapter(
     private val profileItemList: List<ProfileItems>,
@@ -73,8 +75,17 @@ class ProfileItemAdapter(
                     ))
 
                 holder.overflowArrow.setOnClickListener {
-                    holder.childItems.visibility = View.VISIBLE
-                    holder.overflowArrow.setImageResource(R.drawable.hide_child_items)
+                    if(holder.childItems.visibility == View.VISIBLE)
+                    {
+                        holder.childItems.visibility = View.GONE
+                    }
+                    else
+                    {
+                        holder.childItems.visibility = View.VISIBLE
+                    }
+                }
+                holder.firstChild.setOnClickListener {
+                    Toast.makeText(context, "child",Toast.LENGTH_LONG).show()
                 }
 
             }
@@ -123,6 +134,7 @@ class ProfileItemAdapter(
         val profileItemName: TextView = itemView.findViewById(R.id.profileItemName)
         val childItems : LinearLayout = itemView.findViewById(R.id.childItems)
         val overflowArrow : ImageView = itemView.findViewById(R.id.overflowArrow)
+        val firstChild : TextView = itemView.findViewById(R.id.first_item)
     }
 
     class DividerViewHolder(view: View) : RecyclerView.ViewHolder(view) {

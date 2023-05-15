@@ -20,7 +20,6 @@ class DashBoardAdapter(val list : List<DashBoardItemDataClass>) : RecyclerView.A
         return  ViewHolder(view).apply {
 
             dashBoardItemView.setOnClickListener {
-
                 val position = list[adapterPosition]
                 position.clickedItem.invoke()
 

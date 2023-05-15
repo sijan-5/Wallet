@@ -125,7 +125,9 @@
     <string name="Daraz">Daraz</string>
     <string name="food_mandu">Foodmandu</string>
     <string name="platinum">Club Platinum</string>
-    <string name="annapurna">Aanapurna V.</string>
+    <string name="aanapurna">Aanapurna V.</string>
+    <string name="ncell_top_up">Ncell TopUp</string>
+    <string name="dish_home_price">Dish Home</string>
     <string name="balance">Balance</string>
     <string name="bill_payments">Bill Payments</string>
     <string name="bookings">Bookings</string>
@@ -137,5 +139,8 @@
     <string name="welcome">welcome,</string>
     <string name="profile">Profile</string>
     <string name="edit">Edit</string>
+    <string name="welcome_">welcome,</string>
+    <string name="xx_x">XX.X</string>
+    <string name="recent_payments">Recent Payments</string>
 
 </resources>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="">
+    tools:context="dashboard_four.DashboardFourHome">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,9 +33,9 @@
             android:layout_marginStart="@dimen/dimen_16"
             android:layout_marginTop="@dimen/dimen_48"
             android:fontFamily="@font/quicksand_medium"
-            android:text="welcome,"
+            android:text="@string/welcome_"
             android:textColor="@color/white"
-            android:textSize="10sp"
+            android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -289,9 +289,6 @@
             android:layout_marginTop="@dimen/dimen_12"
             android:paddingBottom="@dimen/dimen_24"
             />
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

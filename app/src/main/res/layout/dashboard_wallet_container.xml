@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/wallet_info_container"
+    android:paddingStart="@dimen/dimen_16"
+    android:paddingEnd="@dimen/dimen_16"
+    android:paddingTop="@dimen/dimen_16"
+    android:paddingBottom="@dimen/dimen_16"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/npr_xxxx"
+        android:textColor="@color/bold_text_color"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/walletAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/black_amount_wallet"
+        app:layout_constraintBottom_toBottomOf="@id/balanceText"
+        app:layout_constraintStart_toStartOf="@id/amount"
+        app:layout_constraintTop_toTopOf="@id/balanceText" />
+
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:fontFamily="@font/quicksand_medium"
+        android:text="@string/balance"
+        android:textColor="@color/bold_text_color"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/walletAmount"
+        app:layout_constraintTop_toBottomOf="@id/amount" />
+
+    <TextView
+        android:id="@+id/point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="@string/xx_x"
+        android:textColor="@color/bold_text_color"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/walletPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:src="@drawable/wallet_point"
+        app:layout_constraintBottom_toBottomOf="@id/walletPointText"
+        app:layout_constraintEnd_toStartOf="@id/walletPointText"
+        app:layout_constraintTop_toTopOf="@id/walletPointText" />
+
+    <TextView
+        android:id="@+id/walletPointText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Wallet Point"
+        android:textColor="@color/bold_text_color"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/point"
+        app:layout_constraintTop_toBottomOf="@id/point" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.R
+import com.generic.wallet.bankTransferFeature.BankListAdapter
+import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
 import com.generic.wallet.dashboard_one.DashboardOneAdapter
 import com.generic.wallet.dashboard_one.DashboardOneDataClass
 import com.generic.wallet.databinding.FragmentDashBoardThirdHomeBinding
@@ -25,7 +27,7 @@ class DashBoardThirdHome : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var _binding : FragmentDashBoardThirdHomeBinding?= null
+    private var _binding: FragmentDashBoardThirdHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +61,7 @@ class DashBoardThirdHome : Fragment() {
         binding.utilitiesRecyclerView.layoutManager =
             GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
         binding.utilitiesRecyclerView.adapter =
-            DashboardOneAdapter(getUtilities())
+            AdapterThirdRecentPayments(getUtilities())
 
         //utilities
         binding.merchantRecyclerView.layoutManager =
@@ -69,78 +71,49 @@ class DashBoardThirdHome : Fragment() {
     }
 
 
-    private fun getUtilities(): List<DashboardOneDataClass> {
+    private fun getUtilities(): List<BankLogoAndNameDataClass> {
         return listOf(
-            DashboardOneDataClass(
-                resources.getString(R.string.top_up),
-                R.drawable.top_up_b,
-                R.drawable.dashboard_one_icon_bg,
-            ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.landline),
-                R.drawable.landline_b,
-                R.drawable.dashboard_one_icon_bg,
+            BankLogoAndNameDataClass(
+                R.drawable.ncell_l,
+                resources.getString(R.string.ncell_top_up),
+            ),
+            BankLogoAndNameDataClass(
+                R.drawable.dish_home,
+                resources.getString(R.string.dish_home_price),
+            ),
 
-                ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.electricity),
-                R.drawable.electricity_b,
-                R.drawable.dashboard_one_icon_bg,
-            ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.internet),
-                R.drawable.internet_b,
-                R.drawable.dashboard_one_icon_bg,
-            ) {},
+            BankLogoAndNameDataClass(
+                R.drawable.wlink_logo,
+                resources.getString(R.string.world_link),
+            ),
 
-            DashboardOneDataClass(
-                resources.getString(R.string.water),
-                R.drawable.water_b,
-                R.drawable.dashboard_one_icon_bg,
-
-                ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.tv),
-                R.drawable.tv_b,
-                R.drawable.dashboard_one_icon_bg,
-
-                ) {},
-
-            DashboardOneDataClass(
-                resources.getString(R.string.dataPack),
-                R.drawable.data_pack_b,
-                R.drawable.dashboard_one_icon_bg,
-            ) {},
-
-            DashboardOneDataClass(
-                resources.getString(R.string.more),
-                R.drawable.more_b,
-                R.drawable.dashboard_one_icon_bg,
-            ) {},
-
+            BankLogoAndNameDataClass(
+                R.drawable.nea,
+                resources.getString(R.string.nea),
             )
+        )
     }
 
     private fun getServices(): List<DashboardOneDataClass> {
         return listOf(
             DashboardOneDataClass(
                 resources.getString(R.string.send_money),
-                R.drawable.send_money,
+                R.drawable.send_money_l,
                 R.drawable.dashboard_one_icon_bg,
             ) {},
             DashboardOneDataClass(
                 resources.getString(R.string.request_money),
-                R.drawable.request_money,
+                R.drawable.request_money_l,
                 R.drawable.dashboard_one_icon_bg,
             ) {},
             DashboardOneDataClass(
                 resources.getString(R.string.load_wallet),
-                R.drawable.load_wallet,
+                R.drawable.load_wallet_l,
                 R.drawable.dashboard_one_icon_bg,
             ) {},
             DashboardOneDataClass(
                 resources.getString(R.string.bank_transfer),
-                R.drawable.bank_transfer_01,
+                R.drawable.bank_transfer_01_l,
                 R.drawable.dashboard_one_icon_bg,
             ) {},
         )
@@ -153,22 +126,22 @@ class DashBoardThirdHome : Fragment() {
                 resources.getString(R.string.Daraz),
                 R.drawable.daraz,
                 R.drawable.dashboard_one_icon_bg
-            ){},
+            ) {},
             DashboardOneDataClass(
                 resources.getString(R.string.food_mandu),
                 R.drawable.foodmandu,
                 R.drawable.dashboard_one_icon_bg
-            ){},
+            ) {},
             DashboardOneDataClass(
-                resources.getString(R.string.annapurna),
+                resources.getString(R.string.aanapurna),
                 R.drawable.aanapurna,
                 R.drawable.dashboard_one_icon_bg
-            ){},
+            ) {},
             DashboardOneDataClass(
                 resources.getString(R.string.platinum),
                 R.drawable.platinum,
                 R.drawable.dashboard_one_icon_bg
-            ){}
+            ) {}
         )
 
     }
