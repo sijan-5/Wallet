@@ -48,6 +48,8 @@ class ForgotPasswordFragment : FragmentWithTitleBar() {
         findNavController().popBackStack()
     }
 
+
+
 //    override fun onCreateView(
 //        inflater: LayoutInflater, container: ViewGroup?,
 //        savedInstanceState: Bundle?

@@ -10,15 +10,15 @@ import com.generic.wallet.R
 import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
 import org.w3c.dom.Text
 
-class DashBoardAdapter(val list : List<DashBoardItemDataClass>) : RecyclerView.Adapter<DashBoardAdapter.ViewHolder> () {
+class DashBoardAdapter(val list: List<DashBoardItemDataClass>) :
+    RecyclerView.Adapter<DashBoardAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashBoardAdapter.ViewHolder {
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.dash_board_item_layout, parent,false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.dash_board_item_layout, parent, false)
 
-
-        return  ViewHolder(view).apply {
-
+        return ViewHolder(view).apply {
             dashBoardItemView.setOnClickListener {
                 val position = list[adapterPosition]
                 position.clickedItem.invoke()
@@ -43,10 +43,9 @@ class DashBoardAdapter(val list : List<DashBoardItemDataClass>) : RecyclerView.A
     override fun getItemCount(): Int = list.size
 
 
-    class ViewHolder(val dashBoardItemView : View) : RecyclerView.ViewHolder(dashBoardItemView)
-    {
-        val logoImage : ImageView = dashBoardItemView.findViewById(R.id.dashboardItemLogo)
-        val logoName : TextView = dashBoardItemView.findViewById(R.id.dashBoardItemName)
+    class ViewHolder(val dashBoardItemView: View) : RecyclerView.ViewHolder(dashBoardItemView) {
+        val logoImage: ImageView = dashBoardItemView.findViewById(R.id.dashboardItemLogo)
+        val logoName: TextView = dashBoardItemView.findViewById(R.id.dashBoardItemName)
     }
 
 

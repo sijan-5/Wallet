@@ -88,7 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/carViewFillKyc"
-        android:layout_marginTop="@dimen/dimen_24"
+        android:layout_marginTop="@dimen/dimen_8"
         android:id="@+id/servicesRecyclerView"
         />
     <TextView
@@ -100,7 +100,7 @@
         android:textColor="@color/bold_text_color"
         android:fontFamily="@font/quicksand_bold"
         app:layout_constraintTop_toBottomOf="@id/servicesRecyclerView"
-        android:layout_marginTop="@dimen/dimen_12"
+        android:layout_marginTop="@dimen/dimen_8"
         android:layout_marginStart="@dimen/dimen_16"
         app:layout_constraintStart_toStartOf="parent"
         />
@@ -110,7 +110,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/utilitiesText"
-        android:layout_marginTop="@dimen/dimen_12"
+        android:layout_marginTop="@dimen/dimen_8"
         />
 
 
@@ -123,7 +123,7 @@
             android:textColor="@color/bold_text_color"
             android:fontFamily="@font/quicksand_bold"
             app:layout_constraintTop_toBottomOf="@id/utilitiesRecyclerView"
-            android:layout_marginTop="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_8"
             android:layout_marginStart="@dimen/dimen_16"
             app:layout_constraintStart_toStartOf="parent"
             />

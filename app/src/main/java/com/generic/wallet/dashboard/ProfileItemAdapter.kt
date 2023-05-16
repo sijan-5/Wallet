@@ -22,6 +22,7 @@ class ProfileItemAdapter(
     private val profileItems = 1
     private val divider = 2
 
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -92,30 +93,11 @@ class ProfileItemAdapter(
             ProfileItems.Divider -> {
 
             }
-
-
         }
     }
 
 
-//        when (holder.itemViewType) {
-//            profileItems -> {
-//                val profileItemsHolder = holder as ProfileItemViewHolder
-//                profileItemsHolder.profileItemImage.setImageResource(item.imageResource)
-//                profileItemsHolder.profileItemName.text = item.serviceName
-//                profileItemsHolder.profileItemImage.setBackgroundResource(R.drawable.fill_kyc_background)
-//                profileItemsHolder.profileItemImage.setBackgroundColor(
-//                    ContextCompat.getColor(
-//                        context,
-//                        item.backgroundColorId
-//                    )
-//
-//            }
-//        }
-
-
     override fun getItemViewType(position: Int): Int {
-//        return super.getItemViewType(position)
 
         return when (profileItemList[position]) {
             is ProfileItems.DataClassForProfileItems -> profileItems
@@ -126,7 +108,6 @@ class ProfileItemAdapter(
 
 
     override fun getItemCount(): Int = profileItemList.size
-
 
     class ProfileItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

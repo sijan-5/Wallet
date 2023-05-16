@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/dimen_24"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".dashboard.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
       >
         <View
             android:layout_width="match_parent"
@@ -98,6 +100,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toBottomOf="@id/profileImageIcon"
@@ -210,8 +213,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
             <TextView
                 android:id="@+id/phoneNumber"
                 android:layout_width="wrap_content"
@@ -248,19 +249,15 @@
                 />
 
 
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/horizontalLine"
-                android:layout_marginTop="@dimen/dimen_16"
-                />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <ExpandableListView
+            android:id="@+id/expandableListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:dividerHeight="1dp"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 </androidx.core.widget.NestedScrollView>

@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.R
 import com.generic.wallet.bankTransferFeature.BankListAdapter
 import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
+import com.generic.wallet.dashboard.DashBoardAdapter
+import com.generic.wallet.dashboard.DashBoardItemDataClass
 import com.generic.wallet.dashboard_one.DashboardOneAdapter
 import com.generic.wallet.dashboard_one.DashboardOneDataClass
 import com.generic.wallet.databinding.FragmentDashBoardThirdHomeBinding
@@ -67,7 +69,7 @@ class DashBoardThirdHome : Fragment() {
         binding.merchantRecyclerView.layoutManager =
             GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
         binding.merchantRecyclerView.adapter =
-            DashboardOneAdapter(getMerchant())
+            DashBoardAdapter(getMerchant())
     }
 
 
@@ -120,29 +122,28 @@ class DashBoardThirdHome : Fragment() {
     }
 
 
-    private fun getMerchant(): List<DashboardOneDataClass> {
+    private fun getMerchant(): List<DashBoardItemDataClass> {
         return listOf(
-            DashboardOneDataClass(
-                resources.getString(R.string.Daraz),
+            DashBoardItemDataClass(
                 R.drawable.daraz,
+                resources.getString(R.string.Daraz),
                 R.drawable.dashboard_one_icon_bg
-            ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.food_mandu),
+            ) {} ,
+                    DashBoardItemDataClass(
                 R.drawable.foodmandu,
+                resources.getString(R.string.food_mandu),
                 R.drawable.dashboard_one_icon_bg
-            ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.aanapurna),
+            ) {} ,
+        DashBoardItemDataClass(
                 R.drawable.aanapurna,
+                resources.getString(R.string.aanapurna),
                 R.drawable.dashboard_one_icon_bg
             ) {},
-            DashboardOneDataClass(
-                resources.getString(R.string.platinum),
+            DashBoardItemDataClass(
                 R.drawable.platinum,
+                resources.getString(R.string.platinum),
                 R.drawable.dashboard_one_icon_bg
-            ) {}
-        )
+            ) {} )
 
     }
 

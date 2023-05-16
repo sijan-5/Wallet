@@ -3,15 +3,18 @@ package com.generic.wallet.dashboard
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import android.widget.ExpandableListView.OnGroupExpandListener
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.generic.wallet.ExpandableListAdapter
+import com.generic.wallet.ExpandableListDataItems
 import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentProfileBinding
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -90,8 +93,17 @@ class ProfileFragment() : Fragment() {
         val currentDestinationID = findNavController().currentDestination?.id
         Log.d("currentID", currentDestinationID.toString())
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = ProfileItemAdapter(listOfProfileItems,requireContext())
+        val getHasMap = ExpandableListDataItems.getData()
+        val listOfKeys  = getHasMap.keys.toList()
+        Log.d("keys", listOfKeys.toString())
+        val customizedListAdapter = ExpandableListAdapter(requireContext(),listOfKeys,getHasMap)
+        binding.expandableListView.setAdapter(customizedListAdapter)
+
+        binding.expandableListView.setOnGroupExpandListener(OnGroupExpandListener { groupPosition ->
+
+            Toast.makeText(requireContext(),"expanded", Toast.LENGTH_LONG).show()
+        })
+
 
         binding.backArrow.setOnClickListener {
             findNavController().popBackStack()

@@ -45,6 +45,7 @@ abstract class FragmentWithTitleBar : Fragment() {
     abstract fun goToPreviousFragment()
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

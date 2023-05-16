@@ -20,7 +20,7 @@
             android:id="@+id/bankLogo"
             android:layout_width="58dp"
             android:layout_height="58dp"
-            android:padding="@dimen/dimen_8"
+            android:padding="@dimen/dimen_12"
             android:scaleType="centerInside"
             android:src="@drawable/garima_1" />
     </androidx.cardview.widget.CardView>

@@ -71,7 +71,7 @@ class BottomNavigationCircles : BottomNavigationView {
 
     private fun init(attrs: AttributeSet? = null) {
         getColors(attrs)
-        getBackgroundDrawable(attrs)
+        getBackgroundDrawable()
         setupRootLayout()
         setupListener()
         setupClipping()
@@ -84,15 +84,15 @@ class BottomNavigationCircles : BottomNavigationView {
     }
 
 
-    private fun getBackgroundDrawable(attrs: AttributeSet?) {
+    private fun getBackgroundDrawable() {
 
         backgroundShape = Shape.Circle
         customBackgroundDrawable = -1
-
     }
 
 
     private fun setupRootLayout() {
+
         val menuViewGroup = getChildAt(0) as BottomNavigationMenuView
         menuViewGroup.id = menuViewGroupId
         rootLayout = RelativeLayout(context)
@@ -124,6 +124,9 @@ class BottomNavigationCircles : BottomNavigationView {
 
         if (view.parent is View) {
             disableClipOnParents(view.parent as View)
+        }
+        else{
+            Log.d("this", view.parent.toString())
         }
     }
 

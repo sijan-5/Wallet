@@ -11,14 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.generic.wallet.R
 
 class DashboardOneAdapter(
-    private val listOfItems: List<DashboardOneDataClass>,
-    private val cashBackText:String = "Your cash back is 5%",
+    private val listOfItems: List<DashboardOneDataClass>
 ) : RecyclerView.Adapter<DashboardOneAdapter.ViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): DashboardOneAdapter.ViewHolder {
-
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.dashboard_one_recycler_item, parent, false)
         return ViewHolder(view)
@@ -31,12 +29,10 @@ class DashboardOneAdapter(
         holder.itemImage.setBackgroundResource(item.imageResource_bg_drawable)
         holder.itemName.text = item.logoName
 
-        if(item.cashBackBoolean)
-        {
-            holder.cashBack.text = cashBackText
+        if (item.cashBackBoolean) {
+            holder.cashBack.text = "CashBack ${item.minCashBackPercentage}%-${item.maxCashBackPercentage}"
             holder.cashBack.visibility = View.VISIBLE
-        }
-        else{
+        } else {
             holder.cashBack.visibility = View.GONE
         }
     }
@@ -46,7 +42,7 @@ class DashboardOneAdapter(
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val itemImage: ImageView = itemView.findViewById<ImageView>(R.id.dashboardItemLogo)
         val itemName: TextView = itemView.findViewById(R.id.dashBoardItemName)
-        val cashBack :TextView = itemView.findViewById(R.id.cashBackText)
+        val cashBack: TextView = itemView.findViewById(R.id.cashBackText)
     }
 
 }

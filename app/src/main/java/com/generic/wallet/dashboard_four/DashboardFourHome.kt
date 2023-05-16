@@ -27,7 +27,7 @@ class DashboardFourHome : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var _binding:FragmentDashboardFourHomeBinding? = null
+    private var _binding: FragmentDashboardFourHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,8 +39,7 @@ class DashboardFourHome : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentDashboardFourHomeBinding.inflate(inflater)
@@ -54,71 +53,69 @@ class DashboardFourHome : Fragment() {
         //services
         binding.servicesRecyclerView.layoutManager =
             GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
-        binding.servicesRecyclerView.adapter =
-                DashBoardAdapter(getServices())
+        binding.servicesRecyclerView.adapter = DashBoardAdapter(getServices())
 
         //utilities
         binding.utilitiesRecyclerView.layoutManager =
             GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
-        binding.utilitiesRecyclerView.adapter =
-            DashboardOneAdapter(getUtilities())
+        binding.utilitiesRecyclerView.adapter = DashboardOneAdapter(getUtilities())
 
         //utilities
         binding.merchantRecyclerView.layoutManager =
             GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
-        binding.merchantRecyclerView.adapter =
-            DashboardOneAdapter(getMerchant())
+        binding.merchantRecyclerView.adapter = DashBoardAdapter(getMerchant())
     }
 
     private fun getUtilities(): List<DashboardOneDataClass> {
         return listOf(
             DashboardOneDataClass(
                 resources.getString(R.string.top_up),
-                R.drawable.top_up_b,
+                R.drawable.top__up,
                 R.drawable.icon_back_ground,
-                true
+                true,
+                2f,
+                5f
             ) {},
             DashboardOneDataClass(
                 resources.getString(R.string.landline),
-                R.drawable.landline_b,
+                R.drawable.landline,
                 R.drawable.landline_background,
-
                 ) {},
             DashboardOneDataClass(
                 resources.getString(R.string.electricity),
-                R.drawable.electricity_b,
+                R.drawable.electricity,
                 R.drawable.electricitybackground,
             ) {},
             DashboardOneDataClass(
                 resources.getString(R.string.internet),
-                R.drawable.internet_b,
+                R.drawable.internet,
                 R.drawable.internetbackground,
                 true
             ) {},
 
             DashboardOneDataClass(
                 resources.getString(R.string.water),
-                R.drawable.water_b,
+                R.drawable.water,
                 R.drawable.waterbackground,
 
                 ) {},
             DashboardOneDataClass(
                 resources.getString(R.string.tv),
-                R.drawable.tv_b,
+                R.drawable.tv,
                 R.drawable.tvbackground,
 
                 ) {},
 
             DashboardOneDataClass(
                 resources.getString(R.string.dataPack),
-                R.drawable.data_pack_b,
+                R.drawable.datapack,
                 R.drawable.datapackbackground
 
             ) {},
 
             DashboardOneDataClass(
                 resources.getString(R.string.more),
-                R.drawable.more_b,
+                R.drawable.more,
                 R.drawable.morebackground,
             ) {},
 
@@ -157,32 +154,26 @@ class DashboardFourHome : Fragment() {
     }
 
 
-    private fun getMerchant(): List<DashboardOneDataClass> {
-        return listOf(
-            DashboardOneDataClass(
-                resources.getString(R.string.Daraz),
-                R.drawable.daraz,
-                R.drawable.dashboard_one_icon_bg
-            ){},
-            DashboardOneDataClass(
-                resources.getString(R.string.food_mandu),
-                R.drawable.foodmandu,
-                R.drawable.dashboard_one_icon_bg
-            ){},
-            DashboardOneDataClass(
-                resources.getString(R.string.aanapurna),
-                R.drawable.aanapurna,
-                R.drawable.dashboard_one_icon_bg
-            ){},
-            DashboardOneDataClass(
-                resources.getString(R.string.platinum),
-                R.drawable.platinum,
-                R.drawable.dashboard_one_icon_bg
-            ){}
-        )
+    private fun getMerchant(): List<DashBoardItemDataClass> {
+        return listOf(DashBoardItemDataClass(
+            R.drawable.daraz,
+            resources.getString(R.string.Daraz),
+            R.drawable.dashboard_one_icon_bg
+        ) {}, DashBoardItemDataClass(
+            R.drawable.foodmandu,
+            resources.getString(R.string.food_mandu),
+            R.drawable.dashboard_one_icon_bg
+        ) {}, DashBoardItemDataClass(
+            R.drawable.aanapurna,
+            resources.getString(R.string.aanapurna),
+            R.drawable.dashboard_one_icon_bg
+        ) {}, DashBoardItemDataClass(
+            R.drawable.platinum,
+            resources.getString(R.string.platinum),
+            R.drawable.dashboard_one_icon_bg
+        ) {})
 
     }
-
 
 
     companion object {
@@ -196,12 +187,11 @@ class DashboardFourHome : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DashboardFourHome().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        fun newInstance(param1: String, param2: String) = DashboardFourHome().apply {
+            arguments = Bundle().apply {
+                putString(ARG_PARAM1, param1)
+                putString(ARG_PARAM2, param2)
             }
+        }
     }
 }

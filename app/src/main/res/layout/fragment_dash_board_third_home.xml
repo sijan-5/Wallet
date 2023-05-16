@@ -33,9 +33,9 @@
             android:layout_marginStart="@dimen/dimen_16"
             android:layout_marginTop="@dimen/dimen_48"
             android:fontFamily="@font/quicksand_medium"
-            android:text="welcome,"
+            android:text="@string/welcome_"
             android:textColor="@color/white"
-            android:textSize="10sp"
+            android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,7 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/recent_payments"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textColor="@color/bold_text_color"
             android:fontFamily="@font/quicksand_bold"
             app:layout_constraintTop_toBottomOf="@id/servicesRecyclerView"
@@ -179,7 +179,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/offers"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textColor="@color/bold_text_color"
             android:fontFamily="@font/quicksand_bold"
             app:layout_constraintTop_toBottomOf="@id/utilitiesRecyclerView"
@@ -246,8 +246,8 @@
             android:id="@+id/merchantText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/offers"
-            android:textSize="12sp"
+            android:text="@string/merchant"
+            android:textSize="14sp"
             android:textColor="@color/bold_text_color"
             android:fontFamily="@font/quicksand_bold"
             app:layout_constraintTop_toBottomOf="@id/horizontalScrollView"
@@ -284,11 +284,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/merchantText"
-            android:layout_marginTop="@dimen/dimen_12"
-            android:paddingBottom="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:paddingBottom="@dimen/dimen_32"
             />
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
