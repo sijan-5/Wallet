@@ -25,7 +25,14 @@ class ExpandableListDataItems {
 
             profileItemHashMap["Account"] = accountChildList
             profileItemHashMap["Support"] = supportChildList
-            profileItemHashMap["App"] = appChildList
+            profileItemHashMap["Appp"] = appChildList
+            profileItemHashMap["Appq"] = appChildList
+            profileItemHashMap["Appr"] = appChildList
+            profileItemHashMap["Apps"] = appChildList
+            profileItemHashMap["Appt"] = appChildList
+            profileItemHashMap["Appu"] = appChildList
+            profileItemHashMap["Appv"] = appChildList
+
 
             return profileItemHashMap
 

@@ -34,7 +34,6 @@ class SendMoneyPaymentMethodFragment : BaseFragmentForDashboard() {
 
     override fun getView(inflater: LayoutInflater): View {
         _binding = FragmentSendMoneyPaymentMethodBinding.inflate(inflater)
-
         return binding.root
     }
 

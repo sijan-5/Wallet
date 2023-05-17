@@ -95,15 +95,21 @@ class ProfileFragment() : Fragment() {
 
         val getHasMap = ExpandableListDataItems.getData()
         val listOfKeys  = getHasMap.keys.toList()
-        Log.d("keys", listOfKeys.toString())
+
         val customizedListAdapter = ExpandableListAdapter(requireContext(),listOfKeys,getHasMap)
         binding.expandableListView.setAdapter(customizedListAdapter)
 
         binding.expandableListView.setOnGroupExpandListener(OnGroupExpandListener { groupPosition ->
 
-            Toast.makeText(requireContext(),"expanded", Toast.LENGTH_LONG).show()
+//            Toast.makeText(requireContext(),groupPosition.toString(), Toast.LENGTH_LONG).show()
         })
 
+        binding.expandableListView.setOnGroupCollapseListener{
+//            Toast.makeText(requireContext(),it.toString(), Toast.LENGTH_LONG).show()
+        }
+        binding.expandableListView.setOnGroupCollapseListener{
+//            Toast.makeText(requireContext(),it.toString(), Toast.LENGTH_LONG).show()
+        }
 
         binding.backArrow.setOnClickListener {
             findNavController().popBackStack()

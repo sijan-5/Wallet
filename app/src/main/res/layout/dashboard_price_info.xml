@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/wallet_info_container"
-    android:layout_marginTop="@dimen/dimen_24"
     android:padding="@dimen/dimen_16"
  >
 
@@ -46,57 +45,5 @@
         android:layout_marginTop="@dimen/dimen_24"
         />
 
-<!--    <androidx.appcompat.widget.AppCompatImageView-->
-<!--        android:id="@+id/walletPng"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="@dimen/dimen_16"-->
-<!--        android:background="@drawable/dashboard_one_icon_bg"-->
-<!--        android:padding="@dimen/dimen_12"-->
-<!--        android:src="@drawable/wallet"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="@dimen/dimen_16"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintLeft_toRightOf="@id/walletPng"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:fontFamily="@font/quicksand_medium"-->
-<!--            android:text="@string/wallet_balance"-->
-<!--            android:textColor="@color/button_purple" />-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:fontFamily="@font/quicksand_bold"-->
-<!--                android:text="@string/npr"-->
-<!--                android:textColor="@color/bold_text_color"-->
-<!--                android:textSize="20sp" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="@dimen/dimen_8"-->
-<!--                android:fontFamily="@font/quicksand_bold"-->
-<!--                android:text="@string/xxxx"-->
-<!--                android:textColor="@color/bold_text_color"-->
-<!--                android:textSize="20sp" />-->
-
-<!--        </LinearLayout>-->
-<!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
 

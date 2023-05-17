@@ -4,12 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/constraint"
+    android:layout_marginBottom="@dimen/dimen_32"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".sendMoneyFeature.SendMoneyFormFragment">
 
     <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/dashBoardInfo"
         layout="@layout/dashboard_price_info"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dimen_24"
         />
 
     <CheckBox
@@ -105,14 +110,21 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/amountEditText" />
 
-    <Spinner
+
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/purposeDropDown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/select_purpose"
+        android:background="@drawable/edit_text_border"
         app:layout_constraintTop_toBottomOf="@id/customerID"
-        android:layout_marginTop="@dimen/dimen_8"
-        />
+        android:layout_marginTop="@dimen/dimen_8">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <TextView
