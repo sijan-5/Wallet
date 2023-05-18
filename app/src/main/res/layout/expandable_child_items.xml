@@ -9,9 +9,14 @@
         android:id="@+id/expandedChildList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/green"
+        android:textColor="@color/bold_text_color"
         android:text="child"
+        android:fontFamily="@font/quicksand_medium"
         android:textSize ="12sp"
+        android:paddingBottom="@dimen/dimen_8"
+        android:paddingTop="@dimen/dimen_8"
+        android:paddingEnd="@dimen/dimen_48"
+        android:paddingStart="@dimen/dimen_48"
         />
 
 

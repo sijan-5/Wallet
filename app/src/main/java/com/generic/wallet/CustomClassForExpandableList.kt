@@ -16,30 +16,6 @@ class CustomClassForExpandableList : ExpandableListView{
 
     constructor(context: Context) : super(context)
 
-//    override fun setAdapter(adapter: ExpandableListAdapter?) {
-//        super.setAdapter(adapter)
-//
-//    }
-//
-//    override fun setOnChildClickListener(onChildClickListener: OnChildClickListener?) {
-//        super.setOnChildClickListener(onChildClickListener)
-//    }
-//
-//
-//    override fun expandGroup(groupPos: Int) : Boolean {
-//        return super.expandGroup(groupPos)
-//    }
-//
-//    override fun expandGroup(groupPos: Int, animate: Boolean) : Boolean {
-//        return super.expandGroup(groupPos, animate)
-//    }
-//
-//    override fun isGroupExpanded(groupPosition: Int): Boolean {
-//        return super.isGroupExpanded(groupPosition)
-//    }
-//
-
-
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
 
@@ -47,9 +23,6 @@ class CustomClassForExpandableList : ExpandableListView{
             Int.MAX_VALUE shr 20, MeasureSpec.AT_MOST
         )
         super.onMeasure(widthMeasureSpec, heightMeasureSpec_custom)
-
-        val viewGroupParams = (layoutParams as ViewGroup.LayoutParams)
-        viewGroupParams.height = measuredHeight
 
     }
 

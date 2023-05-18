@@ -1,23 +1,27 @@
 package com.generic.wallet
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 
 class ExpandableListAdapter(
     private val context: Context,
-    private val expandableTitleList: List<String>,
-    private val hasMapForTitleAndChild: HashMap<String, List<String>>
+    private val groupList: List<GroupTitleDataClass>,
+    private val profileItemHashMap: HashMap<GroupTitleDataClass, List<String>>
 ) : BaseExpandableListAdapter() {
 
 
     //get specified child from the given title
     override fun getChild(groupPosition: Int, childPosition: Int): Any {
 
-        return hasMapForTitleAndChild[expandableTitleList[groupPosition]]!![childPosition]
+        return profileItemHashMap[groupList[groupPosition]]!![childPosition]
     }
 
 
@@ -43,6 +47,7 @@ class ExpandableListAdapter(
             layoutInflater.inflate(R.layout.expandable_child_items, null)
         }
 
+
         val childTextView = convertingView!!.findViewById<TextView>(R.id.expandedChildList)
         childTextView.text = expandedListText
         return childTextView!!
@@ -51,17 +56,17 @@ class ExpandableListAdapter(
 
     // return number of child in each group
     override fun getChildrenCount(groupPosition: Int): Int {
-        return hasMapForTitleAndChild[expandableTitleList[groupPosition]]!!.size
+        return profileItemHashMap[groupList[groupPosition]]!!.size
     }
 
     //return group
     override fun getGroup(groupPosition: Int): Any {
-        return expandableTitleList[groupPosition]
+        return groupList[groupPosition]
     }
 
     //return number of group
     override fun getGroupCount(): Int {
-        return expandableTitleList.size
+        return groupList.size
     }
 
     override fun getGroupId(groupPosition: Int): Long {
@@ -74,16 +79,28 @@ class ExpandableListAdapter(
         convertView: View?,
         parent: ViewGroup?
     ): View {
-        val groupText = getGroup(groupPosition) as String
+        val groupObject = getGroup(groupPosition) as GroupTitleDataClass
         val convertingView = convertView ?: run {
             val layoutInflater =
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             layoutInflater.inflate(R.layout.expandable_list_title, null)
         }
 
-        val groupTextView = convertingView.findViewById<TextView>(R.id.expandedListTitle)
-        groupTextView.text = groupText
+        if (isExpanded) {
+            convertingView.findViewById<ImageView>(R.id.greaterIcon)
+                .setImageResource(R.drawable.drop_arrow)
+        } else {
+            convertingView.findViewById<ImageView>(R.id.greaterIcon)
+                .setImageResource(R.drawable.greater_icon)
+        }
 
+        val profileItemImage = convertingView.findViewById<ImageView>(R.id.profileItemImage)
+        val profileItemText = convertingView.findViewById<TextView>(R.id.profileItemText)
+
+        profileItemImage.setImageResource(groupObject.imageResource)
+
+        profileItemImage.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context,groupObject.backgroundColor))
+        profileItemText.text = groupObject.groupName
         return convertingView
     }
 

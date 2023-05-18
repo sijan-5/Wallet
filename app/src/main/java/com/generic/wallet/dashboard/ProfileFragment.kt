@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.generic.wallet.ExpandableListAdapter
 import com.generic.wallet.ExpandableListDataItems
+import com.generic.wallet.GroupTitleDataClass
 import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentProfileBinding
 
@@ -93,10 +94,11 @@ class ProfileFragment() : Fragment() {
         val currentDestinationID = findNavController().currentDestination?.id
         Log.d("currentID", currentDestinationID.toString())
 
-        val getHasMap = ExpandableListDataItems.getData()
-        val listOfKeys  = getHasMap.keys.toList()
+        val hashMap = ExpandableListDataItems().getData()
+        val listOfKeys  = hashMap.keys.toList()
 
-        val customizedListAdapter = ExpandableListAdapter(requireContext(),listOfKeys,getHasMap)
+
+        val customizedListAdapter = ExpandableListAdapter(requireContext(),listOfKeys,hashMap)
         binding.expandableListView.setAdapter(customizedListAdapter)
 
         binding.expandableListView.setOnGroupExpandListener(OnGroupExpandListener { groupPosition ->

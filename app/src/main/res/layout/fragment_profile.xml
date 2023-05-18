@@ -229,15 +229,19 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.generic.wallet.CustomClassForExpandableList
-
             android:id="@+id/expandableListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:dividerHeight="1dp"
             android:paddingTop="@dimen/dimen_12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout"
+            android:groupIndicator="@null"
+            android:divider="@null"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_16"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
