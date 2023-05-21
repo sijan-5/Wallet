@@ -1,5 +1,6 @@
 package com.generic.wallet
 
+import ChildDataClass
 import android.accounts.Account
 import android.content.Context
 import android.graphics.Color
@@ -7,10 +8,11 @@ import androidx.core.content.ContextCompat
 
 class ExpandableListDataItems {
 
-    private val profileItemHashMap: HashMap<GroupTitleDataClass, List<String>> = HashMap()
-    private var accountChildList: MutableList<String> = mutableListOf<String>()
-    var supportChildList: MutableList<String> = mutableListOf<String>()
-    private var appChildList: MutableList<String> = mutableListOf<String>()
+    private val profileItemHashMap: HashMap<GroupTitleDataClass, List<ChildDataClass>?> = HashMap()
+    private var accountChildList: MutableList<ChildDataClass> = mutableListOf<ChildDataClass>()
+    var supportChildList: MutableList<ChildDataClass> = mutableListOf()
+    private var appChildList: MutableList<ChildDataClass> = mutableListOf<ChildDataClass>()
+    private var settingChildList : MutableList<ChildDataClass> = mutableListOf()
 
 
     private val listOfGroupItem: List<GroupTitleDataClass> =
@@ -21,7 +23,7 @@ class ExpandableListDataItems {
                 "Fill Kyc"
             ),
             GroupTitleDataClass(
-                R.drawable.profile,
+                R.drawable.account,
                 R.color.internetBackground,
                 "Account"
             ),
@@ -30,37 +32,45 @@ class ExpandableListDataItems {
                 R.color.settingBackgroundColor,
                 "Settings"
 
-            ),   GroupTitleDataClass(
-                R.drawable.support,
-                R.color.supportBackgroundColor,
-                "Support"
-
             ),
             GroupTitleDataClass(
                 R.drawable.app,
                 R.color.appBackgroundColor,
                 "App"
             ),
+            GroupTitleDataClass(
+                R.drawable.support,
+                R.color.supportBackgroundColor,
+                "Support"
+
+            ),
         )
 
 
-    fun getData(): HashMap<GroupTitleDataClass, List<String>> {
+    fun getData(): HashMap<GroupTitleDataClass, List<ChildDataClass>?> {
 
-        accountChildList.add("Link bank Account")
-        accountChildList.add("Transaction Limit")
+        accountChildList.add(ChildDataClass("Link Bank Account"))
+        accountChildList.add(ChildDataClass("Transaction Limit"))
 
-        supportChildList.add("FAQs")
-        supportChildList.add("About Us")
-        supportChildList.add("Contact Us")
+        supportChildList.add(ChildDataClass("FAQs"))
+        supportChildList.add(ChildDataClass("About Us"))
+        supportChildList.add(ChildDataClass("Contact Us"))
 
-        appChildList.add("Link Bank Account")
-        appChildList.add("Transaction Limit")
+        appChildList.add(ChildDataClass("Check For Update"))
+        appChildList.add(ChildDataClass("Privacy Policy"))
+        appChildList.add(ChildDataClass("Terms and condition"))
 
-        profileItemHashMap[this.listOfGroupItem[0]] = accountChildList
-        profileItemHashMap[this.listOfGroupItem[1]] = supportChildList
-        profileItemHashMap[this.listOfGroupItem[2]] = appChildList
-        profileItemHashMap[this.listOfGroupItem[3]] = appChildList
-        profileItemHashMap[this.listOfGroupItem[4]] = appChildList
+        settingChildList.add(ChildDataClass("Change Password"))
+        settingChildList.add(ChildDataClass("Change Transaction Pin"))
+        settingChildList.add(ChildDataClass("Enable Biometric Login", true))
+        settingChildList.add(ChildDataClass("Enable Biometric Payment",true))
+        settingChildList.add(ChildDataClass("Enable App Notification" , true))
+
+        profileItemHashMap[this.listOfGroupItem[0]]   = null
+        profileItemHashMap[this.listOfGroupItem[1]] = accountChildList
+        profileItemHashMap[this.listOfGroupItem[2]] =settingChildList
+        profileItemHashMap[this.listOfGroupItem[3]] =appChildList
+        profileItemHashMap[this.listOfGroupItem[4]] = supportChildList
 
 
         return profileItemHashMap

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/expandedChildList"
@@ -11,13 +10,29 @@
         android:layout_height="wrap_content"
         android:textColor="@color/bold_text_color"
         android:text="child"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:fontFamily="@font/quicksand_medium"
         android:textSize ="12sp"
         android:paddingBottom="@dimen/dimen_8"
         android:paddingTop="@dimen/dimen_8"
-        android:paddingEnd="@dimen/dimen_48"
+        android:paddingEnd="@dimen/dimen_12"
         android:paddingStart="@dimen/dimen_48"
         />
 
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/switchElement"
+        android:thumb="@drawable/custom_thumb"
+        app:track="@drawable/custom_track"
+        app:switchMinWidth="@dimen/dimen_32"
+        app:layout_constraintTop_toTopOf="@id/expandedChildList"
+        app:layout_constraintBottom_toBottomOf="@id/expandedChildList"
+        />
 
-</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -142,5 +142,6 @@
     <string name="welcome_">welcome,</string>
     <string name="xx_x">XX.X</string>
     <string name="recent_payments">Recent Payments</string>
+    <string name="logout">Logout</string>
 
 </resources>

@@ -88,11 +88,9 @@ class ProfileFragment() : Fragment() {
     }
 
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val currentDestinationID = findNavController().currentDestination?.id
-        Log.d("currentID", currentDestinationID.toString())
 
         val hashMap = ExpandableListDataItems().getData()
         val listOfKeys  = hashMap.keys.toList()

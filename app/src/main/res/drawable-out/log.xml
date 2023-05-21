@@ -3,8 +3,7 @@
     android:width="18dp"
     android:height="18dp"
     android:viewportWidth="17.3"
-    android:viewportHeight="17.264"
-   >
+    android:viewportHeight="17.264">
   <path
       android:pathData="M9.679,14.918L6.885,14.918a0.349,0.349 0,1 1,0 -0.7h2.794a1.049,1.049 0,0 0,1.048 -1.048L10.727,9.679a0.349,0.349 0,1 1,0.7 0v3.492A1.748,1.748 0,0 1,9.679 14.918Z"
       android:strokeWidth="0.5"
