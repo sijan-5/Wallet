@@ -7,6 +7,10 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.LayerDrawable
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.OvalShape
 import android.util.AttributeSet
 import android.util.Log
 import android.util.TypedValue
@@ -31,6 +35,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.properties.Delegates
 
+
 class BottomNavigationCircles : BottomNavigationView {
     private val LOG_TAG = "BottomNavigationCircles"
 
@@ -40,55 +45,39 @@ class BottomNavigationCircles : BottomNavigationView {
 
     private lateinit var rootLayout: RelativeLayout
     private var enabledColor = Color.RED
-    private var textColor by Delegates.notNull<Int>()
 
-    var backgroundShape = Shape.Circle
-    private var customBackgroundDrawable = -1
-    var circleColor = Color.GREEN
 
     enum class Shape(val value: Int) {
-        Circle(0),
-        RoundedRectangle(1);
+        Circle(0), RoundedRectangle(1);
 
-        companion object {
-            private val VALUES = values()
-            fun getByValue(value: Int) = VALUES.firstOrNull { it.value == value }
-        }
+
     }
 
     constructor(context: Context) : super(context) {
         init()
+
     }
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
         init(attrs)
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) :
-            super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         init(attrs)
     }
 
     private fun init(attrs: AttributeSet? = null) {
-        getColors(attrs)
-        getBackgroundDrawable()
+//        getBackgroundDrawable()
         setupRootLayout()
         setupListener()
         setupClipping()
         selectFirstItem()
     }
 
-    private fun getColors(attrs: AttributeSet?) {
-        val textView = TextView(context)
-        textColor = textView.currentTextColor
-    }
-
-
-    private fun getBackgroundDrawable() {
-
-        backgroundShape = Shape.Circle
-        customBackgroundDrawable = -1
-    }
 
 
     private fun setupRootLayout() {
@@ -100,6 +89,8 @@ class BottomNavigationCircles : BottomNavigationView {
         rootLayout.addView(menuViewGroup)
         addView(rootLayout)
     }
+
+
 
     private fun setupListener() {
         setOnItemSelectedListener {
@@ -114,6 +105,7 @@ class BottomNavigationCircles : BottomNavigationView {
             findViewById<BottomNavigationMenuView>(menuViewGroupId).clipChildren = false
 
             disableClipOnParents(this)
+
         }
     }
 
@@ -123,23 +115,16 @@ class BottomNavigationCircles : BottomNavigationView {
         }
 
         if (view.parent is View) {
+
             disableClipOnParents(view.parent as View)
         }
-        else{
-            Log.d("this", view.parent.toString())
-        }
+
     }
 
     private fun selectFirstItem() {
-        if (
-            rootLayout.childCount > 0 &&
-            ((rootLayout.getChildAt(0)) as BottomNavigationMenuView).childCount > 0
-        ) {
+        if (rootLayout.childCount > 0 && ((rootLayout.getChildAt(0)) as BottomNavigationMenuView).childCount > 0) {
             val navigationItemView =
-                (
-                        (rootLayout.getChildAt(0) as BottomNavigationMenuView)
-                            .getChildAt(0) as NavigationBarItemView
-                        )
+                ((rootLayout.getChildAt(0) as BottomNavigationMenuView).getChildAt(0) as NavigationBarItemView)
 
             navigationItemView.viewTreeObserver.addOnGlobalLayoutListener {
                 animateBottomIcon(selectedItemId)
@@ -152,7 +137,6 @@ class BottomNavigationCircles : BottomNavigationView {
 
 
         if (itemId != currentNavigationItemId) {
-
             val itemView = getNavigationBarItemView(itemId)
             val icon = getAppCompatImageView(itemView)
 //            ContextCompat.getDrawable(context, R.drawable.bottom_nav_item_background)
@@ -175,9 +159,7 @@ class BottomNavigationCircles : BottomNavigationView {
                     buildTranslateCircleAnimator(oldCircle, -(height / 4).toFloat(), 0f),
 //                    buildTintAnimator(currentView, enabledColor, disabledColor)
                 )
-                oldCircle.animate()
-                    .alpha(0F)
-                    .duration = 500
+                oldCircle.animate().alpha(0F).duration = 500
 
                 GlobalScope.launch {
                     delay(500)
@@ -193,16 +175,8 @@ class BottomNavigationCircles : BottomNavigationView {
             rootLayout.addView(circleView)
             findViewById<BottomNavigationMenuView>(menuViewGroupId).bringToFront()
             setCircleSizeAndPosition(
-                circleView,
-                subText.height,
-                (icon.width * 3).toInt(),
-                itemView.x,
-                itemView.width,
-                0
+                circleView, subText.height, (icon.width * 3).toInt(), itemView.x, itemView.width
             )
-
-
-
 
             animatorSet.playTogether(
                 buildTranslateIconAnimator(icon, 0f, -(height / 2.5).toFloat()),
@@ -210,9 +184,7 @@ class BottomNavigationCircles : BottomNavigationView {
 //                buildTintAnimator(icon, disabledColor, enabledColor)
             )
 
-            circleView.animate()
-                .alpha(1F)
-                .duration = 500
+            circleView.animate().alpha(1F).duration = 500
 
             currentNavigationItemId = itemId
             animatorSet.start()
@@ -221,7 +193,7 @@ class BottomNavigationCircles : BottomNavigationView {
         return true
     }
 
-    private fun getNavigationBarItemView(itemId: Int): NavigationBarItemView {
+    private fun getNavigationBarItemView(itemId: Int):NavigationBarItemView {
         return findViewById(itemId)
     }
 
@@ -242,32 +214,36 @@ class BottomNavigationCircles : BottomNavigationView {
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
         textView.setTextColor(
             ContextCompat.getColor(
-                context,
-                com.example.sample01.R.color.button_purple
+                context, com.example.sample01.R.color.button_purple
             )
         )
     }
 
-    private fun buildTranslateIconAnimator(currentView: View, from: Float, to: Float):
-            ObjectAnimator {
+    private fun buildTranslateIconAnimator(
+        currentView: View,
+        from: Float,
+        to: Float
+    ): ObjectAnimator {
         return ObjectAnimator.ofFloat(
-            currentView,
-            "translationY",
-            from, to
+            currentView, "translationY", from, to
         ).setDuration(500)
     }
 
-    private fun buildTranslateCircleAnimator(oldCircle: View, from: Float, to: Float):
-            ObjectAnimator {
+    private fun buildTranslateCircleAnimator(
+        oldCircle: View,
+        from: Float,
+        to: Float
+    ): ObjectAnimator {
         return ObjectAnimator.ofFloat(
-            oldCircle,
-            "translationY",
-            from, to
+            oldCircle, "translationY", from, to
         ).setDuration(500)
     }
 
-    private fun buildTintAnimator(currentView: AppCompatImageView, enabled: Int, disabled: Int):
-            ValueAnimator {
+    private fun buildTintAnimator(
+        currentView: AppCompatImageView,
+        enabled: Int,
+        disabled: Int
+    ): ValueAnimator {
         val animateTint = ValueAnimator.ofArgb(disabled, enabled)
         animateTint.duration = 10000
         animateTint.addUpdateListener {
@@ -278,49 +254,41 @@ class BottomNavigationCircles : BottomNavigationView {
     }
 
     private fun buildBackgroundCircle(): ImageView {
-        val circleView = ImageView(context)
+
+        val circleView = AppCompatImageView(context)
+
         circleView.id = View.generateViewId()
-        circleView.alpha = 1F
+        circleView.layoutParams = LinearLayout.LayoutParams(100, 300)
 
-        if (customBackgroundDrawable == -1) {
-            val backgroundShapeDrawable = when (backgroundShape) {
-                Shape.Circle -> ContextCompat.getDrawable(
-                    context,
-                    R.drawable.bottom_nav_item_background
-                )
-                Shape.RoundedRectangle -> ContextCompat.getDrawable(
-                    context,
-                    R.color.internetBackground
-                )
-            }
-//            backgroundShapeDrawable?.setTint(Color.RED)
-            circleView.setImageDrawable(backgroundShapeDrawable)
+        val shapeDrawable = ShapeDrawable()
+        shapeDrawable.shape = OvalShape()
 
-        } else {
-            val drawable = ContextCompat.getDrawable(context, customBackgroundDrawable)
-            drawable?.setTint(circleColor)
-            circleView.setImageDrawable(drawable)
-        }
+        shapeDrawable.paint.setShadowLayer(
+            40f, 0f, -15f, ContextCompat.getColor(context, com.example.sample01.R.color.light_red)
+        )
+
+
+        shapeDrawable.paint.color = ContextCompat.getColor(context, R.color.white)
+        val drawable = LayerDrawable(arrayOf<Drawable>(shapeDrawable))
+        val inset = 20
+        drawable.setLayerInset(
+            0, inset, inset, inset, inset
+        )
+        circleView.background = drawable
 
         return circleView
     }
 
     private fun setCircleSizeAndPosition(
-        circleView: ImageView,
-        paddingBottom: Int, //subtext size
+        circleView: ImageView, paddingBottom: Int, //subtext size
         size: Int, //iconwidth*2.7
         x: Float, //itemView.x + itemView.width / 2 - icon.width
-        itemViewWidth: Int,
-        paddingLeftRight: Int
+        itemViewWidth: Int
 
     ) {
-        val params = circleView.layoutParams as ViewGroup.MarginLayoutParams
-        circleView.setPadding(0, -30, 0, paddingBottom / 2)
-        params.width = size
-        params.height = size
-        circleView.layoutParams = params
+
         val marginLeft = (itemViewWidth - size) / 2
-        circleView.x = x + marginLeft - 1
+        circleView.x = x + marginLeft
 
     }
 }

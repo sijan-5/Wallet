@@ -19,5 +19,6 @@
     <color name="radio_button_unselected_text_color">#AFAFAF</color>
     <color name="light_red">#FF6363</color>
     <color name="search_box_background_color">#F9F9FF</color>
+    <color name="drop_shadow">#84848417</color>
 
 </resources>

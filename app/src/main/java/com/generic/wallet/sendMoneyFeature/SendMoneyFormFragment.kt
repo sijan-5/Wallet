@@ -3,6 +3,7 @@ package com.generic.wallet.sendMoneyFeature
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewPropertyAnimator
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
@@ -18,7 +19,7 @@ class SendMoneyFormFragment : BaseFragmentForDashboard() {
     private var param1: String? = null
     private var param2: String? = null
     private var _binding: FragmentSendMoneyFormBinding? = null
-    private val binding get() = _binding
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +36,10 @@ class SendMoneyFormFragment : BaseFragmentForDashboard() {
       findNavController().popBackStack()
     }
 
-    override fun getView(inflater: LayoutInflater): View? {
+    override fun getView(inflater: LayoutInflater): View {
 
         _binding =  FragmentSendMoneyFormBinding.inflate(inflater)
-        return binding?.root
+        return binding.root
     }
 
 //    override fun onCreateView(
@@ -53,7 +54,8 @@ class SendMoneyFormFragment : BaseFragmentForDashboard() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.continueButton?.setOnClickListener {
+
+        binding.continueButton.setOnClickListener {
 
             findNavController().navigate(R.id.action_sendMoneyForm_to_sendMoneyPaymentMethod)
         }

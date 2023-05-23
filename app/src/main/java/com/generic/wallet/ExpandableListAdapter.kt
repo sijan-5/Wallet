@@ -19,6 +19,7 @@ import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toBitmap
 
 class ExpandableListAdapter(
     private val context: Context,
@@ -31,7 +32,7 @@ class ExpandableListAdapter(
     override fun getChild(groupPosition: Int, childPosition: Int): Any {
 
 
-        return   profileItemHashMap[groupList[groupPosition]]!![childPosition]
+        return profileItemHashMap[groupList[groupPosition]]!![childPosition]
 
     }
 
@@ -52,27 +53,26 @@ class ExpandableListAdapter(
 
         val expandedListText = getChild(groupPosition, childPosition) as ChildDataClass
 
-            val convertingView = convertView ?: kotlin.run {
-                val layoutInflater =
-                    context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                layoutInflater.inflate(R.layout.expandable_child_items, null)
-            }
-
-
-            val childTextView = convertingView.findViewById<TextView>(R.id.expandedChildList)
-            val switch = convertingView.findViewById<SwitchCompat>(R.id.switchElement)
-            childTextView.text = expandedListText.childName
-
-
-            if (expandedListText.showSwitch) {
-                switch.visibility = View.VISIBLE
-            } else {
-                switch.visibility = View.GONE
-            }
-
-            return convertingView
+        val convertingView = convertView ?: kotlin.run {
+            val layoutInflater =
+                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            layoutInflater.inflate(R.layout.expandable_child_items, null)
         }
 
+
+        val childTextView = convertingView.findViewById<TextView>(R.id.expandedChildList)
+        val switch = convertingView.findViewById<SwitchCompat>(R.id.switchElement)
+        childTextView.text = expandedListText.childName
+
+
+        if (expandedListText.showSwitch) {
+            switch.visibility = View.VISIBLE
+        } else {
+            switch.visibility = View.GONE
+        }
+
+        return convertingView
+    }
 
 
     // return number of child in each group
@@ -108,14 +108,18 @@ class ExpandableListAdapter(
         }
 
         if (isExpanded) {
-//            convertingView.findViewById<ImageView>(R.id.greaterIcon)
-//                .setImageResource(R.drawable.drop_arrow)
 
-            val bitMap = BitmapFactory.decodeResource(context.resources, R.drawable.greater_icon)
-            val rotatedImage = getRotatedDrawable(bitMap,45f)
 
-            convertingView.findViewById<ImageView>(R.id.greaterIcon)
-                .setImageDrawable(rotatedImage)
+            val bitMap = ContextCompat.getDrawable(context, R.drawable.greater_icon)?.toBitmap()
+
+            bitMap?.let {
+                val rotatedDrawable = getRotatedDrawable(it, 90f)
+                convertingView.findViewById<ImageView>(R.id.greaterIcon)
+                    .setImageDrawable(rotatedDrawable)
+
+
+            }
+
 
         } else {
             convertingView.findViewById<ImageView>(R.id.greaterIcon)
@@ -138,13 +142,11 @@ class ExpandableListAdapter(
     override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean = true
 
 
-    fun getRotatedDrawable(bitmap : Bitmap, angle : Float): Drawable
-    {
-        val drawable = object : BitmapDrawable(context.resources, bitmap)
-        {
+    fun getRotatedDrawable(bitmap: Bitmap, angle: Float): Drawable {
+        val drawable = object : BitmapDrawable(context.resources, bitmap) {
             override fun draw(canvas: Canvas) {
                 canvas.save()
-                canvas.rotate(angle,bitmap.width /2f , bitmap.height/2f)
+                canvas.rotate(angle, bitmap.width / 2f, bitmap.height / 2f)
                 super.draw(canvas)
                 canvas.restore()
             }
