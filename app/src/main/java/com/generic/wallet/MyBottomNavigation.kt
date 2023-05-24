@@ -50,7 +50,6 @@ class BottomNavigationCircles : BottomNavigationView {
     enum class Shape(val value: Int) {
         Circle(0), RoundedRectangle(1);
 
-
     }
 
     constructor(context: Context) : super(context) {
@@ -134,7 +133,6 @@ class BottomNavigationCircles : BottomNavigationView {
 
 
     private fun animateBottomIcon(itemId: Int): Boolean {
-
 
         if (itemId != currentNavigationItemId) {
             val itemView = getNavigationBarItemView(itemId)
@@ -258,7 +256,7 @@ class BottomNavigationCircles : BottomNavigationView {
         val circleView = AppCompatImageView(context)
 
         circleView.id = View.generateViewId()
-        circleView.layoutParams = LinearLayout.LayoutParams(100, 300)
+
 
         val shapeDrawable = ShapeDrawable()
         shapeDrawable.shape = OvalShape()
@@ -275,7 +273,6 @@ class BottomNavigationCircles : BottomNavigationView {
             0, inset, inset, inset, inset
         )
         circleView.background = drawable
-
         return circleView
     }
 
