@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentDashboardBinding
 
@@ -25,6 +26,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class DashboardFragment : Fragment() {
+
+    private val noOfColumns = 4
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -57,12 +60,13 @@ class DashboardFragment : Fragment() {
 
         val currentDestinationID = findNavController().currentDestination?.id
         Log.d("currentID", currentDestinationID.toString())
+
+
         //wallet Services
-        binding.walletServicesRecyclerView.layoutManager = GridLayoutManager(
-            requireContext(), noOfColumns, GridLayoutManager.VERTICAL,
-            false
-        )
-        binding.walletServicesRecyclerView.adapter = DashBoardAdapter(getListWalletServices())
+
+        checkFunction(binding.utilitiesRecyclerView)
+        Log.d("check", binding.utilitiesRecyclerView.toString())
+        walletServices()
 
         //utilities
         binding.utilitiesRecyclerView.layoutManager = GridLayoutManager(
@@ -80,11 +84,8 @@ class DashboardFragment : Fragment() {
 
         //clicking on profile icon
         binding.profileImageIcon.setOnClickListener {
-
-
             val activity = requireActivity()
             if (activity is BottomNavigationActivity) {
-
                 val menuItem = activity.getMenuItem(R.id.profileFragment)
                 NavigationUI.onNavDestinationSelected(menuItem, findNavController())
 
@@ -93,6 +94,17 @@ class DashboardFragment : Fragment() {
 
 //        binding.walletServicesRecyclerView.addItemDecoration(GridLayoutDecorator(noOfColumns,requireContext()))
     }
+
+    private fun checkFunction(utilitiesRecyclerView: RecyclerView) {
+        when(utilitiesRecyclerView)
+        {
+            utilitiesRecyclerView.findViewById<RecyclerView>(R.id.utilitiesRecyclerView) ->
+            {
+
+            }
+        }
+    }
+
     private fun getWalletUtilitiesServices(): List<DashBoardItemDataClass> {
 
         return listOf(
@@ -108,7 +120,6 @@ class DashboardFragment : Fragment() {
                 resources.getString(R.string.landline),
                 R.drawable.landline_background
             ) {
-
                 findNavController().navigate(R.id.action_dashBoardFragment_to_landline_feature_nav_graph)
             },
             DashBoardItemDataClass(
@@ -233,6 +244,19 @@ class DashboardFragment : Fragment() {
 
             )
     }
+
+
+    fun walletServices()
+    {
+        binding.walletServicesRecyclerView.apply {
+            layoutManager = GridLayoutManager(
+                requireContext(), noOfColumns, GridLayoutManager.VERTICAL,
+                false
+            )
+            adapter = DashBoardAdapter(getListWalletServices())
+        }
+    }
+
 
     companion object {
         /**
