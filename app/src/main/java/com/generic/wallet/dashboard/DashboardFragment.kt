@@ -6,12 +6,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.generic.wallet.R
+import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
 import com.generic.wallet.databinding.FragmentDashboardBinding
 
 
@@ -28,6 +31,7 @@ private const val ARG_PARAM2 = "param2"
 class DashboardFragment : Fragment() {
 
     private val noOfColumns = 4
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -55,32 +59,8 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val noOfColumns = 4
-
-        val currentDestinationID = findNavController().currentDestination?.id
-        Log.d("currentID", currentDestinationID.toString())
-
-
         //wallet Services
-
-        checkFunction(binding.utilitiesRecyclerView)
-        Log.d("check", binding.utilitiesRecyclerView.toString())
-        walletServices()
-
-        //utilities
-        binding.utilitiesRecyclerView.layoutManager = GridLayoutManager(
-            requireContext(), noOfColumns, GridLayoutManager.VERTICAL,
-            false
-        )
-        binding.utilitiesRecyclerView.adapter = DashBoardAdapter(getWalletUtilitiesServices())
-
-        //merchants
-        binding.merchantRecyclerView.layoutManager = GridLayoutManager(
-            requireContext(), noOfColumns, GridLayoutManager.VERTICAL,
-            false
-        )
-        binding.merchantRecyclerView.adapter = DashBoardAdapter(getMerchantServices())
+        setUpRecyclerViews()
 
         //clicking on profile icon
         binding.profileImageIcon.setOnClickListener {
@@ -92,18 +72,39 @@ class DashboardFragment : Fragment() {
             }
         }
 
-//        binding.walletServicesRecyclerView.addItemDecoration(GridLayoutDecorator(noOfColumns,requireContext()))
     }
 
-    private fun checkFunction(utilitiesRecyclerView: RecyclerView) {
-        when(utilitiesRecyclerView)
-        {
-            utilitiesRecyclerView.findViewById<RecyclerView>(R.id.utilitiesRecyclerView) ->
-            {
+    private fun setUpRecyclerViews()
+    {
+        setUpServicesRecyclerView()
+        setUpMerchantRecyclerView()
+        setUpUtilitiesRecyclerView()
+    }
 
-            }
+    private fun setUpUtilitiesRecyclerView()
+    {
+        binding.utilitiesRecyclerView.apply {
+            layoutManager= GridLayoutManager(requireContext(), noOfColumns, GridLayoutManager.VERTICAL, false)
+            adapter = DashBoardAdapter(getWalletUtilitiesServices())
         }
     }
+    private fun setUpMerchantRecyclerView()
+    {
+        binding.merchantRecyclerView.apply {
+            layoutManager = GridLayoutManager(requireContext(),noOfColumns,GridLayoutManager.VERTICAL,false)
+            adapter = DashBoardAdapter(getMerchantServices())
+    }
+
+    }
+    private fun setUpServicesRecyclerView()
+    {
+        binding.walletServicesRecyclerView.apply {
+            layoutManager = GridLayoutManager(requireContext(),noOfColumns,GridLayoutManager.VERTICAL,false)
+            adapter = DashBoardAdapter(getListWalletServices())
+        }
+    }
+
+
 
     private fun getWalletUtilitiesServices(): List<DashBoardItemDataClass> {
 
@@ -128,23 +129,24 @@ class DashboardFragment : Fragment() {
                 R.drawable.electricitybackground
             ) {
 
-                findNavController().navigate(R.id.action_dashBoardFragment_to_electricity_feature_nav_graph2)
+               val bundle = bundleOf("key" to electricityBoardList(), "title" to resources.getString(R.string.electricity) )
+                navigateToCommonPage(bundle)
             },
             DashBoardItemDataClass(
                 R.drawable.internet,
                 resources.getString(R.string.internet),
                 R.drawable.internetbackground
             ) {
-
-                findNavController().navigate(R.id.action_dashBoardFragment_to_internet_feature_nav_graph)
+               val bundle = bundleOf("key" to getISPList(),"title" to resources.getString(R.string.internet)  )
+                navigateToCommonPage(bundle)
             },
             DashBoardItemDataClass(
                 R.drawable.water,
                 resources.getString(R.string.water),
                 R.drawable.waterbackground
             ) {
-
-                findNavController().navigate(R.id.action_dashBoardFragment_to_water_feature_nav_graph)
+               val bundle = bundleOf("key" to getListOfWaterServices(),"title" to resources.getString(R.string.water) )
+                navigateToCommonPage(bundle)
             },
             DashBoardItemDataClass(
                 R.drawable.tv,
@@ -171,8 +173,8 @@ class DashboardFragment : Fragment() {
 
 
     }
-    private fun getListWalletServices(): List<DashBoardItemDataClass> {
 
+    private fun getListWalletServices(): List<DashBoardItemDataClass> {
 
         return listOf(
             DashBoardItemDataClass(
@@ -246,18 +248,6 @@ class DashboardFragment : Fragment() {
     }
 
 
-    fun walletServices()
-    {
-        binding.walletServicesRecyclerView.apply {
-            layoutManager = GridLayoutManager(
-                requireContext(), noOfColumns, GridLayoutManager.VERTICAL,
-                false
-            )
-            adapter = DashBoardAdapter(getListWalletServices())
-        }
-    }
-
-
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -276,6 +266,37 @@ class DashboardFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+    private fun electricityBoardList() : List<BankLogoAndNameDataClass> {
+
+        return  mutableListOf(
+            BankLogoAndNameDataClass(R.drawable.nea,"NEA"),
+            BankLogoAndNameDataClass(R.drawable.slrec,"SLREC")
+        )
+    }
+
+    private fun getISPList(): List<BankLogoAndNameDataClass> {
+        return mutableListOf(
+            BankLogoAndNameDataClass(R.drawable.wlink_logo, "World Link"),
+            BankLogoAndNameDataClass(R.drawable.vianet, "Vianet"),
+            BankLogoAndNameDataClass(R.drawable.subisu, "SUBISU"),
+            BankLogoAndNameDataClass(R.drawable.cgnet, "CG Net"),
+            )
+    }
+
+    private fun getListOfWaterServices() : List<BankLogoAndNameDataClass>
+    {
+        return mutableListOf(BankLogoAndNameDataClass(R.drawable.nwsc , "NWSC"),
+            BankLogoAndNameDataClass(R.drawable.kukl_logo , "KUKL"),
+            BankLogoAndNameDataClass(R.drawable.community_khanepani , "Community KhanePani"))
+    }
+
+
+    private fun navigateToCommonPage(bundle :Bundle?=null)
+    {
+        view?.findNavController()?.navigate(R.id.action_dashBoardFragment_to_commonUtilitiesRecycler,bundle)
     }
 
 

@@ -10,7 +10,7 @@ import com.generic.wallet.R
 
 class BankListAdapter(
     val list: List<BankLogoAndNameDataClass>,
-    private val onClickListener: () -> Unit
+    private val onClickListener : () -> Unit
 ) : RecyclerView.Adapter<BankListAdapter.ViewHolder>() {
 
 

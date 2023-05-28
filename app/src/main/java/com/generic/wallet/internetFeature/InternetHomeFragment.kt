@@ -26,7 +26,7 @@ class InternetHomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var _binding : FragmentInternetHomeBinding?= null
+    private var _binding: FragmentInternetHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,10 +50,13 @@ class InternetHomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.internetRecyclerView.layoutManager = GridLayoutManager(requireContext(),4,GridLayoutManager.VERTICAL,false)
-        binding.internetRecyclerView.adapter = BankListAdapter(getISPList()) {
-        }
+        binding.internetRecyclerView.apply {
+            layoutManager =
+                GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
+            binding.internetRecyclerView.adapter = BankListAdapter(getISPList()) {
 
+            }
+        }
         binding.backArrow.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -79,15 +82,14 @@ class InternetHomeFragment : Fragment() {
             }
     }
 
-    private fun getISPList() : List<BankLogoAndNameDataClass>
-    {
-        return  listOf(
+    private fun getISPList(): List<BankLogoAndNameDataClass> {
+        return listOf(
 
-            BankLogoAndNameDataClass(R.drawable.wlink_logo,"World Link"),
-            BankLogoAndNameDataClass(R.drawable.vianet,"Vianet"),
-            BankLogoAndNameDataClass(R.drawable.subisu,"SUBISU"),
-            BankLogoAndNameDataClass(R.drawable.cgnet,"CG Net"),
+            BankLogoAndNameDataClass(R.drawable.wlink_logo, "World Link"),
+            BankLogoAndNameDataClass(R.drawable.vianet, "Vianet"),
+            BankLogoAndNameDataClass(R.drawable.subisu, "SUBISU"),
+            BankLogoAndNameDataClass(R.drawable.cgnet, "CG Net"),
 
-        )
+            )
     }
 }

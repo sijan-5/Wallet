@@ -1,4 +1,4 @@
-package com.generic.wallet
+package com.generic.wallet.profilefragmentexpandablelist
 
 import androidx.annotation.DrawableRes
 

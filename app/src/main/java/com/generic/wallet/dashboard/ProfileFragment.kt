@@ -1,18 +1,14 @@
 package com.generic.wallet.dashboard
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ExpandableListView.OnGroupExpandListener
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.generic.wallet.ExpandableListAdapter
-import com.generic.wallet.ExpandableListDataItems
-import com.generic.wallet.GroupTitleDataClass
+import com.generic.wallet.profilefragmentexpandablelist.ExpandableListAdapter
+import com.generic.wallet.profilefragmentexpandablelist.ExpandableListDataItems
 import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentProfileBinding
 

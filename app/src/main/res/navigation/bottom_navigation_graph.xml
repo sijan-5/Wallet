@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/dashBoardFragment"
-        android:name="com.generic.wallet.dashboard.DashboardFragment"
+        android:name="com.generic.wallet.electricityFeature.ElectricityPaymentMethodFragment"
         android:label="dash_board"
-        tools:layout="@layout/fragment_dashboard">
+        tools:layout="@layout/fragment_electricity_payment_method">
 
         <action
             android:id="@+id/action_dashBoardFragment_to_bank_transfer_login_graph"
@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_commonUtilitiesRecycler"
+            app:destination="@id/commonUtilitiesRecycler" />
 
     </fragment>
 
@@ -84,6 +87,12 @@
         android:name="com.generic.wallet.dashboard.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/commonUtilitiesRecycler"
+        android:name="com.generic.wallet.dashboard.CommonUtilitiesRecycler"
+        android:label="fragment_common_utilities_recycler"
+        tools:layout="@layout/fragment_common_utilities_recycler" >
+    </fragment>
 
 
 </navigation>

@@ -231,7 +231,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.generic.wallet.CustomClassForExpandableList
+        <com.generic.wallet.profilefragmentexpandablelist.CustomClassForExpandableList
             android:id="@+id/expandableListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

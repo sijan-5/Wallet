@@ -97,7 +97,7 @@
                     app:layout_constraintTop_toBottomOf="@id/walletBalance" />
 
                 <TextView
-                    android:id="@+id/outGoingBalance"
+                    android:id="@+id/payableBalance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -116,7 +116,7 @@
                     android:background="@drawable/dash_line"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/outGoingBalance" />
+                    app:layout_constraintTop_toBottomOf="@id/payableBalance" />
 
                 <TextView
                     android:id="@+id/walletUser"

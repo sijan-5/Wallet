@@ -1,10 +1,7 @@
-package com.generic.wallet
+package com.generic.wallet.profilefragmentexpandablelist
 
 import ChildDataClass
-import android.accounts.Account
-import android.content.Context
-import android.graphics.Color
-import androidx.core.content.ContextCompat
+import com.generic.wallet.R
 
 class ExpandableListDataItems {
 
