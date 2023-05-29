@@ -1,10 +1,18 @@
 package com.generic.wallet.electricityFeature
 
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.generic.wallet.R
 
 import com.generic.wallet.commondetail.CommonPaymentMethodFragment
 import com.generic.wallet.commondetail.PaymentDetailDataClass
+import com.google.android.material.textfield.TextInputLayout
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -17,60 +25,65 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ElectricityPaymentMethodFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ElectricityPaymentMethodFragment(
-) : CommonPaymentMethodFragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-//    private var _binding :FragmentELectricityPaymentMethodBinding? = null
-//    private val binding get() = _binding!!
-    override fun getPaymentItemsList() : List<PaymentDetailDataClass> {
-        return listOf(
-            PaymentDetailDataClass("Service","NEA"),
-            PaymentDetailDataClass("Counter","Satungal"),
-            PaymentDetailDataClass("SC Number", "948.##.####"),
-            PaymentDetailDataClass("Customer ID", "******"),
-            PaymentDetailDataClass("Total Amount","NPR ####"),
-            PaymentDetailDataClass("Previous Dues","NPR ####"),
-            PaymentDetailDataClass("Dues Date Form","YYYY/MM/DD"),
-        )
-    }
-
-    override fun getFragmentObject(): Fragment {
-        return this
-    }
+class ElectricityPaymentMethodFragment() : CommonPaymentMethodFragment() {
 
     override var getWalletBalance: String = "NPR ####"
     override var getPayableWalletBalance: String = "NPR ####"
     override var getTitleFromSubClass: String = "Electricity"
+
+    override fun getPaymentItemsList(): List<PaymentDetailDataClass> {
+        return listOf(
+            PaymentDetailDataClass("Service", "NEA"),
+            PaymentDetailDataClass("Counter", "Satungal"),
+            PaymentDetailDataClass("SC Number", "948.##.####"),
+            PaymentDetailDataClass("Customer ID", "******"),
+            PaymentDetailDataClass("Total Amount", "NPR ####"),
+            PaymentDetailDataClass("Previous Dues", "NPR ####"),
+            PaymentDetailDataClass("Dues Date Form", "YYYY/MM/DD"),
+        )
+    }
+
+    override fun getChildView(): View {
+        val inflater = LayoutInflater.from(activity)
+        return inflater.inflate(R.layout.fragment_electricity_payment_method, null, false)
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
-//    override fun onCreateView(
-//        inflater: LayoutInflater, container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//        // Inflate the layout for this fragment
-//        _binding = FragmentELectricityPaymentMethodBinding.inflate(inflater)
-//        return binding.root
-////    }
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        binding.backArrow.setOnClickListener {
-//            findNavController().popBackStack()
-//        }
-//
-//        binding.payButton.setOnClickListener {
-//            findNavController().navigate(R.id.action_electricity_to_transitionPin)
-//        }
-//    }
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.d("this","Elec")
+
+        view.findViewById<CheckBox>(R.id.payInAdvanceCheckBox)
+            .setOnCheckedChangeListener { _, isChecked ->
+
+                if (isChecked) {
+                    view.findViewById<TextView>(R.id.amountText).visibility = View.VISIBLE
+                    view.findViewById<TextInputLayout>(R.id.amountEditText).visibility =
+                        View.VISIBLE
+                }
+                else
+                {
+                    view.findViewById<TextView>(R.id.amountText).visibility = View.GONE
+                    view.findViewById<TextInputLayout>(R.id.amountEditText).visibility =
+                        View.GONE
+                }
+
+            }
+    }
+
 
     companion object {
         /**
@@ -83,12 +96,11 @@ class ElectricityPaymentMethodFragment(
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ElectricityPaymentMethodFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        fun newInstance(param1: String, param2: String) = ElectricityPaymentMethodFragment().apply {
+            arguments = Bundle().apply {
+                putString(ARG_PARAM1, param1)
+                putString(ARG_PARAM2, param2)
             }
+        }
     }
 }

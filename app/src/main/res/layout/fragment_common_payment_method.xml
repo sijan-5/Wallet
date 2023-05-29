@@ -16,7 +16,7 @@
             android:id="@+id/backArrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_48"
+            android:layout_marginTop="@dimen/dimen_40"
             android:src="@drawable/arrow_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +32,7 @@
             app:layout_constraintBottom_toBottomOf="@id/backArrow"
             app:layout_constraintStart_toEndOf="@id/backArrow"
             app:layout_constraintTop_toTopOf="@id/backArrow" />
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/paymentMethodStatusCardView"
@@ -117,81 +118,26 @@
         </androidx.cardview.widget.CardView>
 
 
-        <CheckBox
-            android:id="@+id/payInAdvanceCheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pay_in_advance"
-            android:visibility="gone"
-            android:textSize="14sp"
-            android:textColor="@color/black24"
-            android:fontFamily="@font/quicksand_medium"
-            app:layout_constraintTop_toBottomOf="@id/paymentMethodStatusCardView"
-            android:layout_marginTop="@dimen/dimen_24"
-            app:layout_constraintStart_toStartOf="parent"
-            />
 
-        <TextView
-            android:id="@+id/amountText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_16"
-            android:fontFamily="@font/quicksand_medium"
-            android:text="@string/amount"
-            android:visibility="gone"
-            android:textColor="@color/light_black"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/payInAdvanceCheckBox" />
-
-        <com.google.android.material.textfield.TextInputLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_amount"
-            android:visibility="gone"
-            android:id="@+id/amountEditText"
-            app:layout_constraintTop_toBottomOf="@id/amountText"
-            android:layout_marginTop="@dimen/dimen_8"
-            app:boxStrokeWidth="0dp"
-            >
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border"
-                android:textColor="@color/edit_text_hint_color"
-                android:fontFamily="@font/quicksand"
-                android:textSize="14sp"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
             android:orientation="vertical"
-            android:id="@+id/linearLayout"
             app:layout_constraintTop_toBottomOf="@id/paymentMethodStatusCardView"
             android:layout_marginTop="@dimen/dimen_24"
             />
-
-        <androidx.constraintlayout.widget.Barrier
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/barrier"
-            app:barrierDirection="bottom"
-            app:constraint_referenced_ids="linearLayout,amountEditText"/>
 
         <TextView
             android:id="@+id/paymentMethodText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/payment_method"
-            app:layout_constraintTop_toBottomOf="@id/barrier"
             android:textSize="14sp"
             android:fontFamily="@font/quicksand_bold"
             android:textColor="@color/bold_text_color"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container"
             android:layout_marginTop="@dimen/dimen_16"
             />
 

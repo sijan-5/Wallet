@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/dashBoardFragment"
-        android:name="com.generic.wallet.internetFeature.InternetPaymentMethodForm"
+        android:name="com.generic.wallet.waterFeature.WaterPaymentMethod"
         android:label="dash_board"
-        tools:layout="@layout/fragment_internet_payment_method_form">
+        tools:layout="@layout/fragment_water_payment_method">
 
         <action
             android:id="@+id/action_dashBoardFragment_to_bank_transfer_login_graph"

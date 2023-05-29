@@ -22,13 +22,13 @@ import com.generic.wallet.internetFeature.InternetPaymentMethodForm
 
 abstract class CommonPaymentMethodFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var _binding: com.generic.wallet.databinding.FragmentCommonPaymentMethodBinding? = null
-    private val binding get() = _binding!!
+    private var _binding: FragmentCommonPaymentMethodBinding? = null
+    private  val binding get() = _binding!!
     abstract fun getPaymentItemsList(): List<PaymentDetailDataClass>
     abstract var getWalletBalance: String
     abstract var getPayableWalletBalance: String
     abstract var getTitleFromSubClass: String
-    abstract fun getFragmentObject(): Fragment
+    abstract fun getChildView() : View?
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,55 +42,22 @@ abstract class CommonPaymentMethodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        Log.d("view","Common")
+
         _binding = FragmentCommonPaymentMethodBinding.inflate(inflater)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (getFragmentObject() is ElectricityPaymentMethodFragment) {
-            setUpTitleAndBalance()
-            setUpRecyclerView(getPaymentItemsList())
-
-            binding.apply {
-                linearLayout.visibility = View.GONE
-                payInAdvanceCheckBox.visibility = View.VISIBLE
-                payInAdvanceCheckBox.setOnCheckedChangeListener{_, isChecked ->
-                    if (isChecked)
-                    {
-                        amountText.visibility = View.VISIBLE
-                        amountEditText.visibility = View.VISIBLE
-                    }
-                    else
-                    {
-                        amountText.visibility = View.GONE
-                        amountEditText.visibility = View.GONE
-                    }
-                }
-            }
+        getChildView()?.let {
+            binding.container.addView(it)
         }
 
-
-        else if(getFragmentObject() is InternetPaymentMethodForm)
-        {
-            setUpTitleAndBalance()
-            setUpRecyclerView(getPaymentItemsList())
-
-            val inflater = LayoutInflater.from(activity)
-            val hiddenViewForInternetPayment = inflater.inflate(R.layout.test,null,true)
-            binding.apply {
-                linearLayout.apply {
-                    addView(hiddenViewForInternetPayment)
-                    visibility = View.VISIBLE
-                }
-                amountEditText.visibility=View.GONE
-                amountText.visibility= View.GONE
-                payInAdvanceCheckBox.visibility = View.GONE
-            }
-        }
-
+        Log.d("this","Common")
+        setUpTitleAndBalance()
+        setUpRecyclerView()
     }
     private fun setUpTitleAndBalance() {
         binding.apply {
@@ -99,11 +66,11 @@ abstract class CommonPaymentMethodFragment : Fragment() {
             title.text = getTitleFromSubClass
             }
     }
-    private fun setUpRecyclerView(paymentItem : List<PaymentDetailDataClass> )
+    private fun setUpRecyclerView()
     {
         binding.showPaymentDetailRecycler.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = PaymentMethodAdapter(paymentItem)
+            adapter = PaymentMethodAdapter(getPaymentItemsList())
         }
     }
 
