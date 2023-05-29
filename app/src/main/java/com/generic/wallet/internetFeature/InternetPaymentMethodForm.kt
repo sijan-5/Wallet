@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
+import com.generic.wallet.commondetail.CommonPaymentMethodFragment
+import com.generic.wallet.commondetail.PaymentDetailDataClass
 import com.generic.wallet.databinding.FragmentInternetPaymentMethodFormBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,13 +21,25 @@ private const val ARG_PARAM2 = "param2"
  * Use the [InternetPaymentMethodForm.newInstance] factory method to
  * create an instance of this fragment.
  */
-class InternetPaymentMethodForm : Fragment() {
+class InternetPaymentMethodForm :CommonPaymentMethodFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var _binding : FragmentInternetPaymentMethodFormBinding? = null
     private val binding get() = _binding!!
+    override fun getPaymentItemsList(): List<PaymentDetailDataClass> {
+        return listOf(PaymentDetailDataClass("UserName","Shooman"),
+        PaymentDetailDataClass("Service Provider","WorldLink"),
+        PaymentDetailDataClass("Status","Active"),
+        PaymentDetailDataClass("Selected Plan","500Mb/Mth"))
 
+    }
+
+    override var getWalletBalance: String = "NPR 123"
+    override var getPayableWalletBalance: String = "NPR 123"
+    override var getTitleFromSubClass: String = "Water"
+
+    override fun getFragmentObject(): Fragment = this
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,26 +48,26 @@ class InternetPaymentMethodForm : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        _binding = FragmentInternetPaymentMethodFormBinding.inflate(inflater)
-        return binding.root
-    }
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        _binding = FragmentInternetPaymentMethodFormBinding.inflate(inflater)
+//        return binding.root
+//    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.backArrow.setOnClickListener {
-            findNavController().popBackStack()
-        }
-
-        binding.payButton.setOnClickListener {
-            findNavController().navigate(R.id.action_internet_to_transitionPin)
-        }
-    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        binding.backArrow.setOnClickListener {
+//            findNavController().popBackStack()
+//        }
+//
+//        binding.payButton.setOnClickListener {
+//            findNavController().navigate(R.id.action_internet_to_transitionPin)
+//        }
+//    }
 
     companion object {
         /**

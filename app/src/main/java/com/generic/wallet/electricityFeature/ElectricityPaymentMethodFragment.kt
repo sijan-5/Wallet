@@ -25,7 +25,6 @@ class ElectricityPaymentMethodFragment(
 //    private var _binding :FragmentELectricityPaymentMethodBinding? = null
 //    private val binding get() = _binding!!
     override fun getPaymentItemsList() : List<PaymentDetailDataClass> {
-
         return listOf(
             PaymentDetailDataClass("Service","NEA"),
             PaymentDetailDataClass("Counter","Satungal"),
@@ -37,8 +36,12 @@ class ElectricityPaymentMethodFragment(
         )
     }
 
-    override var getWalletBalance: String = "####"
-    override var getPayableWalletBalance: String = "####"
+    override fun getFragmentObject(): Fragment {
+        return this
+    }
+
+    override var getWalletBalance: String = "NPR ####"
+    override var getPayableWalletBalance: String = "NPR ####"
     override var getTitleFromSubClass: String = "Electricity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
