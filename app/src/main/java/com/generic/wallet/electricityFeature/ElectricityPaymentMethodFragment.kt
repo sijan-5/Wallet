@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
 
 import com.generic.wallet.commondetail.CommonPaymentMethodFragment
@@ -29,9 +30,10 @@ class ElectricityPaymentMethodFragment() : CommonPaymentMethodFragment() {
 
     override var getWalletBalance: String = "NPR ####"
     override var getPayableWalletBalance: String = "NPR ####"
-    override var getTitleFromSubClass: String = "Electricity"
+    override fun getTitleFromSubClass(): String = resources.getString(R.string.electricity)
 
-    override fun getPaymentItemsList(): List<PaymentDetailDataClass> {
+
+    override fun getPaymentBillList(): List<PaymentDetailDataClass> {
         return listOf(
             PaymentDetailDataClass("Service", "NEA"),
             PaymentDetailDataClass("Counter", "Satungal"),
@@ -48,40 +50,31 @@ class ElectricityPaymentMethodFragment() : CommonPaymentMethodFragment() {
         return inflater.inflate(R.layout.fragment_electricity_payment_method, null, false)
     }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
+    override fun navigateBack() {
+        findNavController().popBackStack()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+    override fun navigateToConfirmation() {
+        findNavController().navigate(R.id.action_electricity_to_transitionPin)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("this","Elec")
 
         view.findViewById<CheckBox>(R.id.payInAdvanceCheckBox)
             .setOnCheckedChangeListener { _, isChecked ->
-
                 if (isChecked) {
                     view.findViewById<TextView>(R.id.amountText).visibility = View.VISIBLE
                     view.findViewById<TextInputLayout>(R.id.amountEditText).visibility =
                         View.VISIBLE
-                }
-                else
-                {
+                } else {
                     view.findViewById<TextView>(R.id.amountText).visibility = View.GONE
                     view.findViewById<TextInputLayout>(R.id.amountEditText).visibility =
                         View.GONE
                 }
-
             }
+
+
     }
 
 

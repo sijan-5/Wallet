@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
 import com.generic.wallet.commondetail.CommonPaymentMethodFragment
 import com.generic.wallet.commondetail.PaymentDetailDataClass
@@ -21,11 +22,8 @@ private const val ARG_PARAM2 = "param2"
  */
 class WaterPaymentMethod : CommonPaymentMethodFragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-
-    override fun getPaymentItemsList(): List<PaymentDetailDataClass> {
+    override fun getPaymentBillList(): List<PaymentDetailDataClass> {
         return listOf(
             PaymentDetailDataClass("Service","NWSC"),
             PaymentDetailDataClass("Counter","Kathmandu"),
@@ -37,29 +35,21 @@ class WaterPaymentMethod : CommonPaymentMethodFragment() {
 
     override var getWalletBalance: String = "NPR 123"
     override var getPayableWalletBalance: String = "NPR 123"
-    override var getTitleFromSubClass: String = "Water"
+    override fun getTitleFromSubClass(): String = resources.getString(R.string.water)
 
     override fun getChildView(): View? {
         return null
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
+
+    override fun navigateToConfirmation() {
+        findNavController().navigate(R.id.action_waterPayment_to_transactionPin)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+    override fun navigateBack() {
+        findNavController().popBackStack()
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     companion object {
         /**
          * Use this factory method to create a new instance of

@@ -7,8 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.generic.wallet.R
-import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
-import org.w3c.dom.Text
 
 class DashBoardAdapter(val list: List<DashBoardItemDataClass>) :
     RecyclerView.Adapter<DashBoardAdapter.ViewHolder>() {

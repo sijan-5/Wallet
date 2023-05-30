@@ -1,6 +1,5 @@
 package com.generic.wallet.commondetail
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,10 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentCommonPaymentMethodBinding
-import com.generic.wallet.electricityFeature.ElectricityPaymentMethodFragment
-import com.generic.wallet.internetFeature.InternetPaymentMethodForm
 
 
 /**
@@ -19,17 +15,18 @@ import com.generic.wallet.internetFeature.InternetPaymentMethodForm
  * Use the [CommonPaymentMethodFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-
+const val TAG = "TAG"
 abstract class CommonPaymentMethodFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var _binding: FragmentCommonPaymentMethodBinding? = null
     private  val binding get() = _binding!!
-    abstract fun getPaymentItemsList(): List<PaymentDetailDataClass>
+    abstract fun getPaymentBillList(): List<PaymentDetailDataClass>
     abstract var getWalletBalance: String
     abstract var getPayableWalletBalance: String
-    abstract var getTitleFromSubClass: String
+    abstract fun getTitleFromSubClass() : String
     abstract fun getChildView() : View?
-
+    abstract fun navigateToConfirmation()
+    abstract fun navigateBack()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -42,8 +39,6 @@ abstract class CommonPaymentMethodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        Log.d("view","Common")
-
         _binding = FragmentCommonPaymentMethodBinding.inflate(inflater)
         return binding.root
     }
@@ -55,7 +50,14 @@ abstract class CommonPaymentMethodFragment : Fragment() {
             binding.container.addView(it)
         }
 
-        Log.d("this","Common")
+        binding.apply {
+           backArrow.setOnClickListener {
+               navigateBack()
+           }
+            payButton.setOnClickListener {
+                navigateToConfirmation()
+            }
+        }
         setUpTitleAndBalance()
         setUpRecyclerView()
     }
@@ -63,14 +65,14 @@ abstract class CommonPaymentMethodFragment : Fragment() {
         binding.apply {
             balance.text = getWalletBalance
             payableBalance.text = getPayableWalletBalance
-            title.text = getTitleFromSubClass
+            title.text = getTitleFromSubClass()
             }
     }
     private fun setUpRecyclerView()
     {
         binding.showPaymentDetailRecycler.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = PaymentMethodAdapter(getPaymentItemsList())
+            adapter = PaymentMethodAdapter(getPaymentBillList())
         }
     }
 

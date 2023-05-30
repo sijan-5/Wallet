@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/internet_feature_nav_graph"
-    app:startDestination="@id/internetHomeFragment">
+    app:startDestination="@id/internetFormFragment">
 
     <fragment
         android:id="@+id/internetPaymentMethodForm"
         android:name="com.generic.wallet.internetFeature.InternetPaymentMethodForm"
         android:label="InternetPaymentMethodForm" >
-
 
         <action android:id="@+id/action_internet_to_transitionPin"
             app:destination="@id/pin_authentication_nav_graph"/>
@@ -22,14 +21,5 @@
         <action
             android:id="@+id/action_internetFormFragment_to_internetPaymentMethodForm"
             app:destination="@id/internetPaymentMethodForm" />
-    </fragment>
-    <fragment
-        android:id="@+id/internetHomeFragment"
-        android:name="com.generic.wallet.internetFeature.InternetHomeFragment"
-        android:label="fragment_internet_home"
-        tools:layout="@layout/fragment_internet_home" >
-        <action
-            android:id="@+id/action_internetHomeFragment_to_internetFormFragment"
-            app:destination="@id/internetFormFragment" />
     </fragment>
 </navigation>

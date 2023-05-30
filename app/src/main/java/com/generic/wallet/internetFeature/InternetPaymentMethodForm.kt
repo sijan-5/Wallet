@@ -1,12 +1,14 @@
 package com.generic.wallet.internetFeature
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
+import com.generic.wallet.SelectTitle
 import com.generic.wallet.commondetail.CommonPaymentMethodFragment
 import com.generic.wallet.commondetail.PaymentDetailDataClass
 import com.generic.wallet.databinding.FragmentInternetPaymentMethodFormBinding
@@ -21,65 +23,37 @@ private const val ARG_PARAM2 = "param2"
  * Use the [InternetPaymentMethodForm.newInstance] factory method to
  * create an instance of this fragment.
  */
+
  class InternetPaymentMethodForm :CommonPaymentMethodFragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private var _binding : FragmentInternetPaymentMethodFormBinding? = null
-    private val binding get() = _binding!!
-    override fun getPaymentItemsList(): List<PaymentDetailDataClass> {
+
+    override fun getPaymentBillList(): List<PaymentDetailDataClass> {
         return listOf(PaymentDetailDataClass("UserName","Shooman"),
         PaymentDetailDataClass("Service Provider","WorldLink"),
         PaymentDetailDataClass("Status","Active"),
         PaymentDetailDataClass("Selected Plan","500Mb/Mth"))
-
     }
+
 
     override var getWalletBalance: String = "NPR 123"
     override var getPayableWalletBalance: String = "NPR 123"
-    override var getTitleFromSubClass: String = "Water"
+
+    override fun getTitleFromSubClass() : String = resources.getString(R.string.internet)
+
 
     override fun getChildView(): View {
         val inflater = LayoutInflater.from(activity)
         return inflater.inflate(R.layout.fragment_internet_payment_method_form, null ,false)
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+
+    override fun navigateToConfirmation() {
+        findNavController().navigate(R.id.action_internet_to_transitionPin)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+    override fun navigateBack() {
+        findNavController().popBackStack()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment InternetPaymentMethodForm.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            InternetPaymentMethodForm().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

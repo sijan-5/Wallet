@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.generic.wallet.bankTransferFeature.BankListAdapter
-import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
 import com.generic.wallet.R
 import com.generic.wallet.databinding.FragmentLoadWalletHomeBinding
 

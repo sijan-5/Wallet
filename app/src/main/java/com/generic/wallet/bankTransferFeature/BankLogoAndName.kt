@@ -4,28 +4,28 @@ import android.os.Parcel
 import android.os.Parcelable
 import androidx.annotation.DrawableRes
 
-data class BankLogoAndNameDataClass (@DrawableRes val bankImageResource : Int, val bankTextView :String?) :Parcelable {
+data class CommonUtilitiesDataClass (@DrawableRes val bankImageResource : Int, val itemName :String) :Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
-        parcel.readString()
+        parcel.readString()!!
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(bankImageResource)
-        parcel.writeString(bankTextView)
+        parcel.writeString(itemName)
     }
 
     override fun describeContents(): Int {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<BankLogoAndNameDataClass> {
-        override fun createFromParcel(parcel: Parcel): BankLogoAndNameDataClass {
-            return BankLogoAndNameDataClass(parcel)
+    companion object CREATOR : Parcelable.Creator<CommonUtilitiesDataClass> {
+        override fun createFromParcel(parcel: Parcel): CommonUtilitiesDataClass {
+            return CommonUtilitiesDataClass(parcel)
         }
 
-        override fun newArray(size: Int): Array<BankLogoAndNameDataClass?> {
+        override fun newArray(size: Int): Array<CommonUtilitiesDataClass?> {
             return arrayOfNulls(size)
         }
     }

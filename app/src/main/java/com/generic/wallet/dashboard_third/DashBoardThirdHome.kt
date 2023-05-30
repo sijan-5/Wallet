@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.R
-import com.generic.wallet.bankTransferFeature.BankListAdapter
-import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
+import com.generic.wallet.bankTransferFeature.CommonUtilitiesDataClass
 import com.generic.wallet.dashboard.DashBoardAdapter
 import com.generic.wallet.dashboard.DashBoardItemDataClass
-import com.generic.wallet.dashboard_one.DashboardOneAdapter
 import com.generic.wallet.dashboard_one.DashboardOneDataClass
 import com.generic.wallet.databinding.FragmentDashBoardThirdHomeBinding
 
@@ -73,23 +71,23 @@ class DashBoardThirdHome : Fragment() {
     }
 
 
-    private fun getUtilities(): List<BankLogoAndNameDataClass> {
+    private fun getUtilities(): List<CommonUtilitiesDataClass> {
         return listOf(
-            BankLogoAndNameDataClass(
+            CommonUtilitiesDataClass(
                 R.drawable.ncell_l,
                 resources.getString(R.string.ncell_top_up),
             ),
-            BankLogoAndNameDataClass(
+            CommonUtilitiesDataClass(
                 R.drawable.dish_home,
                 resources.getString(R.string.dish_home_price),
             ),
 
-            BankLogoAndNameDataClass(
+            CommonUtilitiesDataClass(
                 R.drawable.wlink_logo,
                 resources.getString(R.string.world_link),
             ),
 
-            BankLogoAndNameDataClass(
+            CommonUtilitiesDataClass(
                 R.drawable.nea,
                 resources.getString(R.string.nea),
             )

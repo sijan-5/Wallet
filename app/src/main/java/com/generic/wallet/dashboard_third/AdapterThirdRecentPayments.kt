@@ -7,10 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.generic.wallet.R
-import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
-import com.generic.wallet.dashboard_one.DashboardOneDataClass
+import com.generic.wallet.bankTransferFeature.CommonUtilitiesDataClass
 
-class AdapterThirdRecentPayments(val list: List<BankLogoAndNameDataClass>) : RecyclerView.Adapter<AdapterThirdRecentPayments.ViewHolder>() {
+class AdapterThirdRecentPayments(val list: List<CommonUtilitiesDataClass>) : RecyclerView.Adapter<AdapterThirdRecentPayments.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -24,7 +23,7 @@ class AdapterThirdRecentPayments(val list: List<BankLogoAndNameDataClass>) : Rec
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item =  list[position]
         holder.itemLogo.setImageResource(item.bankImageResource)
-        holder.itemName.text = item.bankTextView
+        holder.itemName.text = item.itemName
 
     }
 

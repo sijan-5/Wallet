@@ -2,7 +2,6 @@ package com.generic.wallet.dashboard
 
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +11,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.generic.wallet.R
-import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
+import com.generic.wallet.bankTransferFeature.CommonUtilitiesDataClass
 import com.generic.wallet.databinding.FragmentDashboardBinding
 
 
@@ -28,6 +26,8 @@ private const val ARG_PARAM2 = "param2"
  * Use the [DashboardFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+const val key :String = "KeyForDashboardItems"
+const val titlekey:String = "keyForTitle"
 class DashboardFragment : Fragment() {
 
     private val noOfColumns = 4
@@ -128,16 +128,16 @@ class DashboardFragment : Fragment() {
                 resources.getString(R.string.electricity),
                 R.drawable.electricitybackground
             ) {
-
-               val bundle = bundleOf("key" to electricityBoardList(), "title" to resources.getString(R.string.electricity) )
+               val bundle = bundleOf(key to electricityBoardList(), titlekey to resources.getString(R.string.electricity) )
                 navigateToCommonPage(bundle)
             },
             DashBoardItemDataClass(
                 R.drawable.internet,
                 resources.getString(R.string.internet),
                 R.drawable.internetbackground
-            ) {
-               val bundle = bundleOf("key" to getISPList(),"title" to resources.getString(R.string.internet)  )
+            )
+            {
+               val bundle = bundleOf(key to getISPList(), titlekey to resources.getString(R.string.internet)  )
                 navigateToCommonPage(bundle)
             },
             DashBoardItemDataClass(
@@ -145,7 +145,7 @@ class DashboardFragment : Fragment() {
                 resources.getString(R.string.water),
                 R.drawable.waterbackground
             ) {
-               val bundle = bundleOf("key" to getListOfWaterServices(),"title" to resources.getString(R.string.water) )
+               val bundle = bundleOf(key to getListOfWaterServices(), titlekey to resources.getString(R.string.water) )
                 navigateToCommonPage(bundle)
             },
             DashBoardItemDataClass(
@@ -170,7 +170,6 @@ class DashboardFragment : Fragment() {
 
             }
         )
-
 
     }
 
@@ -269,28 +268,27 @@ class DashboardFragment : Fragment() {
     }
 
 
-    private fun electricityBoardList() : List<BankLogoAndNameDataClass> {
-
+    private fun electricityBoardList() : List<CommonUtilitiesDataClass> {
         return  mutableListOf(
-            BankLogoAndNameDataClass(R.drawable.nea,"NEA"),
-            BankLogoAndNameDataClass(R.drawable.slrec,"SLREC")
+            CommonUtilitiesDataClass(R.drawable.nea,"NEA"),
+            CommonUtilitiesDataClass(R.drawable.slrec,"SLREC")
         )
     }
 
-    private fun getISPList(): List<BankLogoAndNameDataClass> {
+    private fun getISPList(): List<CommonUtilitiesDataClass> {
         return mutableListOf(
-            BankLogoAndNameDataClass(R.drawable.wlink_logo, "World Link"),
-            BankLogoAndNameDataClass(R.drawable.vianet, "Vianet"),
-            BankLogoAndNameDataClass(R.drawable.subisu, "SUBISU"),
-            BankLogoAndNameDataClass(R.drawable.cgnet, "CG Net"),
+            CommonUtilitiesDataClass(R.drawable.wlink_logo, "World Link"),
+            CommonUtilitiesDataClass(R.drawable.vianet, "Vianet"),
+            CommonUtilitiesDataClass(R.drawable.subisu, "SUBISU"),
+            CommonUtilitiesDataClass(R.drawable.cgnet, "CG Net"),
             )
     }
 
-    private fun getListOfWaterServices() : List<BankLogoAndNameDataClass>
+    private fun getListOfWaterServices() : List<CommonUtilitiesDataClass>
     {
-        return mutableListOf(BankLogoAndNameDataClass(R.drawable.nwsc , "NWSC"),
-            BankLogoAndNameDataClass(R.drawable.kukl_logo , "KUKL"),
-            BankLogoAndNameDataClass(R.drawable.community_khanepani , "Community KhanePani"))
+        return mutableListOf(CommonUtilitiesDataClass(R.drawable.nwsc , "NWSC"),
+            CommonUtilitiesDataClass(R.drawable.kukl_logo , "KUKL"),
+            CommonUtilitiesDataClass(R.drawable.community_khanepani , "Community KhanePani"))
     }
 
 

@@ -6,17 +6,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.generic.wallet.R
-import com.generic.wallet.bankTransferFeature.BankListAdapter
-import com.generic.wallet.bankTransferFeature.BankLogoAndNameDataClass
+import com.generic.wallet.SelectTitle
+import com.generic.wallet.bankTransferFeature.CommonDashboardItemAdapter
+import com.generic.wallet.bankTransferFeature.CommonUtilitiesDataClass
 import com.generic.wallet.databinding.FragmentCommonUtilitiesRecyclerBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-private const val key = "Private_Key"
+const val itemNameKey: String = "ItemNameKey"
 
 class CommonUtilitiesRecycler : Fragment() {
     // TODO: Rename and change types of parameters
@@ -34,8 +37,7 @@ class CommonUtilitiesRecycler : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentCommonUtilitiesRecyclerBinding.inflate(inflater)
@@ -50,25 +52,44 @@ class CommonUtilitiesRecycler : Fragment() {
 //            arguments?.getParcelableArrayList<BankLogoAndNameDataClass>(key)
 
         val bundle = arguments
-        if (bundle != null) {
 
-            val list: List<BankLogoAndNameDataClass> =
-                bundle.getParcelableArrayList<BankLogoAndNameDataClass>("key")!!
+        if (bundle != null) {
+            val list: List<CommonUtilitiesDataClass> =
+                bundle.getParcelableArrayList<CommonUtilitiesDataClass>(key)!!
             Log.d("array size", "${list.size}")
 
-            binding.title.text = bundle.getString("title")
+            val getTitle = bundle.getString(titlekey)
+            binding.title.text = getTitle
 
             binding.commonRecyclerView.apply {
                 layoutManager =
                     GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
-                adapter = BankListAdapter(list) {}
+                adapter = CommonDashboardItemAdapter(list) { itemName ->
+
+                    val itemNameBundle = bundleOf(itemNameKey to itemName)
+                    navigateToSelectDashboardItem(getTitle, itemNameBundle)
+                }
             }
+
 
         } else {
             Log.d("is bundle", "Bundle is null")
         }
 
+        binding.backArrow.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
+    }
+
+    private fun navigateToSelectDashboardItem(titleName: String?, bundle: Bundle) {
+        when (titleName) {
+            SelectTitle.Electricity.getTitle(requireContext()) -> findNavController().navigate(
+                R.id.action_commonUtilitiesRecycler_to_electricity_feature_nav_graph, bundle
+            )
+            SelectTitle.Water.getTitle(requireContext()) -> findNavController().navigate(R.id.action_commonUtilitiesRecycler_to_water_feature_nav_graph,bundle)
+            else -> findNavController().navigate(R.id.action_commonUtilitiesRecycler_to_internet_feature_nav_graph,bundle)
+        }
     }
 
 
@@ -84,20 +105,9 @@ class CommonUtilitiesRecycler : Fragment() {
         // TODO: Rename and change types and number of parameters
 
         fun newInstance(
-            electricityBoardList: List<BankLogoAndNameDataClass>,
-            x: Int
+            electricityBoardList: List<CommonUtilitiesDataClass>, x: Int
         ) {
-//            Log.d("sending", x.toString())
-//            val arrayList: ArrayList<BankLogoAndNameDataClass> = ArrayList(electricityBoardList)
-//
-//            val commonUtilitiesRecycler = CommonUtilitiesRecycler()
-//
-//            val bundle = Bundle()
-//            bundle.putParcelableArrayList(key,arrayList)
-//            bundle.putInt("intKey",x)
-//            commonUtilitiesRecycler.arguments = bundle
-//
-//            return commonUtilitiesRecycler
+
 
         }
     }

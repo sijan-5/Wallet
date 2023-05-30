@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/dashBoardFragment"
-        android:name="com.generic.wallet.waterFeature.WaterPaymentMethod"
+        android:name="com.generic.wallet.dashboard.DashboardFragment"
         android:label="dash_board"
-        tools:layout="@layout/fragment_water_payment_method">
+        tools:layout="@layout/fragment_dashboard">
 
         <action
             android:id="@+id/action_dashBoardFragment_to_bank_transfer_login_graph"
@@ -20,21 +20,10 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_load_wallet_nav_graph"
             app:destination="@id/load_wallet_nav_graph" />
-        <action
-            android:id="@+id/action_dashBoardFragment_to_electricity_feature_nav_graph"
-            app:destination="@id/electricity_feature_nav_graph" />
-        <action
-            android:id="@+id/action_dashBoardFragment_to_electricity_feature_nav_graph2"
-            app:destination="@id/electricity_feature_nav_graph" />
-        <action
-            android:id="@+id/action_dashBoardFragment_to_water_feature_nav_graph"
-            app:destination="@id/water_feature_nav_graph" />
+
         <action
             android:id="@+id/action_dashBoardFragment_to_top_up_feature"
             app:destination="@id/top_up_feature" />
-        <action
-            android:id="@+id/action_dashBoardFragment_to_internet_feature_nav_graph"
-            app:destination="@id/internet_feature_nav_graph" />
         <action
             android:id="@+id/action_dashBoardFragment_to_send_money"
             app:destination="@id/send_money" />
@@ -44,7 +33,6 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_commonUtilitiesRecycler"
             app:destination="@id/commonUtilitiesRecycler" />
-
     </fragment>
 
 
@@ -92,6 +80,15 @@
         android:name="com.generic.wallet.dashboard.CommonUtilitiesRecycler"
         android:label="fragment_common_utilities_recycler"
         tools:layout="@layout/fragment_common_utilities_recycler" >
+        <action
+            android:id="@+id/action_commonUtilitiesRecycler_to_electricity_feature_nav_graph"
+            app:destination="@id/electricity_feature_nav_graph" />
+        <action
+            android:id="@+id/action_commonUtilitiesRecycler_to_water_feature_nav_graph"
+            app:destination="@id/water_feature_nav_graph" />
+        <action
+            android:id="@+id/action_commonUtilitiesRecycler_to_internet_feature_nav_graph"
+            app:destination="@id/internet_feature_nav_graph" />
     </fragment>
 
 

@@ -27,17 +27,17 @@ class BanksTranferHomeFragment : Fragment() {
     private var _binding: FragmentBanksListBinding? = null
     private val binding get() = _binding!!
 
-    private val bankImageAndNameList:List<BankLogoAndNameDataClass> = getItemList()
-    private fun getItemList(): List<BankLogoAndNameDataClass> {
+    private val bankImageAndNameList:List<CommonUtilitiesDataClass> = getItemList()
+    private fun getItemList(): List<CommonUtilitiesDataClass> {
 
         return  listOf(
-            BankLogoAndNameDataClass(R.drawable.adbl_1, "ADBL"),
-            BankLogoAndNameDataClass(R.drawable.nabil_bank_1, "Nepal Bank"),
-            BankLogoAndNameDataClass(R.drawable.nic_asia_1, "NIC Asia"),
-            BankLogoAndNameDataClass(R.drawable.rbb_1, "RBBL"),
-            BankLogoAndNameDataClass(R.drawable.nimb, "NIBL"),
-            BankLogoAndNameDataClass(R.drawable.garima_1, "GBBL"),
-            BankLogoAndNameDataClass(R.drawable.ncc_1, "NCCBL"),
+            CommonUtilitiesDataClass(R.drawable.adbl_1, "ADBL"),
+            CommonUtilitiesDataClass(R.drawable.nabil_bank_1, "Nepal Bank"),
+            CommonUtilitiesDataClass(R.drawable.nic_asia_1, "NIC Asia"),
+            CommonUtilitiesDataClass(R.drawable.rbb_1, "RBBL"),
+            CommonUtilitiesDataClass(R.drawable.nimb, "NIBL"),
+            CommonUtilitiesDataClass(R.drawable.garima_1, "GBBL"),
+            CommonUtilitiesDataClass(R.drawable.ncc_1, "NCCBL"),
         )
 
 
@@ -67,7 +67,7 @@ class BanksTranferHomeFragment : Fragment() {
 
         binding.bankListRecyclerView.layoutManager = GridLayoutManager(requireContext(),4,GridLayoutManager.VERTICAL,
         false)
-        binding.bankListRecyclerView.adapter = BankListAdapter(bankImageAndNameList) {
+        binding.bankListRecyclerView.adapter = CommonDashboardItemAdapter(bankImageAndNameList) {
             changeFragment()
         }
 

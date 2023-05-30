@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
+import com.generic.wallet.dashboard.itemNameKey
 import com.generic.wallet.databinding.FragmentElectricityFormBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,6 +27,7 @@ class ElectricityFormFragment : Fragment() {
     private var param2: String? = null
     private var _binding : FragmentElectricityFormBinding? = null
     private val binding get() = _binding!!
+    val spinnerItemList : ArrayList<String> = arrayListOf("Sunday", "Monday", "Tuesday")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,7 @@ class ElectricityFormFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +50,9 @@ class ElectricityFormFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        arguments?.let {
+            binding.title.text = it.getString(itemNameKey)
+        }
         binding.continueButton.setOnClickListener {
             findNavController().navigate(R.id.action_electricityFormFragment_to_electricityPaymentMethodFragment2)
         }
@@ -53,6 +60,10 @@ class ElectricityFormFragment : Fragment() {
         binding.backArrow.setOnClickListener {
             findNavController().popBackStack()
         }
+
+        val adapter = ArrayAdapter.createFromResource(requireContext(),R.array.planets_array, android.R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinner.adapter = adapter
     }
 
     companion object {

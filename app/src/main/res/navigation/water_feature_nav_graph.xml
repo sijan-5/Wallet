@@ -3,24 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/water_feature_nav_graph"
-    app:startDestination="@id/waterFeatureHomeFragment">
+    app:startDestination="@id/waterForm">
 
     <fragment
-        android:id="@+id/waterFeatureHomeFragment"
-        android:name="com.generic.wallet.waterFeature.WaterFeatureHomeFragment"
-        android:label="fragment_water_feature_home"
-        tools:layout="@layout/fragment_water_feature_home" >
+        android:id="@+id/waterPaymentMethod"
+        android:name="com.generic.wallet.waterFeature.WaterPaymentMethod"
+        android:label="fragment_water_payment_method"
+        tools:layout="@layout/fragment_water_payment_method" >
+
         <action
-            android:id="@+id/action_waterFeatureHomeFragment_to_waterForm"
-            app:destination="@id/waterForm" />
+            android:id="@+id/action_waterPayment_to_transactionPin"
+            app:destination="@id/pin_authentication_nav_graph"/>
     </fragment>
+
+
     <fragment
         android:id="@+id/waterForm"
         android:name="com.generic.wallet.waterFeature.WaterForm"
         android:label="fragment_water_form"
         tools:layout="@layout/fragment_water_form" >
-
-        <action android:id="@+id/action_water_to_transitionPin"
-            app:destination="@id/pin_authentication_nav_graph"/>
+        <action
+            android:id="@+id/action_waterForm_to_waterPaymentMethod"
+            app:destination="@id/waterPaymentMethod" />
     </fragment>
 </navigation>

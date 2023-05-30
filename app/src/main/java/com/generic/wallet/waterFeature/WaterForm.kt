@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
+import com.generic.wallet.dashboard.itemNameKey
 import com.generic.wallet.databinding.FragmentWaterFormBinding
 import kotlin.math.log
 
@@ -53,9 +54,10 @@ class WaterForm : Fragment() {
            findNavController().popBackStack()
         }
 
-        binding.continueButton.setOnClickListener {
-             findNavController().navigate(R.id.action_water_to_transitionPin)
+        binding.title.text =  arguments?.getString(itemNameKey)
 
+        binding.continueButton.setOnClickListener {
+             findNavController().navigate(R.id.action_waterForm_to_waterPaymentMethod)
         }
     }
 

@@ -3,17 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/electricity_feature_nav_graph"
-    app:startDestination="@id/electricityHomeFragment">
+    app:startDestination="@id/electricityFormFragment">
 
-    <fragment
-        android:id="@+id/electricityHomeFragment"
-        android:name="com.generic.wallet.electricityFeature.ElectricityHomeFragment"
-        android:label="fragment_electricity_home"
-        tools:layout="@layout/fragment_electricity_home" >
-        <action
-            android:id="@+id/action_electricityHomeFragment_to_electricityFormFragment"
-            app:destination="@id/electricityFormFragment" />
-    </fragment>
     <fragment
         android:id="@+id/electricityFormFragment"
         android:name="com.generic.wallet.electricityFeature.ElectricityFormFragment"
