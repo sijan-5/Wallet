@@ -6,10 +6,10 @@ import com.generic.wallet.R
 class ExpandableListDataItems {
 
     private val profileItemHashMap: HashMap<GroupTitleDataClass, List<ChildDataClass>?> = HashMap()
-    private var accountChildList: MutableList<ChildDataClass> = mutableListOf<ChildDataClass>()
-    var supportChildList: MutableList<ChildDataClass> = mutableListOf()
-    private var appChildList: MutableList<ChildDataClass> = mutableListOf<ChildDataClass>()
-    private var settingChildList : MutableList<ChildDataClass> = mutableListOf()
+    private val accountChildList: MutableList<ChildDataClass> = mutableListOf<ChildDataClass>()
+    private val supportChildList: MutableList<ChildDataClass> = mutableListOf()
+    private val appChildList: MutableList<ChildDataClass> = mutableListOf<ChildDataClass>()
+    private val settingChildList : MutableList<ChildDataClass> = mutableListOf()
 
 
     private val listOfGroupItem: List<GroupTitleDataClass> =

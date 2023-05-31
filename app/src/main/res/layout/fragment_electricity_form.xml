@@ -9,8 +9,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".electricityFeature.ElectricityFormFragment">
 
-
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/backArrow"
         android:layout_width="wrap_content"
@@ -19,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/title"
         app:layout_constraintBottom_toBottomOf="@id/title"
-
         />
 
     <TextView
@@ -55,8 +52,8 @@
         android:id="@+id/electricityCounterSpinner"
         app:layout_constraintTop_toBottomOf="@id/counterText"
         android:layout_marginTop="@dimen/dimen_8"
-        app:boxStrokeWidth="0dp"
         android:background="@drawable/edit_text_border"
+
         >
         <Spinner
             android:id="@+id/spinner"
@@ -81,19 +78,18 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_sc_number"
             android:id="@+id/scNumberEditText"
-            app:boxStrokeWidth="0dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             app:layout_constraintTop_toBottomOf="@id/scNumberText"
             android:layout_marginTop="@dimen/dimen_8"
             >
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/customer_sc_number"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/edit_text_hint_color"
                 android:fontFamily="@font/quicksand"
+                android:textColor="@color/bold_text_color"
                 android:textSize="14sp"
-                android:background="@drawable/edit_text_border"
                 />
-
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -115,13 +111,13 @@
             android:id="@+id/customerIdEditText"
             app:layout_constraintTop_toBottomOf="@id/customerIDNumberText"
             android:layout_marginTop="@dimen/dimen_8"
-            app:boxStrokeWidth="0dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             >
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/electricityCustomerId"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border"
-                android:textColor="@color/edit_text_hint_color"
+                android:textColor="@color/bold_text_color"
                 android:fontFamily="@font/quicksand"
                 android:textSize="14sp"
                 />

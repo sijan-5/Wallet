@@ -34,16 +34,20 @@ class ElectricityPaymentMethodFragment() : CommonPaymentMethodFragment() {
 
 
     override fun getPaymentBillList(): List<PaymentDetailDataClass> {
-        return listOf(
-            PaymentDetailDataClass("Service", "NEA"),
-            PaymentDetailDataClass("Counter", "Satungal"),
-            PaymentDetailDataClass("SC Number", "948.##.####"),
-            PaymentDetailDataClass("Customer ID", "******"),
-            PaymentDetailDataClass("Total Amount", "NPR ####"),
-            PaymentDetailDataClass("Previous Dues", "NPR ####"),
-            PaymentDetailDataClass("Dues Date Form", "YYYY/MM/DD"),
-        )
+
+         val arguments = arguments
+
+           return listOf(
+                    PaymentDetailDataClass("Service", "NEA"),
+                    PaymentDetailDataClass("Counter", arguments?.getString(CounterLocationKey)!!),
+                    PaymentDetailDataClass("SC Number", arguments.getString(ScNumberKey)!!),
+                    PaymentDetailDataClass("Customer ID", arguments.getString(CustomerIdKey)!!),
+                    PaymentDetailDataClass("Total Amount", "NPR ####"),
+                    PaymentDetailDataClass("Previous Dues", "NPR ####"),
+                    PaymentDetailDataClass("Dues Date Form", "YYYY/MM/DD"),
+            )
     }
+
 
     override fun getChildView(): View {
         val inflater = LayoutInflater.from(activity)

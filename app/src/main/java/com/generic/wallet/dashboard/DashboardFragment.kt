@@ -26,8 +26,9 @@ private const val ARG_PARAM2 = "param2"
  * Use the [DashboardFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-const val key :String = "KeyForDashboardItems"
-const val titlekey:String = "keyForTitle"
+const val key: String = "KeyForDashboardItems"
+const val titlekey: String = "keyForTitle"
+
 class DashboardFragment : Fragment() {
 
     private val noOfColumns = 4
@@ -74,36 +75,36 @@ class DashboardFragment : Fragment() {
 
     }
 
-    private fun setUpRecyclerViews()
-    {
+    private fun setUpRecyclerViews() {
         setUpServicesRecyclerView()
         setUpMerchantRecyclerView()
         setUpUtilitiesRecyclerView()
     }
 
-    private fun setUpUtilitiesRecyclerView()
-    {
+    private fun setUpUtilitiesRecyclerView() {
         binding.utilitiesRecyclerView.apply {
-            layoutManager= GridLayoutManager(requireContext(), noOfColumns, GridLayoutManager.VERTICAL, false)
+            layoutManager =
+                GridLayoutManager(requireContext(), noOfColumns, GridLayoutManager.VERTICAL, false)
             adapter = DashBoardAdapter(getWalletUtilitiesServices())
         }
     }
-    private fun setUpMerchantRecyclerView()
-    {
+
+    private fun setUpMerchantRecyclerView() {
         binding.merchantRecyclerView.apply {
-            layoutManager = GridLayoutManager(requireContext(),noOfColumns,GridLayoutManager.VERTICAL,false)
+            layoutManager =
+                GridLayoutManager(requireContext(), noOfColumns, GridLayoutManager.VERTICAL, false)
             adapter = DashBoardAdapter(getMerchantServices())
-    }
+        }
 
     }
-    private fun setUpServicesRecyclerView()
-    {
+
+    private fun setUpServicesRecyclerView() {
         binding.walletServicesRecyclerView.apply {
-            layoutManager = GridLayoutManager(requireContext(),noOfColumns,GridLayoutManager.VERTICAL,false)
+            layoutManager =
+                GridLayoutManager(requireContext(), noOfColumns, GridLayoutManager.VERTICAL, false)
             adapter = DashBoardAdapter(getListWalletServices())
         }
     }
-
 
 
     private fun getWalletUtilitiesServices(): List<DashBoardItemDataClass> {
@@ -128,7 +129,10 @@ class DashboardFragment : Fragment() {
                 resources.getString(R.string.electricity),
                 R.drawable.electricitybackground
             ) {
-               val bundle = bundleOf(key to electricityBoardList(), titlekey to resources.getString(R.string.electricity) )
+                val bundle = bundleOf(
+                    key to electricityBoardList(),
+                    titlekey to resources.getString(R.string.electricity)
+                )
                 navigateToCommonPage(bundle)
             },
             DashBoardItemDataClass(
@@ -137,7 +141,10 @@ class DashboardFragment : Fragment() {
                 R.drawable.internetbackground
             )
             {
-               val bundle = bundleOf(key to getISPList(), titlekey to resources.getString(R.string.internet)  )
+                val bundle = bundleOf(
+                    key to getISPList(),
+                    titlekey to resources.getString(R.string.internet)
+                )
                 navigateToCommonPage(bundle)
             },
             DashBoardItemDataClass(
@@ -145,7 +152,10 @@ class DashboardFragment : Fragment() {
                 resources.getString(R.string.water),
                 R.drawable.waterbackground
             ) {
-               val bundle = bundleOf(key to getListOfWaterServices(), titlekey to resources.getString(R.string.water) )
+                val bundle = bundleOf(
+                    key to getListOfWaterServices(),
+                    titlekey to resources.getString(R.string.water)
+                )
                 navigateToCommonPage(bundle)
             },
             DashBoardItemDataClass(
@@ -268,33 +278,34 @@ class DashboardFragment : Fragment() {
     }
 
 
-    private fun electricityBoardList() : List<CommonUtilitiesDataClass> {
-        return  mutableListOf(
-            CommonUtilitiesDataClass(R.drawable.nea,"NEA"),
-            CommonUtilitiesDataClass(R.drawable.slrec,"SLREC")
+    private fun electricityBoardList(): List<CommonUtilitiesDataClass> {
+        return mutableListOf(
+            CommonUtilitiesDataClass(R.drawable.nea, "NEA"),
+            CommonUtilitiesDataClass(R.drawable.slrec, "SLREC")
         )
     }
 
     private fun getISPList(): List<CommonUtilitiesDataClass> {
-        return mutableListOf(
+        return listOf(
             CommonUtilitiesDataClass(R.drawable.wlink_logo, "World Link"),
             CommonUtilitiesDataClass(R.drawable.vianet, "Vianet"),
             CommonUtilitiesDataClass(R.drawable.subisu, "SUBISU"),
             CommonUtilitiesDataClass(R.drawable.cgnet, "CG Net"),
-            )
+        )
     }
 
-    private fun getListOfWaterServices() : List<CommonUtilitiesDataClass>
-    {
-        return mutableListOf(CommonUtilitiesDataClass(R.drawable.nwsc , "NWSC"),
-            CommonUtilitiesDataClass(R.drawable.kukl_logo , "KUKL"),
-            CommonUtilitiesDataClass(R.drawable.community_khanepani , "Community KhanePani"))
+    private fun getListOfWaterServices(): List<CommonUtilitiesDataClass> {
+        return listOf(
+            CommonUtilitiesDataClass(R.drawable.nwsc, "NWSC"),
+            CommonUtilitiesDataClass(R.drawable.kukl_logo, "KUKL"),
+            CommonUtilitiesDataClass(R.drawable.community_khanepani, "Community KhanePani")
+        )
     }
 
 
-    private fun navigateToCommonPage(bundle :Bundle?=null)
-    {
-        view?.findNavController()?.navigate(R.id.action_dashBoardFragment_to_commonUtilitiesRecycler,bundle)
+    private fun navigateToCommonPage(bundle: Bundle? = null) {
+        view?.findNavController()
+            ?.navigate(R.id.action_dashBoardFragment_to_commonUtilitiesRecycler, bundle)
     }
 
 

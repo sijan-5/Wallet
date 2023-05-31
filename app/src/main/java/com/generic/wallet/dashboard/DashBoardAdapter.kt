@@ -44,6 +44,7 @@ class DashBoardAdapter(val list: List<DashBoardItemDataClass>) :
     class ViewHolder(val dashBoardItemView: View) : RecyclerView.ViewHolder(dashBoardItemView) {
         val logoImage: ImageView = dashBoardItemView.findViewById(R.id.dashboardItemLogo)
         val logoName: TextView = dashBoardItemView.findViewById(R.id.dashBoardItemName)
+
     }
 
 

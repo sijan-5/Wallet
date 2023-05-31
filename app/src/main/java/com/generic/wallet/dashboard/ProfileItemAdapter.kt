@@ -32,7 +32,7 @@ class ProfileItemAdapter(
             profileItems -> {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.profile_items, parent, false)
-                return ProfileItemViewHolder(view)
+                 ProfileItemViewHolder(view)
             }
 
             divider -> {
@@ -50,7 +50,7 @@ class ProfileItemAdapter(
                         R.color.viewbackgroundcolor
                     )
                 )
-                return DividerViewHolder(divider)
+                 DividerViewHolder(divider)
             }
 
             else -> throw IllegalArgumentException("Invalid item type")
@@ -60,9 +60,7 @@ class ProfileItemAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
-        val item = profileItemList[position]
-
-        when (item) {
+        when (val item = profileItemList[position]) {
             is ProfileItems.DataClassForProfileItems -> {
 
                 val profileItemsHolder = holder as ProfileItemViewHolder
@@ -73,20 +71,18 @@ class ProfileItemAdapter(
                     ContextCompat.getColor(
                         context,
                         item.backgroundColorId
-                    ))
+                    )
+                )
 
                 holder.overflowArrow.setOnClickListener {
-                    if(holder.childItems.visibility == View.VISIBLE)
-                    {
+                    if (holder.childItems.visibility == View.VISIBLE) {
                         holder.childItems.visibility = View.GONE
-                    }
-                    else
-                    {
+                    } else {
                         holder.childItems.visibility = View.VISIBLE
                     }
                 }
                 holder.firstChild.setOnClickListener {
-                    Toast.makeText(context, "child",Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "child", Toast.LENGTH_LONG).show()
                 }
 
             }
@@ -113,9 +109,9 @@ class ProfileItemAdapter(
 
         val profileItemImage: ImageView = itemView.findViewById(R.id.profileItemImage)
         val profileItemName: TextView = itemView.findViewById(R.id.profileItemName)
-        val childItems : LinearLayout = itemView.findViewById(R.id.childItems)
-        val overflowArrow : ImageView = itemView.findViewById(R.id.overflowArrow)
-        val firstChild : TextView = itemView.findViewById(R.id.first_item)
+        val childItems: LinearLayout = itemView.findViewById(R.id.childItems)
+        val overflowArrow: ImageView = itemView.findViewById(R.id.overflowArrow)
+        val firstChild: TextView = itemView.findViewById(R.id.first_item)
     }
 
     class DividerViewHolder(view: View) : RecyclerView.ViewHolder(view) {

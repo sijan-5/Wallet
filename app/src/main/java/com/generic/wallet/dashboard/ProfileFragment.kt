@@ -33,36 +33,37 @@ class ProfileFragment() : Fragment() {
 
     private fun getListOfProfileItems(): List<ProfileItems> {
 
-       return  listOf(
-           ProfileItems.DataClassForProfileItems(
-               R.drawable.fill_kyc,
-               R.color.fill_kyc_backgroundColor,
-               "Fill Kyc"),
-           ProfileItems.DataClassForProfileItems(
-               R.drawable.account,
-               R.color.accountBackgroundColor, "Account"
-           ),
+        return listOf(
+            ProfileItems.DataClassForProfileItems(
+                R.drawable.fill_kyc,
+                R.color.fill_kyc_backgroundColor,
+                "Fill Kyc"
+            ),
+            ProfileItems.DataClassForProfileItems(
+                R.drawable.account,
+                R.color.accountBackgroundColor, "Account"
+            ),
 
-           ProfileItems.DataClassForProfileItems(
-               R.drawable.settings,
-               R.color.settingBackgroundColor, "Settings"
-           ),
+            ProfileItems.DataClassForProfileItems(
+                R.drawable.settings,
+                R.color.settingBackgroundColor, "Settings"
+            ),
 
-           ProfileItems.DataClassForProfileItems(
-               R.drawable.app,
-               R.color.appBackgroundColor, "App"
-           ),
+            ProfileItems.DataClassForProfileItems(
+                R.drawable.app,
+                R.color.appBackgroundColor, "App"
+            ),
 
-           ProfileItems.DataClassForProfileItems(
-               R.drawable.support,
-               R.color.supportBackgroundColor, "Support"
-           ),
-           ProfileItems.Divider,
+            ProfileItems.DataClassForProfileItems(
+                R.drawable.support,
+                R.color.supportBackgroundColor, "Support"
+            ),
+            ProfileItems.Divider,
 
-           ProfileItems.DataClassForProfileItems(
-              R.drawable.support,
-               R.color.logoutBackgroundColor, "Log Out"
-           )
+            ProfileItems.DataClassForProfileItems(
+                R.drawable.support,
+                R.color.logoutBackgroundColor, "Log Out"
+            )
         )
     }
 
@@ -83,16 +84,15 @@ class ProfileFragment() : Fragment() {
         return binding.root
     }
 
-
+    val a = ExpandableListDataItems()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val hashMap = ExpandableListDataItems().getData()
-        val listOfKeys  = hashMap.keys.toList()
+        val hashMap = a.getData()
+        val listOfKeys = hashMap.keys.toList()
 
-
-        val customizedListAdapter = ExpandableListAdapter(requireContext(),listOfKeys,hashMap)
+        val customizedListAdapter = ExpandableListAdapter(requireContext(), listOfKeys, hashMap)
         binding.expandableListView.setAdapter(customizedListAdapter)
 
         binding.expandableListView.setOnGroupExpandListener(OnGroupExpandListener { groupPosition ->
@@ -100,10 +100,10 @@ class ProfileFragment() : Fragment() {
 //            Toast.makeText(requireContext(),groupPosition.toString(), Toast.LENGTH_LONG).show()
         })
 
-        binding.expandableListView.setOnGroupCollapseListener{
+        binding.expandableListView.setOnGroupCollapseListener {
 //            Toast.makeText(requireContext(),it.toString(), Toast.LENGTH_LONG).show()
         }
-        binding.expandableListView.setOnGroupCollapseListener{
+        binding.expandableListView.setOnGroupCollapseListener {
 //            Toast.makeText(requireContext(),it.toString(), Toast.LENGTH_LONG).show()
         }
 
