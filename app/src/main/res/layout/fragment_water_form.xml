@@ -56,6 +56,7 @@
         android:background="@drawable/edit_text_border"
         >
         <Spinner
+            android:id="@+id/waterSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -75,21 +76,23 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/waterCounterSpinner" />
 
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_customer_id"
         android:id="@+id/customerIdEditText"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintTop_toBottomOf="@id/customerIDNumberText"
         android:layout_marginTop="@dimen/dimen_8"
-        app:boxStrokeWidth="0dp"
         >
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/customerId"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_border"
-            android:textColor="@color/edit_text_hint_color"
             android:fontFamily="@font/quicksand"
+            android:textColor="@color/bold_text_color"
             android:textSize="14sp"
             />
     </com.google.android.material.textfield.TextInputLayout>

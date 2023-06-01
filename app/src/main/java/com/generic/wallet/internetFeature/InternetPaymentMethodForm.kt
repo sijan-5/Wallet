@@ -13,22 +13,11 @@ import com.generic.wallet.commondetail.CommonPaymentMethodFragment
 import com.generic.wallet.commondetail.PaymentDetailDataClass
 import com.generic.wallet.databinding.FragmentInternetPaymentMethodFormBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [InternetPaymentMethodForm.newInstance] factory method to
- * create an instance of this fragment.
- */
-
  class InternetPaymentMethodForm :CommonPaymentMethodFragment() {
 
     override fun getPaymentBillList(): List<PaymentDetailDataClass> {
-        return listOf(PaymentDetailDataClass("UserName","Shooman"),
-        PaymentDetailDataClass("Service Provider","WorldLink"),
+        return listOf(PaymentDetailDataClass("UserName",arguments?.getString(INTERNET_USERNAME).toString()),
+        PaymentDetailDataClass("Service Provider",arguments?.getString(INTERNET_TITLE).toString()),
         PaymentDetailDataClass("Status","Active"),
         PaymentDetailDataClass("Selected Plan","500Mb/Mth"))
     }

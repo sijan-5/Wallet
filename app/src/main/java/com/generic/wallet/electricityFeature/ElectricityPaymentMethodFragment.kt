@@ -1,10 +1,8 @@
 package com.generic.wallet.electricityFeature
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -35,13 +33,11 @@ class ElectricityPaymentMethodFragment() : CommonPaymentMethodFragment() {
 
     override fun getPaymentBillList(): List<PaymentDetailDataClass> {
 
-         val arguments = arguments
-
            return listOf(
                     PaymentDetailDataClass("Service", "NEA"),
-                    PaymentDetailDataClass("Counter", arguments?.getString(CounterLocationKey)!!),
-                    PaymentDetailDataClass("SC Number", arguments.getString(ScNumberKey)!!),
-                    PaymentDetailDataClass("Customer ID", arguments.getString(CustomerIdKey)!!),
+                    PaymentDetailDataClass("Counter", arguments?.getString(COUNTERLOCATIONKEY)!!),
+                    PaymentDetailDataClass("SC Number", arguments?.getString(SCNUMBERKEY)!!),
+                    PaymentDetailDataClass("Customer ID", arguments?.getString(CUSTOMERIDKEY)!!),
                     PaymentDetailDataClass("Total Amount", "NPR ####"),
                     PaymentDetailDataClass("Previous Dues", "NPR ####"),
                     PaymentDetailDataClass("Dues Date Form", "YYYY/MM/DD"),

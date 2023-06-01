@@ -29,6 +29,5 @@
 
 
     <style name="Theme.GenericWallet.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.GenericWallet.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

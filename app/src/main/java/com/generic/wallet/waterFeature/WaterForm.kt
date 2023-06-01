@@ -1,83 +1,93 @@
 package com.generic.wallet.waterFeature
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
-import com.generic.wallet.dashboard.itemNameKey
+import com.generic.wallet.dashboard.titleNameKey
 import com.generic.wallet.databinding.FragmentWaterFormBinding
-import kotlin.math.log
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [WaterForm.newInstance] factory method to
- * create an instance of this fragment.
- */
-class WaterForm : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+const val WATER_COUNTER_KEY = "waterCounterKey"
+const val WATER_CUSTOMER_ID_KEY = "waterCustomerIdKey"
+const val WATER_BOARD_TITLE_KEY = "waterBoardTitle"
+class WaterForm : Fragment(){
     private var _binding : FragmentWaterFormBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var counterName:String
+    private lateinit var waterBoardTitle : String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-
         _binding = FragmentWaterFormBinding.inflate(inflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.backArrow.setOnClickListener {
-           findNavController().popBackStack()
-        }
 
-        binding.title.text =  arguments?.getString(itemNameKey)
+        setUpWaterSpinner()
 
-        binding.continueButton.setOnClickListener {
-             findNavController().navigate(R.id.action_waterForm_to_waterPaymentMethod)
+
+        binding.apply{
+            waterBoardTitle =  arguments?.getString(titleNameKey).toString()
+            title.text = waterBoardTitle
+            backArrow.setOnClickListener {
+                findNavController().popBackStack()
+            }
+
+            continueButton.setOnClickListener {
+                val checkEmptyField :Boolean = checkEmptyField()
+                if (checkEmptyField) {
+                    val waterBundle = bundleOf(
+                        WATER_COUNTER_KEY to counterName,
+                        WATER_CUSTOMER_ID_KEY to customerId.text.toString(),
+                        WATER_BOARD_TITLE_KEY to waterBoardTitle
+                    )
+                    findNavController().navigate(
+                        R.id.action_waterForm_to_waterPaymentMethod,
+                        waterBundle
+                    )
+                }
+            }
         }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment WaterForm.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            WaterForm().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+    private fun setUpWaterSpinner(){
+        val adapter = ArrayAdapter.createFromResource(requireContext(),R.array.counter_array,
+            android.R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(com.chaos.view.R.layout.support_simple_spinner_dropdown_item)
+        binding.waterSpinner.adapter = adapter
+        binding.waterSpinner.onItemSelectedListener = selectedItem
+    }
+
+
+   private val selectedItem = object : AdapterView.OnItemSelectedListener{
+       override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+           counterName = parent?.getItemAtPosition(position).toString()
+       }
+       override fun onNothingSelected(parent: AdapterView<*>?) {
+       }
+
+   }
+
+    private fun checkEmptyField() :Boolean
+    {
+        if(binding.customerId.text.toString().isBlank())
+        {
+            binding.customerId.error = "This is required"
+            return false
+        }
+        return true
     }
 }

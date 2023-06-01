@@ -10,16 +10,15 @@ import android.widget.ArrayAdapter
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.generic.wallet.R
-import com.generic.wallet.dashboard.itemNameKey
+import com.generic.wallet.dashboard.titleNameKey
 import com.generic.wallet.databinding.FragmentElectricityFormBinding
 
 
-const val ScNumberKey: String = "ScNumber"
-const val CustomerIdKey: String = "CustomerID"
-const val CounterLocationKey: String = "CounterLocation"
+const val SCNUMBERKEY: String = "ScNumber"
+const val CUSTOMERIDKEY: String = "CustomerID"
+const val COUNTERLOCATIONKEY: String = "CounterLocation"
 
 class ElectricityFormFragment : Fragment(), AdapterView.OnItemSelectedListener {
-
 
     private var _binding: FragmentElectricityFormBinding? = null
     private val binding get() = _binding!!
@@ -41,7 +40,7 @@ class ElectricityFormFragment : Fragment(), AdapterView.OnItemSelectedListener {
         setUpSpinnerAdapter()
 
         arguments?.let {
-            binding.title.text = it.getString(itemNameKey)
+            binding.title.text = it.getString(titleNameKey)
         }
 
         binding.continueButton.setOnClickListener{
@@ -52,9 +51,9 @@ class ElectricityFormFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 findNavController().navigate(
                     R.id.action_electricityFormFragment_to_electricityPaymentMethodFragment2,
                     bundleOf(
-                        ScNumberKey to binding.customerScNumber.text.toString(),
-                        CustomerIdKey to binding.electricityCustomerId.text.toString(),
-                        CounterLocationKey to counterLocation
+                        SCNUMBERKEY to binding.customerScNumber.text.toString(),
+                        CUSTOMERIDKEY to binding.electricityCustomerId.text.toString(),
+                        COUNTERLOCATIONKEY to counterLocation
                     )
                 )
             }

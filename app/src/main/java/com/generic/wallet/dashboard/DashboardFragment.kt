@@ -16,37 +16,13 @@ import com.generic.wallet.bankTransferFeature.CommonUtilitiesDataClass
 import com.generic.wallet.databinding.FragmentDashboardBinding
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DashboardFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-const val key: String = "KeyForDashboardItems"
-const val titlekey: String = "keyForTitle"
-
+const val DASHBOARD_ITEM_KEY: String = "KeyForDashboardItems"
+const val TITLE_KEY: String = "keyForTitle"
 class DashboardFragment : Fragment() {
-
     private val noOfColumns = 4
-
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,22 +33,18 @@ class DashboardFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //wallet Services
         setUpRecyclerViews()
-
         //clicking on profile icon
         binding.profileImageIcon.setOnClickListener {
             val activity = requireActivity()
             if (activity is BottomNavigationActivity) {
                 val menuItem = activity.getMenuItem(R.id.profileFragment)
                 NavigationUI.onNavDestinationSelected(menuItem, findNavController())
-
             }
         }
-
     }
 
     private fun setUpRecyclerViews() {
@@ -105,8 +77,6 @@ class DashboardFragment : Fragment() {
             adapter = DashBoardAdapter(getListWalletServices())
         }
     }
-
-
     private fun getWalletUtilitiesServices(): List<DashBoardItemDataClass> {
 
         return listOf(
@@ -130,8 +100,8 @@ class DashboardFragment : Fragment() {
                 R.drawable.electricitybackground
             ) {
                 val bundle = bundleOf(
-                    key to electricityBoardList(),
-                    titlekey to resources.getString(R.string.electricity)
+                    DASHBOARD_ITEM_KEY to electricityBoardList(),
+                    TITLE_KEY to resources.getString(R.string.electricity)
                 )
                 navigateToCommonPage(bundle)
             },
@@ -142,8 +112,8 @@ class DashboardFragment : Fragment() {
             )
             {
                 val bundle = bundleOf(
-                    key to getISPList(),
-                    titlekey to resources.getString(R.string.internet)
+                    DASHBOARD_ITEM_KEY to getISPList(),
+                    TITLE_KEY to resources.getString(R.string.internet)
                 )
                 navigateToCommonPage(bundle)
             },
@@ -153,8 +123,8 @@ class DashboardFragment : Fragment() {
                 R.drawable.waterbackground
             ) {
                 val bundle = bundleOf(
-                    key to getListOfWaterServices(),
-                    titlekey to resources.getString(R.string.water)
+                    DASHBOARD_ITEM_KEY to getListOfWaterServices(),
+                    TITLE_KEY to resources.getString(R.string.water)
                 )
                 navigateToCommonPage(bundle)
             },
@@ -182,6 +152,7 @@ class DashboardFragment : Fragment() {
         )
 
     }
+
 
     private fun getListWalletServices(): List<DashBoardItemDataClass> {
 
@@ -257,57 +228,27 @@ class DashboardFragment : Fragment() {
     }
 
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DashboardFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DashboardFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
-
-
-    private fun electricityBoardList(): List<CommonUtilitiesDataClass> {
-        return mutableListOf(
+    private fun electricityBoardList(): List<CommonUtilitiesDataClass> = mutableListOf(
             CommonUtilitiesDataClass(R.drawable.nea, "NEA"),
             CommonUtilitiesDataClass(R.drawable.slrec, "SLREC")
         )
-    }
 
-    private fun getISPList(): List<CommonUtilitiesDataClass> {
-        return listOf(
+
+    private fun getISPList(): ArrayList<CommonUtilitiesDataClass> = arrayListOf(
             CommonUtilitiesDataClass(R.drawable.wlink_logo, "World Link"),
             CommonUtilitiesDataClass(R.drawable.vianet, "Vianet"),
             CommonUtilitiesDataClass(R.drawable.subisu, "SUBISU"),
-            CommonUtilitiesDataClass(R.drawable.cgnet, "CG Net"),
-        )
-    }
+            CommonUtilitiesDataClass(R.drawable.cgnet, "CG Net"))
 
-    private fun getListOfWaterServices(): List<CommonUtilitiesDataClass> {
-        return listOf(
+    private fun getListOfWaterServices(): ArrayList<CommonUtilitiesDataClass> = arrayListOf(
             CommonUtilitiesDataClass(R.drawable.nwsc, "NWSC"),
             CommonUtilitiesDataClass(R.drawable.kukl_logo, "KUKL"),
-            CommonUtilitiesDataClass(R.drawable.community_khanepani, "Community KhanePani")
-        )
-    }
-
+            CommonUtilitiesDataClass(R.drawable.community_khanepani, "Community KhanePani"))
 
     private fun navigateToCommonPage(bundle: Bundle? = null) {
         view?.findNavController()
             ?.navigate(R.id.action_dashBoardFragment_to_commonUtilitiesRecycler, bundle)
     }
-
 
 }
 

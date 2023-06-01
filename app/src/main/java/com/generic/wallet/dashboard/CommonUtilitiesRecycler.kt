@@ -19,7 +19,7 @@ import com.generic.wallet.databinding.FragmentCommonUtilitiesRecyclerBinding
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-const val itemNameKey: String = "ItemNameKey"
+const val titleNameKey: String = "ItemNameKey"
 
 class CommonUtilitiesRecycler : Fragment() {
     // TODO: Rename and change types of parameters
@@ -47,18 +47,15 @@ class CommonUtilitiesRecycler : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//
-//        val myArrayList: ArrayList<BankLogoAndNameDataClass> =
-//            arguments?.getParcelableArrayList<BankLogoAndNameDataClass>(key)
 
         val bundle = arguments
 
         if (bundle != null) {
             val list: List<CommonUtilitiesDataClass> =
-                bundle.getParcelableArrayList<CommonUtilitiesDataClass>(key)!!
-            Log.d("array size", "${list.size}")
+                bundle.getParcelableArrayList<CommonUtilitiesDataClass>(DASHBOARD_ITEM_KEY)!!
 
-            val getTitle = bundle.getString(titlekey)
+
+            val getTitle = bundle.getString(TITLE_KEY)
             binding.title.text = getTitle
 
             binding.commonRecyclerView.apply {
@@ -66,7 +63,7 @@ class CommonUtilitiesRecycler : Fragment() {
                     GridLayoutManager(requireContext(), 4, GridLayoutManager.VERTICAL, false)
                 adapter = CommonDashboardItemAdapter(list) { itemName ->
 
-                    val itemNameBundle = bundleOf(itemNameKey to itemName)
+                    val itemNameBundle = bundleOf(titleNameKey to itemName)
                     navigateToSelectDashboardItem(getTitle, itemNameBundle)
                 }
             }
