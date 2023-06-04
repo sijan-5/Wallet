@@ -25,10 +25,10 @@
         <activity
             android:name=".dashboard.BottomNavigationActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
 
         <activity
@@ -48,7 +48,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
     </application>
 
